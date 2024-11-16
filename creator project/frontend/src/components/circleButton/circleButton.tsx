@@ -3,9 +3,9 @@ import './circleButton.css'
 
 const circleButton:React.FC<PropsWithChildren> = ({children}) => {
   return (
-    <div className='parent'>
+    <button className='parent'>
       {children}
-    </div>
+    </button>
   )
 }
 

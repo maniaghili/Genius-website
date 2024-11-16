@@ -1,10 +1,11 @@
 import './Header.css'
 import CircleButton from '../circleButton/circleButton'
 import HeaderLi from '../HeaderLi/HeaderLi'
+import Username from '../userName/Username'
 function Header() {
   return (
-    <div className="flex justify-center">
-     <div className="w-[95%] h-20 flex  justify-between  ">
+    <div className="flex justify-center border border-b-2">
+     <div className="w-[95%] h-22 flex  justify-between  ">
       <div className="w-[50%] flex" >
         <div className="w-[20%] flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-700">
@@ -63,14 +64,7 @@ function Header() {
           </svg>
           </CircleButton>
             
-          <div>
-          <p>جلال بهرامی راد</p>
-          <p className='opacity-70'>خوش آمدید</p>
-
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                                    </svg>
+          <Username name='مانی' />
         </div>
       </div>
      </div>
