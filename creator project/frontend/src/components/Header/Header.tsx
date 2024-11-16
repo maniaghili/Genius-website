@@ -24,7 +24,7 @@ function Header() {
         <div className="w-[75%]">
 
 
-       <ul className='flex h-full items-center gap-7 mr-3'>
+       <ul className='flex h-full items-center gap-7 mr-3 header_list'>
         <HeaderLi svg={true}>
         دسته بندی آمـــوزشها 
         </HeaderLi>

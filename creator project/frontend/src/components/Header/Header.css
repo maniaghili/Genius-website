@@ -5,3 +5,15 @@
 .na-header{
     font-size: 25px;
 }
+
+
+
+
+
+
+@media only screen and (max-width:992px){
+
+    .header_list{
+        display: none;
+    }
+}
