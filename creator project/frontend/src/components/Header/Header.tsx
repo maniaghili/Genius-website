@@ -12,7 +12,7 @@ const [colaps,setColaps] = useState(false)
   return (
     <>
     <div className="flex justify-center border border-b-2 relative">
-     <div className="w-[95%] h-22 flex  justify-between  ">
+     <div className="w-[95%] h-[85px] flex  justify-between  ">
       <div className="w-[50%]  flex" >
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
           <button onClick={()=>{setColaps(true)}} className='  coli_button bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center sm:flex lg:hidden'>
@@ -104,11 +104,13 @@ const [colaps,setColaps] = useState(false)
 
         </button>
        </div>
-       <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-lg w-5/6 h-11 border border-neutral-700 border-opacity-30'>
+       <div className='w-full flex justify-center'>
+       <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-2xl w-11/12 h-11 border border-neutral-700 border-opacity-30'>
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
-                                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"></path>
-                                    </svg>
+            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"></path>
+        </svg>
         <input type="text" className='bg-transparent h-full w-full' placeholder='دنبال چی میگردی؟'/>
+       </div>
        </div>
        </div>
        <div onClick={()=>{setColaps(false)}} className='opacity-10 w-1/2'></div>
