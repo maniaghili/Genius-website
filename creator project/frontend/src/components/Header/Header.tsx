@@ -2,13 +2,20 @@ import './Header.css'
 import CircleButton from '../circleButton/circleButton'
 import HeaderLi from '../HeaderLi/HeaderLi'
 import Username from '../userName/Username'
+import {  useState } from 'react'
+
+
 function Header() {
+
+const [colaps,setColaps] = useState(false)
+
   return (
-    <div className="flex justify-center border border-b-2">
+    <>
+    <div className="flex justify-center border border-b-2 relative">
      <div className="w-[95%] h-22 flex  justify-between  ">
       <div className="w-[50%]  flex" >
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
-          <button className='bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center sm:flex lg:hidden'>
+          <button onClick={()=>{setColaps(true)}} className='  coli_button bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center sm:flex lg:hidden'>
              <div className='h-[1px] w-[50%] bg-black'></div>
              <div className='h-[1px] w-[50%] bg-black'></div>
              <div className='h-[1px] w-[50%] bg-black'></div>
@@ -75,7 +82,17 @@ function Header() {
         </div>
       </div>
      </div>
+     {
+      colaps?<div className='active_colaps z-50 absolute  h-screen w-1/2 lg:hidden'>
+      <p onClick={()=>{setColaps(false)}} className='m'>X</p>
+     </div>:
+     <div className=' colaps z-50 absolute  h-screen w-1/2 lg:hidden'>
+     <p onClick={()=>{setColaps(false)}} className='m'>X</p>
     </div>
+     }
+    </div>
+    
+    </>
   )
 }
 
