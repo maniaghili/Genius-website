@@ -84,8 +84,9 @@ const [colaps,setColaps] = useState(false)
      </div>
      {
       colaps?
-      <div  className=' active_colaps z-40 absolute  h-screen w-full lg:hidden flex justify-between'>
-       <div className='z-50 w-4/5 flex justify-between bg-neutral-100'>
+      <div  className='active_colaps z-40 absolute h-screen w-full lg:hidden flex justify-between'>
+       <div className='w-4/5  bg-neutral-100'>
+       <div className='z-50  flex items-center justify-between'>
         
         <div className='flex w-1/2 h-1/5  gap-3 items-center'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-700">
@@ -93,15 +94,22 @@ const [colaps,setColaps] = useState(false)
             <path fill-rule="evenodd" d="M9.013 19.9a.75.75 0 0 1 .877-.597 11.319 11.319 0 0 0 4.22 0 .75.75 0 1 1 .28 1.473 12.819 12.819 0 0 1-4.78 0 .75.75 0 0 1-.597-.876ZM9.754 22.344a.75.75 0 0 1 .824-.668 13.682 13.682 0 0 0 2.844 0 .75.75 0 1 1 .156 1.492 15.156 15.156 0 0 1-3.156 0 .75.75 0 0 1-.668-.824Z" clip-rule="evenodd"></path>
           </svg>
           <div>
-          <p className="opacity-70 akademi-header font-semibold ">آکادمی</p>
+          <p className="opacity-70 akademi-header font-semibold">آکادمی</p>
           <p className=" na-header  font-bold text-blue-700">
             نابغه
           </p>
           </div>
         </div>
-        <p onClick={()=>{setColaps(false)}}>X
+        <button onClick={()=>{setColaps(false)}} className='ml-2 h-10 w-10'>X
 
-        </p>
+        </button>
+       </div>
+       <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-lg w-5/6 h-11 border border-neutral-700 border-opacity-30'>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
+                                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"></path>
+                                    </svg>
+        <input type="text" className='bg-transparent h-full w-full' placeholder='دنبال چی میگردی؟'/>
+       </div>
        </div>
        <div onClick={()=>{setColaps(false)}} className='opacity-10 w-1/2'></div>
      
