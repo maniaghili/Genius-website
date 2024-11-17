@@ -10,7 +10,7 @@ function Header() {
 const [colaps,setColaps] = useState(false)
 
   return (
-    <>
+    
     <div className="flex justify-center border border-b-2 relative">
      <div className="w-[95%] h-[85px] flex  justify-between  ">
       <div className="w-[50%]  flex" >
@@ -169,7 +169,7 @@ const [colaps,setColaps] = useState(false)
      }
     </div>
     
-    </>
+    
   )
 }
 
