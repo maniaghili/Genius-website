@@ -86,7 +86,7 @@ const [colaps,setColaps] = useState(false)
       colaps?
       <div  className='active_colaps z-40 absolute h-screen w-full lg:hidden flex justify-between'>
        <div className='w-4/5  bg-neutral-100'>
-       <div className='z-50  flex items-center justify-between'>
+       <div className='z-50 w-full  flex items-center justify-between'>
         
         <div className='flex w-1/2 h-1/5  gap-3 items-center'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-700">
@@ -100,20 +100,67 @@ const [colaps,setColaps] = useState(false)
           </p>
           </div>
         </div>
+        
+
         <button onClick={()=>{setColaps(false)}} className='ml-2 h-10 w-10'>X
 
         </button>
        </div>
-       <div className='w-full flex justify-center'>
-       <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-2xl w-11/12 h-11 border border-neutral-700 border-opacity-30'>
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
+
+       <div className='w-full flex  flex-col items-center'>
+         <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-2xl w-11/12 h-11 border border-neutral-700 border-opacity-30'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"></path>
-        </svg>
-        <input type="text" className='bg-transparent h-full w-full' placeholder='دنبال چی میگردی؟'/>
+          </svg>
+          <input type="text" className='bg-transparent h-full w-full' placeholder='دنبال چی میگردی؟'/>
+         </div>
+         
+         <div className='w-11/12 mt-6 h-16 border-y-2 flex justify-between items-center  border-y-neutral-200 '> 
+          <p className='font-bold'>تم تاریک</p>
+           <div className="w-11 h-5 relative bg-background border-2 border-border peer-focus:outline-none rounded-full peer peer-checked:after:left-[26px] peer-checked:after:bg-background after:content-[''] after:absolute after:left-0.5 after:top-0.5 after:bg-border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary peer-checked:border-primary">
+           </div>
+        </div>
+
+        <div className='w-11/12 mt-7'>
+        <div className='w-full h-40 '>
+          <ul className='h-full '>
+            <li className='opacity-60 flex justify-between items-center gap-3 h-10'>
+           <div className='flex items-center gap-3'>
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <path fill-rule="evenodd" d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"></path>
+            </svg>
+            <p>دسته بندی آموزشها</p>
+           </div> 
+
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+            </svg>
+
+            </li>
+            <li className='opacity-60 flex justify-start items-center gap-3 h-10'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z">
+                </path>
+            </svg>
+            <p>پرسش و پاسخ</p>
+            </li>
+            <li className='opacity-60 flex justify-start items-center gap-3 h-10'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z">
+                </path>
+            </svg>
+            <p>مقالات آموزشی</p>
+            </li>
+          </ul>
+        </div>
+        </div>
+
+        </div>
+
+        
+       
        </div>
-       </div>
-       </div>
-       <div onClick={()=>{setColaps(false)}} className='opacity-10 w-1/2'></div>
+       <div onClick={()=>{setColaps(false)}} className='opacity-10 w-1/5 '></div>
      
      </div>:
      <div className=' colaps z-50 absolute  h-screen w-1/2 lg:hidden'>
