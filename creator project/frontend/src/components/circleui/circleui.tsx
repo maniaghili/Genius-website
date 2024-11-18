@@ -1,14 +1,15 @@
 import { PropsWithChildren } from "react"
-
+import './circleui.css'
 type props = {
     text:string
+    color:string
 }
 
-const circleui:React.FC<PropsWithChildren<props>> = ({text,children}) => {
-    console.log(children);
+const circleui:React.FC<PropsWithChildren<props>> = ({text,color,children}) => {
+   
     
   return (
-    <div className="flex items-center justify-center">
+    <div className={"flex items-center justify-center kkk " + color}>
 
     <div className="bg-transparent h-28 w-20 flex-col m-4">
       <div className="h-4/6 bg-white rounded-full flex justify-center items-center">
