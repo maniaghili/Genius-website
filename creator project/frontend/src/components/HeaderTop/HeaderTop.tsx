@@ -1,11 +1,11 @@
-import './Header.css'
+import './HeaderTop.css'
 import CircleButton from '../circleButton/circleButton'
 import HeaderLi from '../HeaderLi/HeaderLi'
 import Username from '../userName/Username'
 import {  useState } from 'react'
 
 
-function Header() {
+function HeaderTop() {
 
 const [colaps,setColaps] = useState(false)
 
@@ -173,4 +173,4 @@ const [colaps,setColaps] = useState(false)
   )
 }
 
-export default Header
+export default HeaderTop

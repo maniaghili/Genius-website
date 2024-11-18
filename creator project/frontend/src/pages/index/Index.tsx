@@ -1,9 +1,11 @@
-import Header from "../../components/Header/Header"
+import HeaderTop from "../../components/HeaderTop/HeaderTop";
+import HeaderBottom from "../../components/HeaderBottom/HeaderBottom";
 
-function Index() {
+const Index = () => {
   return (
     <>
-      <Header />
+      <HeaderTop />
+      <HeaderBottom />
     </>
   )
 }
