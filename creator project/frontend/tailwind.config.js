@@ -5,7 +5,7 @@ export default {
     extend: {},
     screens:{
       lg:'992px',
-      md:'640px',
+      md:'760px',
       sm:'350px'
     }
   },

@@ -1,3 +1,11 @@
 .titleh1{
     font-size: 35px;
 }
+
+
+
+@media only screen and (max-width:640px){
+    .titleh1{
+        font-size: 25px;
+    }
+}
