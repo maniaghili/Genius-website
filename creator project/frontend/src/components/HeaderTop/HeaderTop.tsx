@@ -10,9 +10,9 @@ function HeaderTop() {
 const [colaps,setColaps] = useState(false)
 
   return (
-    <div className='sticky w-full top-0 shadow-md z-40 opacity-95 bg-slate-50 border border-b-2  '>
+    <div className='sticky w-full top-0 shadow-md z-40  bg-slate-50 border border-b-2  '>
 
-    <div className="flex justify-center relative">
+    <div className="flex justify-center relative ">
      <div className="w-[95%] h-[85px] flex  justify-between  ">
       <div className="w-[50%] flex" >
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
@@ -85,8 +85,8 @@ const [colaps,setColaps] = useState(false)
      </div>
      {
       colaps?
-      <div  className='active_colaps z-40 absolute h-screen w-full lg:hidden flex justify-between'>
-       <div className='w-4/5  bg-neutral-100'>
+      <div  className='active_colaps z-50 absolute h-screen w-full lg:hidden flex justify-between'>
+       <div className='w-4/5 bg-white'>
        <div className='z-50 w-full  flex items-center justify-between'>
         
         <div className='flex w-1/2 h-1/5  gap-3 items-center'>
