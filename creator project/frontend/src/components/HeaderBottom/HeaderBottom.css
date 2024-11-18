@@ -2,6 +2,24 @@
     font-size: 35px;
 }
 
+.kk{
+    animation: 2s opi;
+    animation-iteration-count: infinite;
+}
+
+@keyframes opi{
+    0%{
+        opacity: 100%;
+        
+    }
+    50%{
+        opacity: 50%;
+    }
+   
+    100%{
+        opacity: 100%;
+    }
+}
 
 
 @media only screen and (max-width:640px){

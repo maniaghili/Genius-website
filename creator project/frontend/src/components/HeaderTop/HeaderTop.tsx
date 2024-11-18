@@ -10,10 +10,11 @@ function HeaderTop() {
 const [colaps,setColaps] = useState(false)
 
   return (
-    
-    <div className="flex justify-center border border-b-2 relative">
+    <div className='sticky w-full top-0 shadow-md z-40 opacity-95 bg-slate-50 border border-b-2  '>
+
+    <div className="flex justify-center relative">
      <div className="w-[95%] h-[85px] flex  justify-between  ">
-      <div className="w-[50%]  flex" >
+      <div className="w-[50%] flex" >
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
           <button onClick={()=>{setColaps(true)}} className='  coli_button bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center sm:flex lg:hidden'>
              <div className='h-[1px] w-[50%] bg-black'></div>
@@ -169,6 +170,7 @@ const [colaps,setColaps] = useState(false)
      }
     </div>
     
+     </div>
     
   )
 }
