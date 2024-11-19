@@ -1,0 +1,31 @@
+
+
+.moshahede{
+    font-size: 15px;
+}
+
+
+.akh{
+    font-size: 20px;
+    font-weight:bolder;
+}
+
+@media only screen and (max-width:350px){
+
+    
+    .akh{
+        font-size: 15px;
+        
+    }
+}
+@media only screen and (max-width:500px){
+    .moshahede{
+        display: none;
+    }
+    
+    
+    .akh{
+        font-size: 20px;
+        
+    }
+}
