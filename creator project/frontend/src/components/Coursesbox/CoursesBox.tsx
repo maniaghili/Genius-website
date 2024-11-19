@@ -18,7 +18,7 @@ const CoursesBox = () => {
         navigation={true}
         modules={[ Navigation]}
         className="mySwiper"
-        slidesPerView={'auto'}
+        slidesPerView={3}
       >
         <SwiperSlide><Coursebox /></SwiperSlide>
         <SwiperSlide><Coursebox /></SwiperSlide>
@@ -26,9 +26,7 @@ const CoursesBox = () => {
         <SwiperSlide><Coursebox /></SwiperSlide>
         <SwiperSlide><Coursebox /></SwiperSlide>
         <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
+        
         
       </Swiper>
       
