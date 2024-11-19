@@ -5,19 +5,19 @@ const CoursesBox = () => {
     <>
     <BreadCrumb />
     <div className="w-full flex justify-center mt-5 h-[480px] ">
-       <div className="w-[95%] flex gap-4 overflow-hidden rounded-2xl h-full">
-        <div className="w-1/3  bg-gray-400">x</div>
+       <div className="w-[95%] ssm:justify-center flex gap-4 overflow-hidden rounded-2xl h-full">
+        <div className="w-1/3  bg-gray-400  ssm:hidden lg:flex">x</div>
         
         
         
-        <div className="w-1/3  rounded-3xl overflow-hidden flex flex-col items-center">
+        <div className="ssm:w-4/5 lg:w-1/3  rounded-3xl overflow-hidden flex flex-col items-center">
             <img src="../../../public/02.jpg" className="w-full h-2/5 rounded-3xl" alt="" />
-            <div className="w-5/6 h-16  rounded-2xl bg-slate-200">
+            <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
                 <div className="flex flex-col justify-center p-1">
                   <p className="text-green-600 font-bold">. تکمیل شده</p>
                   <h3 className="font-bold">قدم صفر برنامه نویسی</h3>
                 </div>
-                <div className="flex mt-5 w-full justify-start gap-3">
+                <div className="flex mt-5 mb-2 w-full justify-start gap-3">
                     <div className="flex items-center opacity-70 gap-1">
                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                            <path d="M7 3.5A1.5 1.5 0 0 1 8.5 2h3.879a1.5 1.5 0 0 1 1.06.44l3.122 3.12A1.5 1.5 0 0 1 17 6.622V12.5a1.5 1.5 0 0 1-1.5 1.5h-1v-3.379a3 3 0 0 0-.879-2.121L10.5 5.379A3 3 0 0 0 8.379 4.5H7v-1Z">
@@ -34,12 +34,25 @@ const CoursesBox = () => {
                        <span className="flex"><p>12</p>ساعت</span>
                     </div>
                 </div>
+                <div className="w-full h-16 flex justify-between items-center">
+                    <div className="w-5/12  h-full flex items-center">
+                    <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
+                    <div className="h-10">
+                        <p className="opacity-70 ss">مدرس دوره:</p>
+                        <span className="ss">مانی علیقلی نژاد</span>
+                    </div>
+                    </div>
+                    <div className="w-3/12 h-full flex justify-center items-center">
+                    <p className=" text-green-600 ray">رایگان!</p>
+                    </div>
+                </div>
             </div>
+            
 
         </div>
         
         
-        <div className="w-1/3 bg-slate-500">s</div>
+        <div className="w-1/3 bg-slate-500 ssm:hidden lg:flex">s</div>
        </div>
     </div>
     </>
