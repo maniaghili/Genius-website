@@ -19,7 +19,7 @@ const HeaderBottom = () => {
           <h1 className='font-bold titleh1'>داستان برنامه‌نویس شدنت
           از اینجا شروع میشه!</h1>
           <p className='opacity-70'>یادگیری برنامه‌نویسی آرزو نیست، فقط نیاز هست که تلاش و تمرین داشته باشید، بقیه‌اش با نابغه</p>
-          <div className='flex gap-1 items-center bg-blue-600 w-fit rounded-2xl text-white p-2'>
+          <div className='flex gap-1 items-center bg-blue-600 w-fit rounded-2xl text-white p-2 transition-all hover:bg-blue-500'>
             <p>شروع یادگیری برنامه‌نویسی</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                 <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
