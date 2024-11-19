@@ -1,7 +1,7 @@
 import './coursebox.css'
 function coursebox() {
   return (
-    <div className="w-11/12   rounded-3xl  flex flex-col items-center">
+    <div className="w-11/12  h-96  rounded-3xl  flex flex-col items-center">
             <img src="../../../public/02.jpg" className="w-full h-5/12 rounded-3xl" alt="" />
             <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
                 <div className="flex flex-col justify-center p-1">
@@ -26,9 +26,9 @@ function coursebox() {
                     </div>
                 </div>
                 <div className="w-full h-16 flex justify-between items-center">
-                    <div className="w-5/12  h-full flex items-center">
+                    <div className="w-7/12  h-full flex items-center">
                     <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
-                    <div className="h-10">
+                    <div className="h-10 w-full">
                         <p className="opacity-70 ss">مدرس دوره:</p>
                         <span className="ss">مانی علیقلی نژاد</span>
                     </div>
