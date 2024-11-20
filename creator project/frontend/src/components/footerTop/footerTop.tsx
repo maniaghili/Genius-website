@@ -4,8 +4,8 @@ import './footerTop.css'
 const footerTop = () => {
   return (
     <div className='w-full flex justify-center items-center mt-48'>
-      <div className='w-[95%] bg-slate-50 rounded-2xl h-[800px] flex items-center ssm:flex-col lg:flex-row '>
-        <div className='lg:w-1/3 flex items-center gap-4 ssm:w-[90%] ssm:my-5 '>
+      <div className='w-[95%] bg-slate-50 rounded-2xl min-h-[800px] flex items-center ssm:flex-col lg:flex-row '>
+        <div className='lg:w-1/3 flex  gap-4 ssm:w-[90%] ssm:my-5 '>
           <div>
             <div className=" bg-blue-700 w-12 h-12 rounded-full flex justify-center items-center p-2 mr-3">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-white w-5 h-5">
@@ -22,7 +22,7 @@ const footerTop = () => {
         </div>
         <div className='lg:w-2/3 ssm:w-full flex justify-center h-full items-center'>
         
-          <div className=' ssm:w-11/12 lg:w-full h-full flex justify-center gap-2'>
+          <div className=' ssm:w-11/12 lg:w-full h-full flex ssm:flex-col md:flex-row  justify-center gap-2'>
             
             <div className='md:w-1/2 flex flex-col justify-center items-center gap-3 mb-16'>
               <div className=''>
