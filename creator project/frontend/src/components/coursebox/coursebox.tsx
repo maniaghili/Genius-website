@@ -1,4 +1,5 @@
 import './coursebox.css'
+import Heartcircle from '../heartcircle/heartcircle'
 function coursebox() {
   return (
     <div className="w-11/12  h-96  rounded-3xl  flex flex-col items-center">
@@ -44,12 +45,7 @@ function coursebox() {
                             <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <div className="bg-slate-200 w-10 h-10 rounded-full flex justify-center items-center hover:text-red-600 transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 ">
-                        <path d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z">
-                        </path>
-                     </svg>
-                    </div>
+                    <Heartcircle />
                 </div>
             </div>
             

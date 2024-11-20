@@ -16,6 +16,7 @@ const MainBottom = () => {
             <p className="text-blue-700 damo">در مورد نابغه چه میشنویم؟</p>
             <span className="opacity-70">این‌ها، بخش خیلی کوچکی از نظراتی هستند که افراد مختلف در مورد نابغه دارند.</span>
            </div>
+           
         </div>
         <div className="ssm:w-full lg:w-1/2 h-full flex flex-col justify-center">
         <Maincomments />
