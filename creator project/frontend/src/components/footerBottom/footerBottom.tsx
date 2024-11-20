@@ -29,27 +29,50 @@ const footerBottom = () => {
          
                 </div> 
 
-                <div className="flex items-center gap-4">
+               <div className="w-4/5 flex justify-center gap-8 ">
+                <div className="flex items-center gap-4 ">
                     <CircleButton>
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                         <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"></path>
                      </svg>
                     </CircleButton>
                     <div>
-                        <p className="text-blue-500">شماره تلفن</p>
+                        <p className="text-blue-500 font-bold">شماره تلفن</p>
                         <p className="font-bold">۰۲۱−۱۲۳۴۵۶۷</p>
                     </div>
-                </div>
-                <div className="flex items-center gap-3">
+                 </div>
+                 <div className="flex items-center gap-3">
                     <CircleButton>
                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                           <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"></path>
                        </svg>
                     </CircleButton>
                     <div>
-                        <p className="text-blue-500"> ساعات کاری</p>
+                        <p className="text-blue-500 font-bold"> ساعات کاری</p>
                         <p className="font-bold">۰۹:۰۰ - ۱۷:۰۰</p>
                     </div>
+                 </div>
+               </div>
+
+            </div>
+
+            <div className="w-full bg-slate-200 mt-5 flex justify-start">
+                <div className="bg-slate-100 rounded-3xl lg:w-6/12 flex justify-center items-center flex-col gap-2">
+                   <div className="w-11/12 ">
+                      <p className="font-bold w-full">درباره ما</p>
+                      <span className="opacity-70">
+                      نابغه یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد. تبدیل کردن برنامه نویسان ایرانی به بهترین برنامه نویسان جهان هدف ماست.
+                      </span>
+                   </div>
+                </div>
+                <div className="w-full">
+                    <span className="font-bold">لینک های مفید</span>
+                    <ul className="flex flex-col gap-1">
+                        <li className="opacity-70 text-[12px] font-bold"><a href="">قوانین و مقررات</a></li>
+                        <li className="opacity-70 text-[12px] font-bold"><a href="">مدرسان</a></li>
+                        <li className="opacity-70 text-[12px] font-bold"><a href="">درباره نابغه</a></li>
+                        <li className="opacity-70 text-[12px] font-bold"><a href="">ارتباط با ما</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
