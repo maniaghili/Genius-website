@@ -5,7 +5,7 @@ const footerBottom = () => {
 
   return (
     <div className="w-full flex justify-center mt-11 border-t-gray-300 border">
-        <div className=" w-[95%] bg-slate-100 rounded-2xl">
+        <div className=" w-[95%]  rounded-2xl min-h-96">
             <div className="w-full flex justify-end -mt-4 transition-all">
                 <button onClick={()=>{scrollTo(0,5)}} className="bg-slate-200 rounded-2xl p-1 flex justify-center items-center">
                 <p >برگشت به بالا</p>
@@ -56,8 +56,8 @@ const footerBottom = () => {
 
             </div>
 
-            <div className="w-full bg-slate-200 mt-5 flex justify-start">
-                <div className="bg-slate-100 rounded-3xl lg:w-6/12 flex justify-center items-center flex-col gap-2">
+            <div className="w-full  mt-5 flex justify-start">
+                <div className="bg-slate-100 p-5 rounded-3xl lg:w-5/12 flex justify-center items-center flex-col gap-2">
                    <div className="w-11/12 ">
                       <p className="font-bold w-full">درباره ما</p>
                       <span className="opacity-70">
@@ -65,7 +65,7 @@ const footerBottom = () => {
                       </span>
                    </div>
                 </div>
-                <div className="w-full">
+                <div className="w-fit mr-10 ml-5 flex flex-col gap-3">
                     <span className="font-bold">لینک های مفید</span>
                     <ul className="flex flex-col gap-1">
                         <li className="opacity-70 text-[12px] font-bold"><a href="">قوانین و مقررات</a></li>
@@ -73,6 +73,9 @@ const footerBottom = () => {
                         <li className="opacity-70 text-[12px] font-bold"><a href="">درباره نابغه</a></li>
                         <li className="opacity-70 text-[12px] font-bold"><a href="">ارتباط با ما</a></li>
                     </ul>
+                </div>
+                <div className="mr-12">
+salam
                 </div>
             </div>
         </div>
