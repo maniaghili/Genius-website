@@ -5,7 +5,7 @@ const footerBottom = () => {
 
   return (
     <div className="w-full flex justify-center mt-11 border-t-gray-300 border">
-        <div className=" w-[95%]  rounded-2xl min-h-96">
+        <div className=" w-[95%]  rounded-2xl min-h-96 ">
             <div className="w-full flex justify-end -mt-4 transition-all">
                 <button onClick={()=>{scrollTo(0,5)}} className="bg-slate-200 rounded-2xl p-1 flex justify-center items-center">
                 <p >برگشت به بالا</p>
@@ -14,7 +14,7 @@ const footerBottom = () => {
                 </svg>
                 </button>
             </div>
-            <div className="w-full mt-10 flex ssm:flex-col md:flex-row lg:items-center">
+            <div className="w-full mt-10 flex ssm:flex-col  md:flex-row lg:items-center">
                 <div className="md:w-1/5 ssm:w-full flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-700 ">
                         <path d="M12 .75a8.25 8.25 0 0 0-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 0 0 .577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 0 1-.937-.171.75.75 0 1 1 .374-1.453 5.261 5.261 0 0 0 2.626 0 .75.75 0 1 1 .374 1.452 6.712 6.712 0 0 1-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 0 0 .577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0 0 12 .75Z"></path>
@@ -56,16 +56,16 @@ const footerBottom = () => {
 
             </div>
 
-            <div className="w-full  mt-5 flex justify-start">
-                <div className="bg-slate-100 p-5 rounded-3xl h-fit lg:w-5/12 flex justify-center items-center flex-col gap-2">
+            <div className="w-full ssm:flex-col md:flex-row  mt-5 flex justify-start">
+                <div className="bg-slate-100 p-5 rounded-3xl h-fit md:w-5/12 flex justify-center items-center flex-col gap-2">
                    <div className="w-11/12 ">
                       <p className="font-bold w-full">درباره ما</p>
-                      <span className="opacity-70">
+                      <span className="opacity-70 md:text-[12px]">
                       نابغه یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد. تبدیل کردن برنامه نویسان ایرانی به بهترین برنامه نویسان جهان هدف ماست.
                       </span>
                    </div>
                 </div>
-                <div className="flex flex-col gap-3 lg:w-1/3 items-center">
+                <div className="flex flex-col ssm:w-full ssm:items-start ssm:my-4 ssm:mr-5 gap-3 md:w-1/3 items-center">
                     <span className="font-bold">لینک های مفید</span>
                     <ul className="flex flex-col gap-1">
                         <li className="opacity-70 text-[12px] font-bold"><a href="">قوانین و مقررات</a></li>
