@@ -65,7 +65,7 @@ const footerBottom = () => {
                       </span>
                    </div>
                 </div>
-                <div className="w-fit mr-10 ml-5 flex flex-col gap-3">
+                <div className=" mr-10 ml-5 flex flex-col gap-3">
                     <span className="font-bold">لینک های مفید</span>
                     <ul className="flex flex-col gap-1">
                         <li className="opacity-70 text-[12px] font-bold"><a href="">قوانین و مقررات</a></li>
@@ -77,21 +77,21 @@ const footerBottom = () => {
                 <div className="mr-12 flex flex-col gap-5">
                    <p className="font-bold">خبرنامه</p>
                    <span>برای اطلاع از جدیدترین اخبار و جشنوراه‌های تخفیفی نابغه ایمیل خود را وارد کنید.</span>
-                   <div className=" rounded-3xl flex items-center ">
-                       <div className="flex items-center gap-3 w-full h-full bg-slate-200 rounded-3xl">
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-3 opacity-70 ">
+                   <div className=" rounded-2xl flex items-center gap-2">
+                       <div className="flex items-center gap-3 w-full h-full bg-slate-200 rounded-xl">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-3 opacity-70 ">
                             <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z">
                             </path>
                             <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z">
                             </path>
-                        </svg>
-                      <input type="text" className="bg-transparent w-6/12 h-full" placeholder="آدرس ایمیل" />
+                          </svg>
+                           <input type="text" className="bg-transparent w-6/12 h-full" placeholder="آدرس ایمیل" />
                        </div>
                        <div className=" flex justify-end">
                            
-                      <button className="bg-blue-600 hover:bg-blue-500 transition-all rounded-2xl px-5"> 
-                        <p className="w-full">ثبت ایمیل</p>
-                      </button>
+                           <button className="bg-blue-600 text-white hover:bg-blue-500 transition-all rounded-xl px-5"> 
+                              <p className="w-full font-black ">ثبت ایمیل</p>
+                          </button>
                        </div>
                    </div>
                 </div>
