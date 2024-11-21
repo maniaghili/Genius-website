@@ -16,7 +16,7 @@ const [colaps,setColaps] = useState(false)
      <div className="w-[95%] h-[85px] flex  justify-between  ">
       <div className="w-[50%] flex" >
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
-          <button onClick={()=>{setColaps(true)}} className='  coli_button bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center sm:flex lg:hidden'>
+          <button onClick={()=>{setColaps(true)}} className='  coli_button bg-slate-300 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center ssm:flex lg:hidden'>
              <div className='h-[1px] w-[50%] bg-black'></div>
              <div className='h-[1px] w-[50%] bg-black'></div>
              <div className='h-[1px] w-[50%] bg-black'></div>
@@ -37,7 +37,7 @@ const [colaps,setColaps] = useState(false)
         <div className="w-[75%]">
 
 
-       <ul className=' h-full items-center gap-7 mr-3 sm:hidden lg:flex'>
+       <ul className=' h-full items-center gap-7 mr-3 sm:hidden lg:flex '>
         <HeaderLi svg={true}>
         دسته بندی آمـــوزشها 
         </HeaderLi>
