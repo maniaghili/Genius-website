@@ -37,7 +37,7 @@ const [colaps,setColaps] = useState(false)
         <div className="w-[75%]">
 
 
-       <ul className=' h-full items-center gap-7 mr-3 sm:hidden lg:flex '>
+       <ul className=' h-full items-center gap-5 mr-3 sm:hidden lg:flex '>
         <HeaderLi svg={true}>
         دسته بندی آمـــوزشها 
         </HeaderLi>

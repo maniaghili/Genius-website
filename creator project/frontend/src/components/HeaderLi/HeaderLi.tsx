@@ -10,7 +10,7 @@ const HeaderLi:React.FC<PropsWithChildren<pro>> = ({svg,children}) => {
 
 
   const [ali,setAli] = useState(false)
-
+  
 type rr = {
     current:any
 }
@@ -27,8 +27,8 @@ type rr = {
     }
 
   return (
-    <li  onMouseMove={()=>{hoverHandler()}} onMouseLeave={endHandler} className='relative opacity-95 h-14 flex items-center gap-1'>
-      <p className="jjl opacity-80" >{children}</p>
+    <li  onMouseMove={hoverHandler} onMouseLeave={endHandler} className='relative  h-14 flex items-center gap-1'>
+      <div className="flex justify-end jjl"><p className=" opacity-80" >{children}</p></div>
       {
         svg&&
         <>
@@ -37,27 +37,27 @@ type rr = {
           </svg>
           <div className="bg-white drop_down absolute z-10  top-10  w-48 min-h-40 rounded-lg  "  ref={hover} >
               <ul onMouseLeave={endHandler} onMouseEnter={()=>{hoverHandler()}} className="w-full ">
-                <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
+                <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between ">
                       <p>برنامه نویسی وب</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 ml-2 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
                       </svg>
                   </li>
-                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className=" text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
+                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className=" text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between ">
                        <p>برنامه نویسی وب</p>
-                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 ml-2 h-5">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
                        </svg>
                   </li>
-                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
+                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between ">
                         <p>برنامه نویسی وب</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 ml-2 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
                         </svg>
                   </li>
-                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
+                  <li onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}} className="text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between ">
                         <p>برنامه نویسی وب</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 ml-2 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
                         </svg>
                   </li>
@@ -65,32 +65,15 @@ type rr = {
               </ul>
              {
               ali&&
-              <div className="absolute w-96 top-0 left-[-200%] rounded-xl bg-white h-96  z-10" onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}}>
-              <ul >
-                <li className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
-                      <p>برنامه نویسی وب</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                      </svg>
-                  </li>
-                  <li className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
-                       <p>برنامه نویسی وب</p>
-                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                       </svg>
-                  </li>
-                  <li className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
-                        <p>برنامه نویسی وب</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                        </svg>
-                  </li>
-                  <li className="text-black mt-1 hover:text-blue-600  h-10 flex items-center justify-between border-b-2 ">
-                        <p>برنامه نویسی وب</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                        </svg>
-                  </li>
+              <div className="absolute w-80 top-0 left-[-166%] rounded-l-xl bg-white min-h-48 z-10" onMouseEnter={()=>{setAli(true)}} onMouseLeave={()=>{setAli(false)}}>
+              <span className="opacity-75 text-[13px] font-bold">محبوب ترین موضوعات</span>
+              <ul className="mr-7 aa mt-2">
+                <li>asasas</li>
+                <li>sasaa</li>
+                <li>sasasas</li>
+               
+             
+
                  
               </ul>
               </div>
