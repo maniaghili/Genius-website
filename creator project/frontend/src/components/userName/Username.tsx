@@ -1,7 +1,7 @@
 import React from "react"
 import './UserInfo.css'
 type name = {
-    name:string
+    name:string | boolean | undefined
     isName:boolean
 }
 
@@ -11,7 +11,7 @@ const Username:React.FC<name> = ({name,isName}) => {
   return (  
     <div className="flex items-center h-full group relative">
           <div className="w-2/3">
-             <p className='jjl opacity-65'>{name}</p>
+             <p className='jjl opacity-65'>{name?name:'کاربر مهمان'}</p>
              {
                 isName && <p className='opacity-70 text-[12px] font-bold'>خوش آمدید</p>
              }
