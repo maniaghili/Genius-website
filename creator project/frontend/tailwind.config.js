@@ -7,7 +7,7 @@ export default {
       lg:'992px',
       md:'760px',
       sm:'350px',
-      ssm:'250px'
+      ssm:'200px'
     }
   },
   plugins: [],
