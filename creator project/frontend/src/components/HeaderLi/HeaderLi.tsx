@@ -17,7 +17,7 @@ const HeaderLi:React.FC<PropsWithChildren<pro>> = ({svg,children}) => {
 
   return (
     <li className=' group relative  h-14 flex items-center gap-1'>
-      <div className="flex justify-end jjl"><p className=" opacity-80" >{children}</p></div>
+      <div className="flex justify-end jjl opacity-65"><p>{children}</p></div>
       {
         svg&&
         <>
