@@ -25,7 +25,7 @@ const login = () => {
                 <form action="#" className="space-y-3">
                     <div className="flex items-center gap-3">
                         
-                        <div className="font-bold text-[14px] text-foreground">ورود یا ثبت نام</div>
+                        <div className="font-bold text-[14px] text-foreground">ورود </div>
                     </div>
                   
 
