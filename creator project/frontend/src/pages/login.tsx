@@ -1,5 +1,5 @@
 
-import HeaderTop from "../../components/HeaderTop/HeaderTop"
+import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { Link } from "react-router-dom"
 const login = () => {
   return (
