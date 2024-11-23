@@ -7,7 +7,7 @@ const series = () => {
     <HeaderTop /> 
     <div className="w-full  flex justify-center">
       <div className="w-[96%] h-[800px] flex gap-3">
-       <div className="bg-white h-full">
+       <div className="bg-white h-full w-1/4">
          <div className="h-fit sticky top-[20px] ">
           <div className='lg:w-full flex justify-center my-4 gap-3 '>
             <div className='flex justify-center items-center sm:mr-2 lg:mr-0'>
@@ -22,13 +22,13 @@ const series = () => {
                 <p className="text-[11px] font-bold opacity-70">دوره ببین، تمرین کن، برنامه نویس شو </p>
             </div>
           </div>
-          <div className=" flex flex-col">
+          <div className=" flex flex-col justify-center ">
             <p className="font-bold text-[13px]">جست وجو دوره</p>
-           <div className="bg-slate-200 h-10 rounded-xl flex items-center justify-between my-3">
-              <input type="text" className="bg-slate-200 h-10 w-full " placeholder="عنوان دوره..." />
+           <div className="bg-slate-200 h-10 rounded-xl  overflow-hidden justify-between flex items-center my-2">
+              <input type="text" className="bg-slate-200 h-10 " placeholder="عنوان دوره..." />
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg>
            </div>
-           <div className="bg-slate-200 h-10 flex round ed-xl items-center justify-between my-2">
+           <div className="bg-slate-200 h-10 flex overflow-hidden rounded-xl items-center justify-between my-2">
               <input type="text" className="bg-slate-200 h-10 w-full " placeholder="عنوان دوره..." />
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg>
            </div>
