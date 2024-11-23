@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 
 const register = () => {
@@ -23,9 +24,9 @@ const register = () => {
 
               {/* <!-- auth:verification:form --> */}
               <form action="#" className="space-y-3">
-                  <div className="flex items-center gap-3">
-                      
-                      <div className="font-bold text-[14px] text-foreground">  ثبت نام</div>
+                  <div className="flex items-center ">
+                      <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
+                      <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
                   </div>
                 
 
@@ -38,7 +39,7 @@ const register = () => {
 
                   </div>
                   {/* <!-- end form:field:wrapper --> */}
-
+                  
                   {/* <!-- form:submit button --> */}
                   <button type="submit" className="flex text-white items-center justify-center gap-1 w-full h-10 bg-blue-700 rounded-full text-primary-foreground transition-all hover:opacity-80 px-4">
                       <span className="font-semibold  text-sm">برو بریم</span>

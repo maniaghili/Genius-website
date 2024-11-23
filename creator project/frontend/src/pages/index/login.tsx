@@ -1,6 +1,6 @@
 
 import HeaderTop from "../../components/HeaderTop/HeaderTop"
-
+import { Link } from "react-router-dom"
 const login = () => {
   return (
       <>
@@ -23,10 +23,10 @@ const login = () => {
 
                 {/* <!-- auth:verification:form --> */}
                 <form action="#" className="space-y-3">
-                    <div className="flex items-center gap-3">
-                        
-                        <div className="font-bold text-[14px] text-foreground">ورود </div>
-                    </div>
+                <div className="flex items-center ">
+                      <div className="font-bold text-[12px]">حساب کاربری ندارید؟</div>
+                      <Link to={'/register'} className="font-bold text-[12px] text-blue-600">ثبت نام</Link>
+                  </div>
                   
 
                     {/* <!-- form:field:wrapper --> */}
