@@ -32,7 +32,7 @@ const series = () => {
             <p className="mr-1 font-bold text-[13px]">در حال برگزاری</p>
              
             </div>
-            <div className="bg-slate-200 h-10 flex overflow-hidden rounded-xl items-center justify-between my-2">
+            <div className="bg-slate-200 h-10 flex overflow-hidden rounded-xl hover:text-blue-600 transition-all cursor-pointer items-center justify-between my-2">
             <div className="flex">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
@@ -40,9 +40,9 @@ const series = () => {
               </svg>
             <p className="mr-1 font-bold text-[13px]"> نوع دوره</p>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                                            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+            </svg>
              
             </div>
             <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
