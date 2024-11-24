@@ -27,7 +27,7 @@ const [isCategoryCourse,setIsCategoryCourse] = useState(false)
           <div className="w-full  flex justify-center">
          
       <div className="w-[96%] h-fit flex gap-3">
-       <div className="bg-white min-h-full w-1/4">
+       <div className="bg-white ssm:hidden md:inline-block min-h-full w-1/4">
          <div className="h-fit sticky top-[80px] ">
           
           <div className=" flex flex-col justify-center ">
@@ -97,7 +97,7 @@ const [isCategoryCourse,setIsCategoryCourse] = useState(false)
     }
     </div>
        </div>
-        <div className="w-3/4 bg-white h-fit">
+        <div className="md:w-3/4  ssm:w-full bg-white h-fit">
          <div className=" h-10 flex items-center lg:gap-3 md:gap-2 ssm:gap-0 opacity-70">
           <div className="flex gap-1 items-center w-24 ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className=" w-5 h-5">
@@ -115,7 +115,7 @@ const [isCategoryCourse,setIsCategoryCourse] = useState(false)
           </div>
          </div>
         
-         <div className=" my-4 gap-2 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full">
+         <div className=" my-4 sm:gap-8 ssm:grid-cols-1 md:gap-2 lg:grid-cols-3 smt:grid-cols-1 grid w-full h-full">
          <CourseBox />
          <CourseBox />
          <CourseBox />
