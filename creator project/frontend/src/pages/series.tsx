@@ -1,7 +1,12 @@
+import { useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 
 const series = () => {
+
+const [isSelectCourseType,setIsSelectCourseType] = useState(false)
+const [isCategoryCourse,setIsCategoryCourse] = useState(false)
+  
   return (
     <>
     <HeaderTop /> 
@@ -32,7 +37,7 @@ const series = () => {
             <p className="mr-1 font-bold text-[13px]">در حال برگزاری</p>
              
             </div>
-            <div className="bg-slate-200 h-10  flex  overflow-hidden rounded-xl hover:text-blue-600 transition-all cursor-pointer items-center justify-between my-2">
+            <div onClick={()=>{setIsSelectCourseType(type => !type)}} className="select-none bg-slate-200 h-10  flex  overflow-hidden rounded-xl hover:text-blue-600 transition-all cursor-pointer items-center justify-between my-2">
              
                 <div className="flex items-center">
 
@@ -41,22 +46,26 @@ const series = () => {
                      </svg>
                    <p className="mr-1 font-bold text-[13px]"> نوع دوره</p>
                 </div>
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                   {isSelectCourseType?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={'ml-3 w-5 h-5 rotate-180'}>
                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                   </svg>
+                   </svg>:
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={'ml-3 w-5 h-5'}>
+                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+               </svg>}
               
            
             </div>
+            {isSelectCourseType &&
             <div className="bg-slate-200 my-3 h-24 rounded-2xl">
-              <ul className="mt-2 mr-2 flex flex-col gap-2">
-                
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
-              </ul>
-            </div>
+            <ul className="mt-2 mr-2 flex flex-col gap-2">
+              
+            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
+            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
+            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
+            </ul>
+          </div>}
             <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
-            <div className="bg-slate-200 h-10 flex overflow-hidden rounded-xl justify-between items-center  my-2">
+            <div onClick={()=>{setIsCategoryCourse(is=>!is)}} className=" hover:text-blue-600 select-none bg-slate-200 h-10 flex overflow-hidden rounded-xl justify-between items-center  my-2">
             
              <div className="flex items-center">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
@@ -64,20 +73,26 @@ const series = () => {
               </svg>
               <p className="mr-1 font-bold text-[13px]">دسته بندی دوره</p> 
              </div>
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-              </svg>
+             {isCategoryCourse?
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 rotate-180 w-5 h-5">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+         </svg>:
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+     </svg>}
             </div>
           </div>
+          {isCategoryCourse&&
           <div className="bg-slate-200 my-3 h-24 rounded-2xl">
-              <ul className="mt-2 mr-2 flex flex-col gap-2">
-                
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70"> نود جی اس  </p></li>
-              </ul>
-            </div>
+          <ul className=" h-full mr-2 flex flex-col gap-2">
+            
+          <li className="flex items-center mt-2 gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
+          <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
+          <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70"> نود جی  </p></li>
+          </ul>
         </div>
+    }
+    </div>
        </div>
         <div className="w-3/4 bg-slate-600 h-full">s</div>
       </div>
