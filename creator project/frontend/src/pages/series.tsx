@@ -115,7 +115,7 @@ const [isCategoryCourse,setIsCategoryCourse] = useState(false)
           </div>
          </div>
         
-         <div className=" my-4 sm:gap-8 ssm:grid-cols-1 md:gap-2 lg:grid-cols-3 smt:grid-cols-1 grid w-full h-full">
+         <div className=" my-4 sm:gap-28 sm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
          <CourseBox />
          <CourseBox />
          <CourseBox />

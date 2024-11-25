@@ -6,9 +6,10 @@ export default {
     screens:{
       lg:'992px',
       md:'760px',
-      smt:'500',
+      sa:'540px',
       sm:'350px',
-      ssm:'200px'
+      ssm:'200px',
+      
     }
   },
   plugins: [],
