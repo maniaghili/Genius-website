@@ -24,7 +24,7 @@ const sessionBox = () => {
         <p className="font-bold text-[12px] opacity-60 mr-2"> 1</p>
         <span className="font-bold text-[12px] opacity-80">معرفی دوره</span>
         </div>
-        <div>
+        <div className="flex gap-2 h-full">
             <div className="flex items-center opacity-60">
                 <p className="font-bold text-[12px]">۰۳:۵۸</p>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
@@ -32,7 +32,12 @@ const sessionBox = () => {
                     </path>
                 </svg>
             </div>
-            <div></div>
+            <div className="bg-slate-200 rounded-xl opacity-70 w-fit flex justify-between h-full items-center px-2">
+                <p className="font-bold text-[12px] ">مشاهده</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                    <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
         </div>
     </div>
     </div>}
