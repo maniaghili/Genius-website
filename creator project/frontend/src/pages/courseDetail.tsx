@@ -87,7 +87,31 @@ const courseDetail = () => {
             <SessionBox />
             <SessionBox /> 
           </div>
-          <div>salam</div>
+          <div className="my-5 ">
+            <p className="font-bold text-[14px]">دیدگاه ها</p>
+            <div className="border rounded-2xl flex flex-col gap-5">
+              <p className="font-bold text-[12px] opacity-80 mt-3  ">ارسال دیدگاه</p>
+              <div className="flex gap-2">
+                <img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+                <div>
+                  <p className="font-bold text-[12px]">مانی علیقلی</p>
+                  <p className="font-bold text-[12px] opacity-70">2 هفته پیش</p>
+                </div>
+              </div>
+              <div className="w-full flex justify-center">
+                <textarea className="bg-slate-300 w-11/12 h-36 rounded-2xl"  placeholder="نظر خود را وارد کنید">
+
+                </textarea>
+                 
+              </div>
+              <div className="flex justify-end">
+                <div className="bg-blue-600 text-white p-2 rounded-xl"> 
+                  <p>ثبت دیدگاه</p>
+                   </div>
+
+                </div>
+            </div>
+          </div>
        </div>
        <div className="w-[35%] rounded-2xl overflow-hidden bg-red-500" > sz</div>
       </div>
