@@ -1,7 +1,8 @@
 
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import FooterBottom from "../components/footerBottom/footerBottom"
-import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo"
+import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo";
+import SessionBox from "../components/sessionBox/sessionBox";
 const courseDetail = () => {
   return (
     <>
@@ -82,17 +83,9 @@ const courseDetail = () => {
 منظور از غیر مستقیم بودن یادگیری مفاهیم اولیه این است که در برخی از وبسایت‌های آموزشی از جمله وبسایت آموزشی نابغه ما دوره‌های مقدماتی را پیشتر ضبط کرده و از شما انتظار داریم که ابتدا آن‌ها را به خوبی نگاه کرده و یاد گرفته باشید. به همین دلیل است که ما در پایان نوشته‌های مربوط به هر دوره یک قسمت اختصاصی به نام «پیش‌نیازها» را ایجاد کرده و در آنجا خواهیم گفت که برای یادگیری این دوره آموزشی نیاز خواهید داشت چه پیش‌نیازهایی را در ابتدا طی کنید.
             </span>
             <h2 className="font-bold">سر فصلها</h2>
-            <div className="bg-slate-200 flex justify-between items-center cursor-pointer border group rounded-2xl h-10">
-              <div className="flex gap-2">
-                <span className="font-bold text-[12px]">فصل اول</span>
-                <p className="font-bold text-[12px] opacity-70 group-hover:opacity-100 ">معرفی</p>
-              </div>
-              <div>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" opacity-70 group-hover:opacity-100 ml-4 w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </div>
-            </div>
+            <SessionBox /> 
+            <SessionBox />
+            <SessionBox /> 
           </div>
        </div>
        <div className="w-[35%] rounded-2xl overflow-hidden bg-red-500" > sz</div>
