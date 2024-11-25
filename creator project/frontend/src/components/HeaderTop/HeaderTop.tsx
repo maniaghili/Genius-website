@@ -10,7 +10,7 @@ function HeaderTop() {
 const [colaps,setColaps] = useState(false)
 
   return (
-    <div className='sticky w-full top-0 shadow-md z-40  bg-slate-50 border border-b-2  '>
+    <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 border border-b-2  '>
 
     <div className="flex justify-center relative ">
      <div className="w-[95%] h-[75px] flex justify-between">
