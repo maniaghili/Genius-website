@@ -6,7 +6,7 @@ const sessionBox = () => {
 
   return (
     <>
-    <div onClick={()=>{setIsDrop(is=>!is)}} className=" select-none bg-slate-200 flex justify-between items-center cursor-pointer border group rounded-2xl h-10">
+    <div onClick={()=>{setIsDrop(is=>!is)}} className=" select-none bg-slate-200 flex justify-between items-center cursor-pointer border group rounded-2xl h-11">
               <div className="flex gap-2">
                 <span className="font-bold text-[12px]">فصل اول</span>
                 <p className="font-bold text-[12px] opacity-70 group-hover:opacity-100 ">معرفی</p>
@@ -18,7 +18,7 @@ const sessionBox = () => {
               </div>
             </div>
     {isDrop&&
-    <div className="w-full flex justify-center h-8 items-center">
+    <div className="w-full flex justify-center h-9 items-center">
     <div className="w-4/5 bg-white rounded-xl border h-full justify-between flex items-center">
         <div className="flex items-center ">
         <p className="font-bold text-[12px] opacity-60 mr-2"> 1</p>
