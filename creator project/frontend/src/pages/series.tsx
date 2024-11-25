@@ -68,7 +68,7 @@ const [isCategoryCourse,setIsCategoryCourse] = useState(false)
             </ul>
           </div>}
             <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
-            <div onClick={()=>{setIsCategoryCourse(is=>!is)}} className=" hover:text-blue-600 select-none bg-slate-200 h-10 flex overflow-hidden rounded-xl justify-between items-center  my-2">
+            <div onClick={()=>{setIsCategoryCourse(is=>!is)}} className=" hover:text-blue-600 cursor-pointer select-none bg-slate-200 h-10 flex overflow-hidden rounded-xl justify-between items-center  my-2">
             
              <div className="flex items-center">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
