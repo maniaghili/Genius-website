@@ -7,8 +7,8 @@ const courseDetail = () => {
     <>
     <HeaderTop />
     <div className="w-full flex justify-center ">
-      <div className="w-[95%]  gap-3  flex justify-center bg-black">
-       <div className="w-[65%] overflow-hidden bg-blue-600">
+      <div className="w-[95%]  gap-3  flex justify-center">
+       <div className="w-[65%] overflow-hidden ">
           <div className="flex flex-col items-center  justify-center">
            <img src="../../public/01.jpg" className="rounded-2xl mt-4" alt="" />
            <div className="bg-slate-200 w-[95%] rounded-b-2xl h-fit flex flex-col gap-2">
@@ -40,6 +40,34 @@ const courseDetail = () => {
             </svg>
             </CourseTimeInfo>
             
+          </div>
+          <div className="bg-slate-200 h-10 rounded-2xl w-1/2">
+          <ul className="w-full flex items-center h-full">
+            <li className="w-1/3 flex items-center">  
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z">
+                    </path>
+                </svg>
+                <p className="font-bold text-[14px]">معرفی</p>
+
+            </li>
+            <li className="w-1/3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z">
+                    </path>
+                </svg>
+                <p className="font-bold text-[14px]">معرفی</p>
+
+            </li>
+            <li className="w-1/3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155">
+                    </path>
+                </svg>
+                <p className="font-bold text-[14px]">معرفی</p>
+
+            </li>
+          </ul>
           </div>
        </div>
        <div className="w-[35%] rounded-2xl overflow-hidden bg-red-500" > sz</div>
