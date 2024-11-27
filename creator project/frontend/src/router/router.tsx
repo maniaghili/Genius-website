@@ -3,6 +3,7 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import Series from "../pages/series";
 import CourseDetail from "../pages/courseDetail";
+import UserProfile from "../pages/userprofile";
 type ss = {
     path:string ,element: JSX.Element
 }
@@ -12,7 +13,8 @@ export const Router:ss[] = [
     {path:'/login', element:<Login />},
     {path:'/register' ,element:<Register />},
     {path:'/series' ,element:<Series />},
-    {path:'/courseDetail/:courseName',element:<CourseDetail />}
+    {path:'/courseDetail/:courseName',element:<CourseDetail />},
+    {path:'/userprofile',element:<UserProfile />}
 ]
 
  

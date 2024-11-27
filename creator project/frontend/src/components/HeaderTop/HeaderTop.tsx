@@ -27,7 +27,7 @@ const [colaps,setColaps] = useState(false)
         </svg>
         <div className='flex flex-col gap-0'>
           <p className="opacity-70 akademi-header font-semibold ">آکادمی</p>
-          <p className=" na-header  font-bold text-blue-700">
+          <p className=" text-[20px] font-bold text-blue-700">
             نابغه
           </p>
         </div>
