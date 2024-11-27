@@ -4,6 +4,7 @@ import FooterBottom from "../components/footerBottom/footerBottom"
 import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo";
 import SessionBox from "../components/sessionBox/sessionBox";
 import CommentBox from "../components/commentBox/commentBox";
+import Heartcircle from "../components/heartcircle/heartcircle";
 const courseDetail = () => {
   return (
     <>
@@ -120,25 +121,34 @@ const courseDetail = () => {
            {/* comments */}
           </div>
        </div>
-       <div className="w-[35%] rounded-2xl h-full  overflow-hidden bg-red-200" > 
-       <div className="bg-slate-100 flex flex-col items-center sticky top-[200px]">
+       <div className="w-[35%] rounded-2xl h-full  bg-red-200" > 
+          <div className="bg-slate-100 flex flex-col overflow-hidden h-fit rounded-2xl items-center sticky top-[90px] z-20">
              <div className="w-11/12 bg-white gap-2 flex items-center rounded-b-2xl h-20">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mr-3 w-5 h-5">
-             <path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z">
-              </path>
-              </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mr-3 w-5 h-5">
+                 <path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z">
+                 </path>
+                 </svg>
 
-             <p className="font-bold text-[13px]">نام نویسی در دوره</p>
-             </div>
-             <div className="flex justify-between w-full items-center">
-              <p className="mr-4 opacity-70 font-bold text-[13px]">هزینه ثبت نام:</p>
-              <div className="ml-4 font-bold opacity-95">
+                 <p className="font-bold text-[13px]">نام نویسی در دوره</p>
+              </div>
+              <div className="flex justify-between w-full items-center">
+                <p className="mr-4 opacity-70 font-bold text-[13px]">هزینه ثبت نام:</p>
+               <div className="ml-4 font-bold opacity-95">
                 <s>۱,۱۹۹,۰۰۰</s>
                 <p>۱,۰۷۹,۰۰۰</p>
+               </div>
               </div>
-             </div>
+              <div className="my-3 flex items-center w-full h-10 justify-center gap-3">
+                <div className="flex hover:opacity-90 cursor-pointer items-center justify-center gap-1 rounded-2xl  text-white h-full bg-blue-700 w-4/5">
+                  <p className="text-[14px]">اضافه به سبد</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                    <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <Heartcircle />
+              </div>
           </div>
-       </div>
+        </div>
       </div>
     </div>
     <FooterBottom />
