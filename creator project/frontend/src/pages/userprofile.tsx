@@ -7,8 +7,8 @@ const userProfile = () => {
     <div>
      <HeaderTop />
      <div className="w-full flex justify-center h-fit">
-        <div className="w-[95%] flex justify-center gap-4">
-            <div className="w-[25%]">
+        <div className="w-[95%] flex ssm:flex-col sa:flex-row justify-center gap-4">
+            <div className="ssm:w-full sa:w-[25%]">
                <div className="w-full h-full gap-5 flex items-center flex-col">
                   <div className=" mt-3 w-[95%] flex flex-col gap-6 h-fit sticky top-20">
                     <div className="w-full  flex items-center">
@@ -66,7 +66,7 @@ const userProfile = () => {
                   </div>
                </div>
             </div>
-            <div className="w-[75%] h-fit">
+            <div className="ssm:w-full sa:w-[75%] h-fit">
                 <div className="mt-2 w-full grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                  <InfoBox text="باقیمانده اشتراک" value="عضو ویژه نیستید">
                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-blue-500 w-5 h-5">
@@ -99,7 +99,7 @@ const userProfile = () => {
                     </svg>
                     <p className="text-[14px] font-bold">دوره های در حال یادگیری</p>
                 </div>
-                <div className="my-5 grid gap-2 md:grid-cols-2 lg:grid-cols-3 w-full ">
+                <div className="my-5 grid gap-2 ssm:gap-16 sa:gap-24  md:gap-5 md:grid-cols-2 lg:grid-cols-3 w-full ">
                     <Coursebox />
                     <Coursebox />
                     <Coursebox />
