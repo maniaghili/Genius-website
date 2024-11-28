@@ -24,7 +24,7 @@ const basket = () => {
                       </div>
                     </div>
                </div>
-               <div className="grid gap-6 sa:grid-cols-2 md:grid-cols-2 my-5 ">
+               <div className="grid lg:gap-12 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
                       <div className=" relative">
                         <Coursebox />
                         <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
@@ -52,10 +52,63 @@ const basket = () => {
                       
                 </div>
            </div>
-           <div className="bg-red-300 ssm:w-full lg:w-1/3">
-              <div className="bg-slate-300 rounded-xl flex justify-center">
-                 <div></div>
+           <div className="ssm:w-full lg:w-1/3">
+              <div className="bg-slate-200 sticky top-[95px] rounded-xl flex flex-col items-center">
+                 <div className="w-[90%]">
+                 <div className="bg-white rounded-b-2xl w-full flex justify-start gap-2 items-center h-16">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mr-4 w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3">
+                        </path>
+                    </svg>
+                    <p className="font-bold text-[14px]">اطلاعات پرداخت</p>
+                 </div>
+                 <div className="mt-5 w-full flex  h-10 gap-2 rounded-xl overflow-hidden">
+                   <div className="w-[85%] bg-white flex items-center rounded-xl h-full">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="opacity-80 w-5 h-5">
+                                                        <path fill-rule="evenodd" d="M4.5 2A2.5 2.5 0 0 0 2 4.5v3.879a2.5 2.5 0 0 0 .732 1.767l7.5 7.5a2.5 2.5 0 0 0 3.536 0l3.878-3.878a2.5 2.5 0 0 0 0-3.536l-7.5-7.5A2.5 2.5 0 0 0 8.38 2H4.5ZM5 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                                                    </svg>
+                   <input type="text" placeholder="کد تخفیف خود را وارد نمایید" className="w-[90%] h-full"/>
+                   </div>
+                   <div className="w-[15%] h-full bg-blue-600 flex rounded-xl justify-center items-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99">
+                        </path>
+                    </svg>
+                   </div>
+                   
+                </div>
+                <div className="w-full flex justify-between mt-5 items-center">
+                    <p className="font-bold text-[13px]">جمع کل</p>
+                    <p className="font-bold text-[13px]">۱,۰۷۹,۰۰۰
+                    تومان</p>
+
+                </div>
+                <div className="w-full flex justify-between mt-5 items-center">
+                    <p className="font-bold text-[13px]"> موجودی کیف پول</p>
+                    <p className="font-bold text-[13px]">۵۲۰,۰۰۰
+                    تومان</p>
+
+                </div>
+                <div className="w-full flex justify-between mt-5 items-center">
+                    <p className="font-bold text-[13px]">تخفیف </p>
+                    <p className="font-bold text-[13px]">۱۸۵,۰۰۰
+                    تومان</p>
+
+                </div>
+                <div className="w-full h-[1px] opacity-50 bg-gray-700 mt-8"></div>
+                <div className="w-full flex justify-between mt-5 items-center">
+                    <p className="font-bold text-[16px]">مبلغ قابل پرداخت</p>
+                    <p className="font-bold text-[15px]">۱,۰۷۹,۰۰۰تومان</p>
+                </div>
+                <div className="h-10 items-center bg-blue-700  flex justify-center text-white rounded-3xl my-7">
+                    <p>تکمیل فرایند خرید</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
+                                    </svg>
+                </div>
+                 </div>
               </div>
+              
            </div>
         </div>
     </div>
