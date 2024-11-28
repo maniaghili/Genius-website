@@ -29,7 +29,7 @@ const coursebox = () => {
                         </div>
                     </div>
                     <div className="w-full h-16 flex justify-between items-center">
-                        <div className="w-7/12  h-full flex items-center">
+                        <div className="w-9/12  h-full flex items-center">
                         <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
                         <div className="h-10 w-full">
                             <p className="opacity-70 ss">مدرس دوره:</p>

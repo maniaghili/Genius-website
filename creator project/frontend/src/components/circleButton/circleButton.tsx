@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react'
 import './circleButton.css'
 import { Link } from 'react-router-dom'
-import { jsx } from 'react/jsx-runtime'
 
 type id = {
 id:number | boolean |undefined
@@ -21,7 +20,7 @@ const circleButton:React.FC<PropsWithChildren<id>> = ({children,id}):JSX.Element
       console.log('basket');
       
      }else if(id == 4) {
-     
+     //
      }
     
   }
