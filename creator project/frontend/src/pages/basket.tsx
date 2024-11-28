@@ -7,8 +7,8 @@ const basket = () => {
     <>
     <HeaderTop />
     <div className="w-full flex justify-center ">
-        <div className="w-[95%] flex gap-2">
-           <div className="h-fit w-2/3">
+        <div className="w-[95%] flex ssm:flex-col lg:flex-row gap-2">
+           <div className="h-fit lg:w-2/3 ssm:w-full">
                <div className="bg-slate-200 mt-5 h-24 flex items-center rounded-xl">
                     <div className='lg:w-full md:h-3/5 flex mr-5 h-full gap-3 '>
                       <div className=' flex justify-center items-center sm:mr-2 lg:mr-0'>
@@ -18,20 +18,41 @@ const basket = () => {
                            </svg>
                          </div>
                       </div>
-                      <div className=' h-full flex flex-col justify-center ssm:hidden sa:inline-block'>
+                      <div className=' h-full flex flex-col justify-center '>
                          <p className='text-blue-700 font-bold'>سبد خرید شما</p>
                          <p className="text-[12px] font-bold opacity-70">۲ دوره به سبد اضافه کرده اید</p>
                       </div>
                     </div>
                </div>
-               <div className="grid grid-cols-3 my-5 ">
-                      <Coursebox />
-                      <Coursebox />
-                      <Coursebox />
-                      <Coursebox />
-                    </div>
+               <div className="grid gap-6 sa:grid-cols-2 md:grid-cols-2 my-5 ">
+                      <div className=" relative">
+                        <Coursebox />
+                        <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                      </div>
+                      <div className=" relative">
+                        <Coursebox />
+                        <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                      </div>
+                      <div className=" relative">
+                        <Coursebox />
+                        <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                      </div>
+                      <div className=" relative">
+                        <Coursebox />
+                        <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                      </div>
+                      
+                </div>
            </div>
-           <div className="bg-red-300 w-1/3">s</div>
+           <div className="bg-red-300 ssm:w-full lg:w-1/3">s</div>
         </div>
     </div>
     <FooterBottom />
