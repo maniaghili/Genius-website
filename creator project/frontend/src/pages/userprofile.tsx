@@ -99,7 +99,7 @@ const userProfile = () => {
                     </svg>
                     <p className="text-[14px] font-bold">دوره های در حال یادگیری</p>
                 </div>
-                <div className="my-5 grid gap-2 ssm:gap-16 sa:gap-24  md:gap-5 md:grid-cols-2 lg:grid-cols-3 w-full ">
+                <div className="my-5 grid ssm:mb-48 md:mb-0 ssm:gap-44 sa:gap-36  md:gap-5 md:grid-cols-2 lg:grid-cols-3 w-full ">
                     <Coursebox />
                     <Coursebox />
                     <Coursebox />
