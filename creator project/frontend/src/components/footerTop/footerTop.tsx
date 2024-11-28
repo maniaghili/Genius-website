@@ -25,10 +25,10 @@ const footerTop = () => {
           <div className=' ssm:w-11/12 lg:w-full h-full flex ssm:flex-col md:flex-row  justify-center gap-2'>
             
             <div className='md:w-1/2 flex flex-col justify-center items-center gap-3 mb-16'>
-              <div className=''>
+              <div className='flex justify-center'>
                 <ArticleBox />
               </div>
-              <div className=''>
+              <div className='flex justify-center'>
                 <ArticleBox />
               </div>
             </div>

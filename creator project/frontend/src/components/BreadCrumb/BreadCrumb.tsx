@@ -14,7 +14,7 @@ const BreadCrumb = () => {
                   </svg>
                 </div>
             </div>
-            <div className=' h-full flex flex-col justify-center'>
+            <div className=' h-full flex flex-col justify-center ssm:hidden sa:inline-block'>
                 <p className='text-blue-700 font-bold akh'>آخرین دوره های</p>
                 <p>منتشر شده</p>
             </div>

@@ -4,7 +4,7 @@ const footerBottom = () => {
 
 
   return (
-    <div className="w-full overflow-hidden box-border flex justify-center mt-11 border-t-gray-300 border">
+    <div className="w-full  box-border flex justify-center mt-11 border-t-gray-300 border">
         <div className=" w-[95%]  rounded-2xl min-h-96 ">
             <div className="w-full flex justify-end -mt-4 transition-all">
                 <button onClick={()=>{scrollTo(0,5)}} className="bg-slate-200 rounded-2xl p-1 flex justify-center items-center">
@@ -65,7 +65,7 @@ const footerBottom = () => {
                       </span>
                    </div>
                 </div>
-                <div className="flex flex-col ssm:w-full ssm:items-start ssm:my-4 ssm:mr-5 gap-3 md:w-1/3 items-center">
+                <div className="flex flex-col ssm:w-fit ssm:items-start ssm:my-4 ssm:mr-3 gap-3 md:w-1/3 items-center">
                     <span className="font-bold">لینک های مفید</span>
                     <ul className="flex flex-col gap-1">
                         <li className="opacity-70 text-[12px] font-bold"><a href="">قوانین و مقررات</a></li>

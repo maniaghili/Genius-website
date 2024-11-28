@@ -3,7 +3,7 @@ import Heartcircle from '../heartcircle/heartcircle'
 const coursebox = () => {
   return (
     
-        <div className="w-11/12  h-96  rounded-3xl  flex flex-col items-center">
+        <div className="md:w-11/12 ssm:w-full  h-96  rounded-3xl  flex flex-col items-center">
                     
                 <img src="../../../public/02.jpg" className="w-full h-5/12 rounded-3xl" alt="" />
                 <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
@@ -21,7 +21,7 @@ const coursebox = () => {
                         </svg>
                         <span className="flex"><p>5</p>فصل</span>
                         </div>
-                        <div className="flex items-center opacity-70 gap-1">
+                        <div className="flex items-center w-fit opacity-70 gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"></path>
                             </svg>

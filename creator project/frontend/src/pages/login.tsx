@@ -5,7 +5,7 @@ const login = () => {
   return (
       <>
       <HeaderTop />
-    <div className="min-h-screen flex items-center justify-center bg-background p-5">
+    <div className="h-screen flex items-start justify-center bg-background p-5">
         <div className="w-full max-w-sm space-y-5  rounded-2xl">
             <div className="bg-gradient-to-b from-secondary bg-gray-100 to-background rounded-3xl space-y-5 px-5 pb-5">
                 <div className="bg-white rounded-b-3xl space-y-2 p-5">
