@@ -5,7 +5,12 @@ const basket = () => {
   return (
     <>
     <HeaderTop />
-    <div>salam</div>
+    <div className="w-full flex justify-center ">
+        <div className="w-[95%]">
+           <div></div>
+           <div></div>
+        </div>
+    </div>
     <FooterBottom />
     </>
   )
