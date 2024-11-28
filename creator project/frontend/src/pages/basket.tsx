@@ -52,7 +52,11 @@ const basket = () => {
                       
                 </div>
            </div>
-           <div className="bg-red-300 ssm:w-full lg:w-1/3">s</div>
+           <div className="bg-red-300 ssm:w-full lg:w-1/3">
+              <div className="bg-slate-300 rounded-xl flex justify-center">
+                 <div></div>
+              </div>
+           </div>
         </div>
     </div>
     <FooterBottom />
