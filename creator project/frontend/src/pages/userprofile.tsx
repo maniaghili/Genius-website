@@ -2,6 +2,7 @@ import HeaderTop from "../components/HeaderTop/HeaderTop"
 import InfoBox from "../components/infoBox/infoBox"
 import FooterBottom from "../components/footerBottom/footerBottom";
 import Coursebox from "../components/coursebox/coursebox";
+import { Outlet } from "react-router-dom";
 const userProfile = () => {
   return (
     <div>
@@ -105,6 +106,7 @@ const userProfile = () => {
                     <Coursebox />
                     <Coursebox />
                 </div>
+                <Outlet />
             </div>
         </div>
      </div>

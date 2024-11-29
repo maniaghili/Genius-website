@@ -6,7 +6,9 @@ import CourseDetail from "../pages/courseDetail";
 import UserProfile from "../pages/userprofile";
 import Basket from "../pages/basket";
 type ss = {
-    path:string ,element: JSX.Element
+    path:string ,
+    element: JSX.Element,
+    children?:any
 }
 
 export const Router:ss[] = [
@@ -15,8 +17,10 @@ export const Router:ss[] = [
     {path:'/register' ,element:<Register />},
     {path:'/series' ,element:<Series />},
     {path:'/courseDetail/:courseName',element:<CourseDetail />},
-    {path:'/userprofile',element:<UserProfile />},
-    {path:'/userbasket',element:<Basket />}
+    {path:'/userbasket',element:<Basket />},
+    {path:'/userprofile/*',element:<UserProfile />,children:[
+        {path:'mani',element:<Series />}
+    ]}
 ]
 
  
