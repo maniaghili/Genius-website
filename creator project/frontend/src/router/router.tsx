@@ -7,6 +7,7 @@ import UserProfile from "../pages/userprofile";
 import Basket from "../pages/basket";
 import UserCourses from "../pages/userPanel/userCourses";
 import UserInfos from "../pages/userPanel/userInfos";
+import UserTickets from "../pages/userPanel/userTickets";
 type ss = {
     path:string ,
     element: JSX.Element,
@@ -23,6 +24,7 @@ export const Router:ss[] = [
     {path:'/userprofile/*',element:<UserProfile />,children:[
         {path:'courses',element:<UserCourses />},
         {path:'userInfos',element:<UserInfos />},
+        {path:'userTickets',element:<UserTickets />},
 
     ]}
 ]
