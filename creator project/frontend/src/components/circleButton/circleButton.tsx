@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import './circleButton.css';
 
 type id = {
-id:number | boolean |undefined
+id?:number | boolean |undefined
 }
 
 const circleButton:React.FC<PropsWithChildren<id>> = ({children,id}):JSX.Element => {
