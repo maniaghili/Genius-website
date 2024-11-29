@@ -2,84 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     --MyBgColor:#fff;
     --MyTextColor:#1d4ed8 ;
     --bgTwoColor:#e0e0e0;
 }
 
-/* * {
-    border: black 1px solid;
-} */
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 100;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-Thin.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-Thin.woff2') format('woff2');
+body {
+    font-family:'Samim';
 }
 
 @font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 300;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-Light.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-Light.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: normal;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-Regular.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-Regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 600;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-SemiBold.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-SemiBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: bold;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-Bold.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-Bold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 800;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-ExtraBold.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-ExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 900;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-Black.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-Black.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 950;
-    font-display: block;
-    src: url('../fonts/yekanBakh/woff/YekanBakhFaNum-ExtraBlack.woff') format('woff'),
-        url('../fonts/yekanBakh/woff2/YekanBakhFaNum-ExtraBlack.woff2') format('woff2');
-}
+    font-family: 'Mj_Mokhtar';
+    src: local('Mj_Mokhtar'), url(./fonts/Mj_Mokhtar.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Mj_Free_0';
+    src: local('Mj_Free_0'), url(./fonts/Mj_Free_0.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Samim';
+    src: local('Samim'), url(./fonts/Samim.ttf) format('truetype');
+  }
