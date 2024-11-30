@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Heartcircle from "../heartcircle/heartcircle"
 
 const ArticleBox = () => {
@@ -16,7 +17,11 @@ const ArticleBox = () => {
                     <img src=" ../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="userPhoto" />
                     <span className='font-bold'>جلال بهرامی راد</span>
                    </div>
-                   <div className='bg-slate-200 p-1 rounded-3xl hover:bg-slate-100 transition-all'><span className='text-blue-600 '>فرانت اند</span></div>
+                   <Link to={'/articleDetail/s'}>
+                   <div className='bg-slate-200 p-1 rounded-3xl hover:bg-slate-100 transition-all cursor-pointer'>
+                    <span className='text-blue-600 '> مشاهده</span>
+                    </div>
+                   </Link>
                 </div>
                 <div className='flex items-center justify-end gap-1 mt-3'>
                   <div className='flex items-center gap-1 opacity-70'>
