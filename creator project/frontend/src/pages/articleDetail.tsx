@@ -1,10 +1,7 @@
 
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import FooterBottom from "../components/footerBottom/footerBottom"
-import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo";
-import SessionBox from "../components/sessionBox/sessionBox";
 import CommentBox from "../components/commentBox/commentBox";
-import Heartcircle from "../components/heartcircle/heartcircle";
 const articleDetail = () => {
   return (
     <>
