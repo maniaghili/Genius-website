@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const coursebox = () => {
   return (
     
-        <div className="md:w-11/12 ssm:w-full  h-96  rounded-3xl  flex flex-col items-center">              
+        <div className="md:w-11/12 ssm:w-full  min-h-96  rounded-3xl  flex flex-col items-center">              
                 <img src="../../../public/02.jpg" className="w-full h-5/12 rounded-3xl" alt="" />
                 <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
                     <div className="flex flex-col justify-center p-1">
@@ -52,7 +52,7 @@ const coursebox = () => {
                 </div>
                 
 
-            </div>
+        </div>
   )
 }
 
