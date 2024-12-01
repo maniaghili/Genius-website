@@ -9,8 +9,9 @@ const coursebox = () => {
         Aos.init({
             delay: 150
         })
-        
     })
+
+    
 
   return (
     

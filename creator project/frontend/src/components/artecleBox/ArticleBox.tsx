@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom"
 import Heartcircle from "../heartcircle/heartcircle"
-import Aos from 'aos'
+import Aos from 'aos';
 import { useEffect } from 'react'
 
-    
 const ArticleBox = () => {
   useEffect(()=>{
     Aos.init({

@@ -2,13 +2,17 @@
 import { Link } from "react-router-dom"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
 
 const register = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
-    console.log(errors)
     
     
+    const submitHandler = (e:any) => {
+      console.log(e);
+      
+
+    }
     
   return (
     <>
@@ -30,7 +34,7 @@ const register = () => {
               </div>
 
               {/* <!-- auth:verification:form --> */}
-              <form action="#" className="space-y-3" onSubmit={handleSubmit(e=>{console.log(e)})}>
+              <form action="#" className="space-y-3" onSubmit={handleSubmit(submitHandler)}>
                   <div className="flex items-center">
                       <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
                       <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
