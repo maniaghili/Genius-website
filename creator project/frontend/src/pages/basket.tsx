@@ -24,7 +24,7 @@ const basket = () => {
                       </div>
                     </div>
                </div>
-               <div className="grid lg:gap-12 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
+               <div className="grid lg:gap-16 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
                       <div className=" relative">
                         <Coursebox />
                         <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
