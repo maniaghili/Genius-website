@@ -4,8 +4,9 @@ import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
 
 const register = () => {
-    const {register,handleSubmit} = useForm()
-    console.log(register);
+    const {register,handleSubmit,formState:{errors}} = useForm()
+    console.log(errors)
+    
     
     
   return (
@@ -29,7 +30,7 @@ const register = () => {
 
               {/* <!-- auth:verification:form --> */}
               <form action="#" className="space-y-3" onSubmit={handleSubmit(e=>{console.log(e)})}>
-                  <div className="flex items-center ">
+                  <div className="flex items-center">
                       <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
                       <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
                   </div>
@@ -37,11 +38,11 @@ const register = () => {
 
                   {/* <!-- form:field:wrapper --> */}
                   <div className="flex items-center relative flex-col gap-3">
-                      <input type="text" {...register('userName')} placeholder="نام کاربری یا ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
-                      <input type="text" {...register('name')} placeholder="نام خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" /> 
-                      <input type="text" {...register('password')} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
-                      <input type="text" {...register('phone')} placeholder="شماره تماس خود ر وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
-                      <input type="text" {...register('email')} placeholder="ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('userName',{required:'نام کاربری را وارد کنید'})} placeholder="نام کاربری خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('name',{required:'نام خود را وارد نمایید'})} placeholder="نام خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" /> 
+                      <input type="text" {...register('password',{required:'لطفا رمز عبور خود را وارد نمایید'})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('phone',{required:'شماره تماس را وارد کنید'})} placeholder="شماره تماس خود ر وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('email',{required:'وارد کردن ایمیل الزامی است'})} placeholder="ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       
                   </div>
                   {/* <!-- end form:field:wrapper --> */}
