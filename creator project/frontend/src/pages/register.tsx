@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
-import { ReactNode, useState } from "react"
+import { ReactNode } from "react"
 
 const register = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
