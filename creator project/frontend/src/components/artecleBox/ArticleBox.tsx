@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom"
 import Heartcircle from "../heartcircle/heartcircle"
+import Aos from 'aos'
+import { useEffect } from 'react'
 
+    
 const ArticleBox = () => {
+  useEffect(()=>{
+    Aos.init({
+        delay: 150,
+        duration:700
+    })
+    
+})
   return (
-    <div className='bg-slate-100 rounded-2xl w-[95%]  overflow-hidden'>
+    <div className='bg-slate-100 rounded-2xl w-[95%]  overflow-hidden' data-aos="zoom-in-up" >
               <div className='m-3 rounded-xl '>
                 <img src="../../../public/02.jpg" className='h-[60%] w-full rounded-xl' alt="" />
                 <div className='flex justify-between '>

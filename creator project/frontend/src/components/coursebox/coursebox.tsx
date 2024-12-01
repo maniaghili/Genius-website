@@ -1,10 +1,20 @@
 import './coursebox.css'
 import Heartcircle from '../heartcircle/heartcircle'
 import { Link } from 'react-router-dom'
+import Aos from 'aos'
+import { useEffect } from 'react'
 const coursebox = () => {
+
+    useEffect(()=>{
+        Aos.init({
+            delay: 150
+        })
+        
+    })
+
   return (
     
-        <div className="md:w-11/12 ssm:w-full  min-h-96  rounded-3xl  flex flex-col items-center">              
+        <div className="md:w-11/12 ssm:w-full min-h-96  rounded-3xl  flex flex-col items-center" data-aos="zoom-in-up">              
                 <img src="../../../public/02.jpg" className="w-full h-5/12 rounded-3xl" alt="" />
                 <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
                     <div className="flex flex-col justify-center p-1">
