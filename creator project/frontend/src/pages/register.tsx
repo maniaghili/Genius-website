@@ -2,8 +2,9 @@
 import { Link } from "react-router-dom"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
-import { ReactNode } from "react"
-
+import { ReactNode, useContext } from "react"
+import axios from "axios"
+import { userInfo } from "../context/context"
 
 type userInfo = {
     email: string,
@@ -16,10 +17,29 @@ type userInfo = {
 const register = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
     
-    const submitHandler = (e:userInfo) => {
-      console.log(e);
+    const registerHandler = (e:userInfo) => {
+     const userInfo = {
+        username:e.userName,
+        email:e.email,
+        password:e.password,
+        confirmPassword:e.password,
+        name:e.name,
+        phone:e.phone
+     }
+     
+      axios.post("http://localhost:4000/v1/auth/register",userInfo,{
+      }).then(data=>
+        data.statusText === 'Created' && alert('ثبت نام موفقیت امیز بود')
+      ).catch(()=>{alert('کاربر با این مشخصات قبلا ثبت نام کرده است')})
     }
     
+
+    let ali:any = useContext(userInfo)
+
+ 
+    
+    
+
   return (
     <>
     <HeaderTop />
@@ -40,7 +60,7 @@ const register = () => {
               </div>
 
               {/* <!-- auth:verification:form --> */}
-              <form action="#" className="space-y-3" onSubmit={handleSubmit((e:userInfo | any)=>submitHandler(e))}>
+              <form action="#" className="space-y-3" onSubmit={handleSubmit((e:userInfo | any)=>registerHandler(e))}>
                   <div className="flex items-center">
                       <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
                       <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
@@ -53,7 +73,7 @@ const register = () => {
                       {errors.userName && <span className="text-[9px] w-fit font-bold text-red-600">{errors.userName.message  as ReactNode}</span>}
                       <input type="text" {...register('name',{required:'نام خود را وارد نمایید'})} placeholder="نام خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" /> 
                       {errors.name && <span className="text-[9px] w-fit font-bold text-red-600">{errors.name.message as ReactNode}</span>}
-                      <input type="text" {...register('password',{required:' رمز عبور خود را وارد نمایید'})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('password',{minLength:{value:8,message:'8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       {errors.password && <span className="text-[9px] w-fit font-bold text-red-600">{errors.password.message  as ReactNode}</span>}
                       <input type="text" {...register('phone',{required:'شماره تماس را وارد کنید'})} placeholder="شماره تماس خود ر وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       {errors.phone && <span className="text-[9px] w-fit font-bold text-red-600">{errors.phone.message  as ReactNode}</span>}
