@@ -4,10 +4,19 @@ import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
 import { ReactNode } from "react"
 
+
+type userInfo = {
+    email: string,
+    name: string,
+    password: number | string,
+    phone: number,
+    userName: string
+}
+
 const register = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
     
-    const submitHandler = (e:any) => {
+    const submitHandler = (e:userInfo) => {
       console.log(e);
     }
     
@@ -31,7 +40,7 @@ const register = () => {
               </div>
 
               {/* <!-- auth:verification:form --> */}
-              <form action="#" className="space-y-3" onSubmit={handleSubmit(submitHandler)}>
+              <form action="#" className="space-y-3" onSubmit={handleSubmit((e:userInfo | any)=>submitHandler(e))}>
                   <div className="flex items-center">
                       <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
                       <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
