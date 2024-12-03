@@ -1,6 +1,6 @@
 import { createContext, useState,PropsWithChildren } from "react";
 
-const userInfo = createContext(undefined)
+const userInfo = createContext(null)
 
 
 type allInfoType = {userInfos:any,

@@ -1,6 +1,6 @@
 import Index from "../pages/Index"
 import Login from "../pages/login";
-import Register from "../pages/register";
+import Register from "../pages/register/register";
 import Series from "../pages/series";
 import CourseDetail from "../pages/courseDetail";
 import UserProfile from "../pages/userprofile";

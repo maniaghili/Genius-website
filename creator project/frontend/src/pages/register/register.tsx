@@ -1,11 +1,11 @@
 
 import { Link } from "react-router-dom"
-import HeaderTop from "../components/HeaderTop/HeaderTop"
+import HeaderTop from "../../components/HeaderTop/HeaderTop"
 import { useForm } from "react-hook-form"
-import { ReactNode, useContext } from "react"
+import { ReactNode } from "react"
 import axios from "axios"
-import { userInfo } from "../context/context"
-
+import { userInfo } from "../../context/context"
+import { handleUserRegister } from "./funcs/registerfuncs"
 type userInfo = {
     email: string,
     name: string,
@@ -28,17 +28,11 @@ const register = () => {
      }
      
       axios.post("http://localhost:4000/v1/auth/register",userInfo,{
-      }).then(data=>
-        data.statusText === 'Created' && alert('ثبت نام موفقیت امیز بود')
+      }).then(res=>{
+        handleUserRegister(res.data)
+        alert('ثبت نام موفقیت امیز بود')}
       ).catch(()=>{alert('کاربر با این مشخصات قبلا ثبت نام کرده است')})
     }
-    
-
-    
-
- 
-    
-    
 
   return (
     <>
