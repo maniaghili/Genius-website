@@ -7,11 +7,8 @@ import { ReactNode } from "react"
 const register = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
     
-    
     const submitHandler = (e:any) => {
       console.log(e);
-      
-
     }
     
   return (
