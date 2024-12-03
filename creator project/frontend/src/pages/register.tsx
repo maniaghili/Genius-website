@@ -34,7 +34,7 @@ const register = () => {
     }
     
 
-    let ali:any = useContext(userInfo)
+    
 
  
     
