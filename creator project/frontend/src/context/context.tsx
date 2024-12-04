@@ -1,16 +1,15 @@
-import { createContext, useState,PropsWithChildren } from "react";
-
-const userInfo = createContext(null)
+import { createContext, useState,PropsWithChildren,FC } from "react";
 
 
-type allInfoType = {userInfos:any,
+type allInfoType = {
+    userInfos:{},
     setUserInfo:React.Dispatch<React.SetStateAction<object>>,
-    userToken:any,
+    userToken:string,
     setUserToken:React.Dispatch<React.SetStateAction<string>>
 } 
 
-
-const ContextProvider:React.FC<PropsWithChildren> = ({children}) =>{
+const userInfo = createContext(createContext(null) as any)
+const ContextProvider:FC<PropsWithChildren> = ({children}) =>{
 
 const [userInfos,setUserInfo] = useState({})
 const [userToken,setUserToken] = useState('')
@@ -31,5 +30,5 @@ const allInfo:allInfoType = {
     )
 }
 
-
+export type {allInfoType}
 export {ContextProvider,userInfo}

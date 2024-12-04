@@ -4,10 +4,12 @@ import HeaderLi from '../HeaderLi/HeaderLi'
 import Username from '../userName/Username'
 import {  useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useContext } from "react";
+import { userInfo } from "../../context/context";
 
 function HeaderTop() {
-
+  const aaa = useContext(userInfo)
+  console.log(aaa.userInfos.name);
 const [colaps,setColaps] = useState(false)
 
   return (
@@ -87,7 +89,7 @@ const [colaps,setColaps] = useState(false)
          </Link>
           </CircleButton>
             
-          <Username name={undefined} isName={true}/>  
+          <Username name={aaa.userInfos.name} isName={true}/>  
         </div>
       </div>
      </div>

@@ -1,12 +1,12 @@
+import { Link, useNavigate } from "react-router-dom";
+import HeaderTop from "../../components/HeaderTop/HeaderTop";
+import { useForm } from "react-hook-form";
+import { ReactNode, useContext,FC } from "react";
+import axios from "axios";
+import {userInfo} from "../../context/context";
+import { handleUserRegister } from "./funcs/registerfuncs";
 
-import { Link } from "react-router-dom"
-import HeaderTop from "../../components/HeaderTop/HeaderTop"
-import { useForm } from "react-hook-form"
-import { ReactNode } from "react"
-import axios from "axios"
-import { userInfo } from "../../context/context"
-import { handleUserRegister } from "./funcs/registerfuncs"
-type userInfo = {
+type userInfoType = {
     email: string,
     name: string,
     password: number | string,
@@ -14,10 +14,16 @@ type userInfo = {
     userName: string
 }
 
-const register = () => {
+
+const register:FC = () => {
+    const Navigate = useNavigate()
+    let Infos = useContext(userInfo)
+    
+    
+
     const {register,handleSubmit,formState:{errors}} = useForm()
     
-    const registerHandler = (e:userInfo) => {
+    const registerHandler = (e:userInfoType) => {
      const userInfo = {
         username:e.userName,
         email:e.email,
@@ -30,8 +36,15 @@ const register = () => {
       axios.post("http://localhost:4000/v1/auth/register",userInfo,{
       }).then(res=>{
         handleUserRegister(res.data)
-        alert('ثبت نام موفقیت امیز بود')}
-      ).catch(()=>{alert('کاربر با این مشخصات قبلا ثبت نام کرده است')})
+        Infos.setUserToken(res.data.accessToken)
+        Infos.setUserInfo(res.data.user)
+        Navigate("/")
+        
+    }
+      ).catch((err)=>{
+        alert('کاربر با این مشخصات قبلا ثبت نام کرده است')
+        console.log(err)
+      })
     }
 
   return (
@@ -54,7 +67,7 @@ const register = () => {
               </div>
 
               {/* <!-- auth:verification:form --> */}
-              <form action="#" className="space-y-3" onSubmit={handleSubmit((e:userInfo | any)=>registerHandler(e))}>
+              <form action="#" className="space-y-3" onSubmit={handleSubmit((e:userInfoType | any)=>registerHandler(e))}>
                   <div className="flex items-center">
                       <div className="font-bold text-[12px]">حساب کاربری دارید؟</div>
                       <Link to={'/login'} className="font-bold text-[12px] text-blue-600">ورود</Link>
