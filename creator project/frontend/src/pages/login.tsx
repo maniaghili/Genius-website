@@ -1,7 +1,11 @@
 
+import { useForm } from "react-hook-form"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { Link } from "react-router-dom"
 const login = () => {
+    const {register,handleSubmit,formState:{errors}} = useForm()
+    console.log(errors)
+    
   return (
       <>
       <HeaderTop />
@@ -31,8 +35,14 @@ const login = () => {
 
                     {/* <!-- form:field:wrapper --> */}
                     <div className="flex items-center relative flex-col gap-3">
-                        <input type="text" placeholder="نام کاربری یا ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
-                        <input type="text" placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                        <input type="text" {...register('userNic',{required:true})} placeholder="نام کاربری یا ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                        {
+                            errors && <span></span>
+                        }
+                        <input type="text" {...register('userPass',{minLength:{value:8,message:'حداقل 8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                        {
+                            errors && <span></span>
+                        }
                     </div>
                     {/* <!-- end form:field:wrapper --> */}
 

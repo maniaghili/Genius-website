@@ -8,5 +8,9 @@ const getLocalStorage = (key:string) => {
    return localStorage.getItem(key)
 }
 
+const removeLocalStorage = (key:string) => {
+   localStorage.removeItem(key)
+}
 
-export{setLocalStorage,getLocalStorage}
+
+export{setLocalStorage,getLocalStorage,removeLocalStorage}

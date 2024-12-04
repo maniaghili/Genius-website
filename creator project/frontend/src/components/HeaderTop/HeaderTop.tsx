@@ -44,12 +44,12 @@ const [colaps,setColaps] = useState(false)
 
        <ul className=' h-full items-center gap-5 mr-3 ssm:hidden lg:flex '>
         <HeaderLi>
-        دسته بندی آمـــوزشها 
+      دسته بندی آمـــوزش 
         </HeaderLi>
        <a href="/" className='opacity-65 text-[13px] font-bold'>
        
        مقالات آموزشی </a>
-        <Username name='لینک های مفید' isName={false} />  
+        <Username name='لینک های مفید' isName={user.userInfos.name} />  
        </ul>
 
         </div>
