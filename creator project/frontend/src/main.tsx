@@ -6,11 +6,15 @@ import './fonts/Mj_Free_0.ttf'
 import './fonts/Samim.ttf'
 import App from './App.tsx'
 import './index.css'
+import { ContextProvider } from './context/context.tsx'
 
 createRoot(document.getElementById('root')!).render(
+   <ContextProvider>
+
  <BrowserRouter>
     <App />
  </BrowserRouter>
+   </ContextProvider>
   
 )
 

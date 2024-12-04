@@ -10,7 +10,6 @@ import { navigateProfile } from './funcs/headerFuncs';
 
 function HeaderTop() {
   const aaa = useContext(userInfo)
-  console.log(aaa.userInfos.name);
 const [colaps,setColaps] = useState(false)
 
   return (
