@@ -1,12 +1,12 @@
 import { getLocalStorage } from "../../../utils/util"
 
 
-const navigateProfile = () => {
-  let isLogin = getLocalStorage('userToken')
-  if(isLogin){
-    return '/userProfile'
+const navigateUser = (isLogin:string,isNotLogin:string) => {
+  let isUserLogin = getLocalStorage('userToken')
+  if(isUserLogin){
+    return isLogin
   }
-  return '/login'
+  return isNotLogin
 }
 
-export {navigateProfile}
+export {navigateUser}
