@@ -10,7 +10,6 @@ import { userInfo } from './context/context'
 function App() {
   const userAllInfos = useContext(userInfo)
   useEffect(()=>{
-
    getMe().then((infos:any)=>{
     userAllInfos.setUserInfo(infos[0])
     userAllInfos.setUserToken(infos[1])

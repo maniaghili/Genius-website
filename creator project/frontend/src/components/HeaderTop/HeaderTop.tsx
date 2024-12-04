@@ -9,7 +9,7 @@ import { userInfo } from "../../context/context";
 import { navigateProfile } from './funcs/headerFuncs';
 
 function HeaderTop() {
-  const aaa = useContext(userInfo)
+  const user = useContext(userInfo)
 const [colaps,setColaps] = useState(false)
 
   return (
@@ -89,7 +89,7 @@ const [colaps,setColaps] = useState(false)
          </Link>
           </CircleButton>
             
-          <Username name={aaa.userInfos.name} isName={true}/>  
+          <Username name={user.userInfos.name} isName={true}/>  
         </div>
       </div>
      </div>
