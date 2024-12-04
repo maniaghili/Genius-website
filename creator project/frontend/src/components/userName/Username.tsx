@@ -2,6 +2,7 @@ import React from "react"
 import './UserInfo.css'
 import { Link } from "react-router-dom"
 import { navigateUser } from "../HeaderTop/funcs/headerFuncs"
+
 type name = {
     name:string | boolean | undefined
     isName:boolean
@@ -14,9 +15,6 @@ const Username:React.FC<name> = ({name,isName}) => {
     <div className="flex items-center h-full group relative ">
           <div className="w-2/3">
              <p className='jjl opacity-65'>{name?name:'کاربر مهمان'}</p>
-             {
-                isName&&!name && <p className='opacity-70 text-[12px] font-bold'>خوش آمدید</p>
-             }
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="group-hover:rotate-180 transition-all w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
@@ -27,7 +25,7 @@ const Username:React.FC<name> = ({name,isName}) => {
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"></path>
             </svg>
-          <p className="text-[13px] font-bold">{name ?'مشاهده پروفایل':'ورود/ ثبت نام'}</p>
+          <p className="text-[13px] font-bold">{name && isName ?'مشاهده پروفایل':'ورود/ ثبت نام'}</p>
          </Link>
          </li>
          <li className="text-black mt-1 gap-3 cursor-pointer h-8 flex items-center hover:text-blue-500">
@@ -44,7 +42,12 @@ const Username:React.FC<name> = ({name,isName}) => {
           <p className="text-[13px] font-bold"> سبد خرید</p>
          </Link>
          </li>
-         <li className="text-black mt-1  gap-3 cursor-pointer h-8 flex items-center  hover:text-blue-500">
+         
+         
+            {
+              name && isName &&
+              <>
+              <li className="text-black mt-1  gap-3 cursor-pointer h-8 flex items-center  hover:text-blue-500">
           <Link className="flex gap-3 items-center w-full h-full" to={navigateUser('/userprofile/userTickets','/login')}>
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"></path>
@@ -52,9 +55,6 @@ const Username:React.FC<name> = ({name,isName}) => {
           <p className="text-[13px] font-bold">تیکت ها</p>
           </Link>
          </li>
-         
-            {
-              name &&
               
          <li className="text-red-600 mt-1  gap-3 cursor-pointer h-8 flex items-center hover:text-blue-500" >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">
@@ -63,6 +63,7 @@ const Username:React.FC<name> = ({name,isName}) => {
                  <p className="text-[13px] font-bold">خروج از حساب  </p>
           </li>
               
+              </>
             }
         
         </ul>
