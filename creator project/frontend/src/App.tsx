@@ -1,13 +1,21 @@
-import { useRoutes } from 'react-router-dom'
+import { useLocation, useRoutes } from 'react-router-dom'
 import { Router } from './router/router'
 import './App.css'
 import { getMe } from './utils/getMe'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useLayoutEffect } from 'react'
 import { userInfo } from './context/context'
 
 
 
 function App() {
+
+  const loc = useLocation()
+  
+  useLayoutEffect(()=>{
+     window.scrollTo(0,0)
+  },[loc])
+
+
   const userAllInfos = useContext(userInfo)
   useEffect(()=>{
    getMe().then((infos:any)=>{
