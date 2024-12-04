@@ -11,6 +11,7 @@ const handleUserRegister = (data:{
 setLocalStorage('userToken',data.accessToken)
 
 alert('ثبت نام موفقیت امیز بود')
+
 }
 
 
