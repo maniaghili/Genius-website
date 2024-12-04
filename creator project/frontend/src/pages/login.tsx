@@ -1,13 +1,39 @@
 
 import { useForm } from "react-hook-form"
 import HeaderTop from "../components/HeaderTop/HeaderTop"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
+import { handleUserRegister } from "./register/funcs/registerfuncs"
+import { useContext } from "react"
+import { userInfo } from "../context/context"
+
+
+type userInfo = {
+    identifier:string,
+    password:string | number
+}
+
 const login = () => {
+    const Navigate = useNavigate()
+    const user = useContext(userInfo)
+
     const {register,handleSubmit,formState:{errors}} = useForm()
 
-    const loginHandler = (e:{userNic:string,userPass:string}) => {
-console.log(e);
+    const loginHandler = (e:{userNic:string,userPass:string|number}) => {
 
+      const userinfo:userInfo = {
+        identifier:e.userNic,
+        password:e.userPass
+    }
+       axios.post("http://localhost:4000/v1/auth/login",userinfo)
+       .then(res=>{
+        handleUserRegister(res.data)
+        user.setUserToken(res.data.accessToken)
+        Navigate("/")
+       })
+       .catch(()=>{
+
+        alert('هیچ کاربری با این رمز عبور و نام کاربری وجود ندارد')})
     }
 
   return (

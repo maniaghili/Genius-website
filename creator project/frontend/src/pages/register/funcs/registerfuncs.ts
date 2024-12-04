@@ -7,7 +7,7 @@ const handleUserRegister = (data:{
     accessToken:string
 }) => {
 setLocalStorage('userToken',data.accessToken)
-alert('ثبت نام موفقیت امیز بود')
+alert('ورود موفقیت امیز بود')
 }
 
 
