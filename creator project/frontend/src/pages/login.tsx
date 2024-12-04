@@ -4,8 +4,12 @@ import HeaderTop from "../components/HeaderTop/HeaderTop"
 import { Link } from "react-router-dom"
 const login = () => {
     const {register,handleSubmit,formState:{errors}} = useForm()
-    console.log(errors)
-    
+
+    const loginHandler = (e:{userNic:string,userPass:string}) => {
+console.log(e);
+
+    }
+
   return (
       <>
       <HeaderTop />
@@ -26,22 +30,21 @@ const login = () => {
                 </div>
 
                 {/* <!-- auth:verification:form --> */}
-                <form action="#" className="space-y-3">
+                <form action="#" className="space-y-3" onSubmit={handleSubmit(loginHandler as any)}>
                 <div className="flex items-center ">
                       <div className="font-bold text-[12px]">حساب کاربری ندارید؟</div>
                       <Link to={'/register'} className="font-bold text-[12px] text-blue-600">ثبت نام</Link>
                   </div>
-                  
 
                     {/* <!-- form:field:wrapper --> */}
-                    <div className="flex items-center relative flex-col gap-3">
-                        <input type="text" {...register('userNic',{required:true})} placeholder="نام کاربری یا ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                    <div className="flex items-center justify-start relative flex-col gap-3">
+                        <input type="text" {...register('userNic',{required:'حداقل 5 رقم الزامیست',minLength:{value:5,message:'حداقل 5 رقم الزامیست'}})} placeholder="نام کاربری یا ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                         {
-                            errors && <span></span>
+                            errors.userNic && <span className="text-red-600 w-full text-[10px]">{errors.userNic.message as string}</span>
                         }
-                        <input type="text" {...register('userPass',{minLength:{value:8,message:'حداقل 8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                        <input type="text" {...register('userPass',{required:'حداقل 8 رقم الزامیست',minLength:{value:8,message:'حداقل 8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                         {
-                            errors && <span></span>
+                            errors.userPass && <span className="text-red-600 w-full text-[10px]">{errors.userPass.message as string}</span>
                         }
                     </div>
                     {/* <!-- end form:field:wrapper --> */}
