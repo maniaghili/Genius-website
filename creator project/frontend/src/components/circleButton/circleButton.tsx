@@ -1,11 +1,11 @@
-import { PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import './circleButton.css';
 
 type id = {
 id?:number | boolean |undefined
 }
 
-const circleButton:React.FC<PropsWithChildren<id>> = ({children,id}):JSX.Element => {
+const circleButton:React.FC<PropsWithChildren<id>> = memo( ({children,id}):JSX.Element => {
   
 
   const clickHaandler = () => {
@@ -26,6 +26,6 @@ const circleButton:React.FC<PropsWithChildren<id>> = ({children,id}):JSX.Element
    
    
   )
-}
+})
 
 export default circleButton

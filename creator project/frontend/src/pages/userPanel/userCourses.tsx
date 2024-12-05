@@ -1,7 +1,6 @@
 import { memo } from "react"
 import Coursebox from "../../components/coursebox/coursebox"
-const userCourses =memo(
-  () => {
+const userCourses =memo(() => {
     return (
       <>
       <div className="flex items-center my-10 w-full">
