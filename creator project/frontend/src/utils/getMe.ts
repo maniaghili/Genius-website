@@ -1,21 +1,21 @@
 import axios from "axios";
 import { getLocalStorage } from "./util"
 
-const getMe =async () =>{
- const userToken = getLocalStorage('userToken');
 
- if (!userToken){
-    return undefined
- }
-
-let user = await axios.get('http://localhost:4000/v1/auth/me',{
-    headers: {"Authorization" : `Bearer ${userToken}`}
- }).then(data=>data)
-
-
- console.log(user.data);
- 
- return [user.data,userToken]
-}
+const getMe =async() =>{
+   const userToken = getLocalStorage('userToken');
+     
+   if (!userToken){
+      return undefined
+   }
+  
+  let user =await axios.get('http://localhost:4000/v1/auth/me',{
+      headers: {"Authorization" : `Bearer ${userToken}`}
+   }).then(data=>data.data)
+  console.log(user);
+  
+   return [user,userToken]
+   
+  }
 
 export {getMe}

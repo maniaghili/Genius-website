@@ -49,7 +49,7 @@ const [colaps,setColaps] = useState(false)
        <a href="/" className='opacity-65 text-[13px] font-bold'>
        
        مقالات آموزشی </a>
-        <Username name='لینک های مفید' isName={user.userInfos.name} />  
+        <Username name='لینک های مفید' isName={user?.userInfos?.name} />  
        </ul>
 
         </div>
@@ -89,7 +89,7 @@ const [colaps,setColaps] = useState(false)
          </Link>
           </CircleButton>
             
-          <Username name={user.userInfos.name} isName={true}/>  
+          <Username name={user?.userInfos?.name} isName={true}/>  
         </div>
       </div>
      </div>

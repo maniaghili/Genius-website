@@ -5,17 +5,12 @@ import Series from "../pages/series";
 import CourseDetail from "../pages/courseDetail";
 import UserProfile from "../pages/userprofile";
 import Basket from "../pages/basket";
-import UserCourses from "../pages/userPanel/userCourses";
-import UserInfos from "../pages/userPanel/userInfos";
-import UserTickets from "../pages/userPanel/userTickets";
 import ArticleDetail from "../pages/articleDetail";
-type ss = {
-    path:string ,
-    element: JSX.Element,
-    children?:any
-}
+import {userProfile} from "../router/userprofile";
+import { RouteObject } from "react-router-dom";
 
-export const Router:ss[] = [
+
+export const Router:RouteObject[] = [
     {path:"/" ,element: <Index />},
     {path:'/login', element:<Login />},
     {path:'/register' ,element:<Register />},
@@ -23,12 +18,7 @@ export const Router:ss[] = [
     {path:'/courseDetail/:courseName',element:<CourseDetail />},
     {path:'/userbasket',element:<Basket />},
     {path:'/articleDetail/:articleName' , element:<ArticleDetail />},
-    {path:'/userprofile/*',element:<UserProfile />,children:[
-        {path:'courses',element:<UserCourses />},
-        {path:'userInfos',element:<UserInfos />},
-        {path:'userTickets',element:<UserTickets />},
-
-    ]}
+    {path:'/userprofile',element:<UserProfile />,children : userProfile}
 ]
 
  
