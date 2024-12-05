@@ -1,14 +1,27 @@
+import { memo, useEffect, useState } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import Coursebox from "../coursebox/coursebox";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import {  Navigation } from 'swiper/modules';
- import '../../../node_modules/swiper/swiper.css';
+import '../../../node_modules/swiper/swiper.css';
 import '../../../node_modules/swiper/modules/navigation.css';
+import { useQuery } from "react-query";
+import axios from "axios";
 
 
-const CoursesBox = () => {
+const CoursesBox = memo(() => {
+  
+const [courses,setCourses] = useState([])
+
+ const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),{staleTime:200000})
+
+  useEffect(()=>{
+    setCourses(data?.data)
+  },[data])
+  
+  console.log('salam');
+  
+
   return (
     <>
     <BreadCrumb />
@@ -18,6 +31,7 @@ const CoursesBox = () => {
         
         navigation={true}
         modules={[ Navigation]}
+        loop={true}
         className="mySwiper"
         breakpoints={{
           100:{
@@ -32,14 +46,11 @@ const CoursesBox = () => {
 
         }}
       >
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        <SwiperSlide><Coursebox /></SwiperSlide>
-        
-        
+        {
+          courses?.map(course=>(
+            <SwiperSlide key={course._id}><Coursebox {...course} /></SwiperSlide>
+          ))
+        }
       </Swiper>
       
        </div>
@@ -49,6 +60,6 @@ const CoursesBox = () => {
     </>
     
   )
-}
+})
 
 export default CoursesBox

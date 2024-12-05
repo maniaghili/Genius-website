@@ -4,9 +4,11 @@ import './App.css'
 import { getMe } from './utils/getMe'
 import { Suspense, useContext, useEffect, useLayoutEffect } from 'react'
 import { userInfo } from './context/context'
-
+import { QueryClientProvider,QueryClient } from 'react-query'
+import{ReactQueryDevtools} from 'react-query/devtools'
 function App() {
 
+  const allQueries = new QueryClient()
   const {pathname} = useLocation()
   
   useLayoutEffect(()=>{
@@ -25,14 +27,17 @@ useEffect(()=>{
    })
   },[])
   
+  
 const router = useRoutes(Router)
   return (
-    <>
-    <Suspense>
+    
+   <QueryClientProvider client={allQueries}>
+   <Suspense>
     {router}
     </Suspense>
-   
-    </>
+   <ReactQueryDevtools />
+   </QueryClientProvider>
+    
   )
 }
 

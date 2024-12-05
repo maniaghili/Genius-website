@@ -35,11 +35,11 @@ const login:FC =memo(() => {
             if(infos){
               user.setUserInfo(infos[0])
               user.setUserToken(infos[1])
+              infos[0].role === 'ADMIN' && alert('آیا میخواهید به پنل ادمین بروید؟')
+              Navigate("/")
             }
            })
         
-
-        Navigate("/")
     })
     .catch(()=>{
        showIziToast("ناموفق","نام کاربری یا رمز ورود اشتباه است ","red")
