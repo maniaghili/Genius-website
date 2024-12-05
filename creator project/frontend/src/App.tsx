@@ -2,7 +2,7 @@ import { useLocation, useRoutes } from 'react-router-dom'
 import { Router } from './router/router'
 import './App.css'
 import { getMe } from './utils/getMe'
-import { useContext, useEffect, useLayoutEffect } from 'react'
+import { Suspense, useContext, useEffect, useLayoutEffect } from 'react'
 import { userInfo } from './context/context'
 
 function App() {
@@ -28,7 +28,9 @@ useEffect(()=>{
 const router = useRoutes(Router)
   return (
     <>
+    <Suspense>
     {router}
+    </Suspense>
    
     </>
   )

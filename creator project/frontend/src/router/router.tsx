@@ -1,13 +1,14 @@
+import { lazy } from "react";
 import Index from "../pages/Index"
-import Login from "../pages/login";
-import Register from "../pages/register/register";
-import Series from "../pages/series";
-import CourseDetail from "../pages/courseDetail";
-import UserProfile from "../pages/userprofile";
-import Basket from "../pages/basket";
-import ArticleDetail from "../pages/articleDetail";
 import {userProfile} from "../router/userprofile";
 import { RouteObject } from "react-router-dom";
+const UserProfile =  lazy(()=>import ("../pages/userprofile"));
+const Basket = lazy(()=>import("../pages/basket"))
+const CourseDetail  = lazy(()=>import("../pages/courseDetail"))
+const ArticleDetail = lazy(()=>import( "../pages/articleDetail"))
+const Login = lazy(()=>import("../pages/login"));
+const Register = lazy(()=>import("../pages/register/register"))
+const Series = lazy(()=>import("../pages/series"))
 
 
 export const Router:RouteObject[] = [
