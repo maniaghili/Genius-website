@@ -8,6 +8,7 @@ import { useContext ,FC} from "react"
 import { userInfo } from "../context/context";
 import { showIziToast } from "../utils/util";
 import { memo } from "react"
+import { getMe } from "../utils/getMe"
 
 type userInfo = {
     identifier:string,
@@ -30,7 +31,14 @@ const login:FC =memo(() => {
        axios.post("http://localhost:4000/v1/auth/login",userinfo)
        .then(res=>{
         handleUserRegister(res.data)
-        user.setUserToken(res.data.accessToken)
+        getMe().then((infos:any)=>{
+            if(infos){
+              user.setUserInfo(infos[0])
+              user.setUserToken(infos[1])
+            }
+           })
+        
+
         Navigate("/")
     })
     .catch(()=>{

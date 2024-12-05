@@ -5,8 +5,6 @@ import { getMe } from './utils/getMe'
 import { useContext, useEffect, useLayoutEffect } from 'react'
 import { userInfo } from './context/context'
 
-
-
 function App() {
 
   const {pathname} = useLocation()
@@ -16,20 +14,17 @@ function App() {
      console.clear()
   },[pathname])
 
-
   const userAllInfos = useContext(userInfo)
- 
-  useEffect(()=>{
+
+useEffect(()=>{
    getMe().then((infos:any)=>{
     if(infos){
       userAllInfos.setUserInfo(infos[0])
       userAllInfos.setUserToken(infos[1])
     }
    })
-  
   },[])
   
-
 const router = useRoutes(Router)
   return (
     <>

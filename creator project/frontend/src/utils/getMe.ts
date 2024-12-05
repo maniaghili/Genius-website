@@ -4,7 +4,7 @@ import { getLocalStorage } from "./util"
 
 const getMe =async() =>{
    const userToken = getLocalStorage('userToken');
-     
+
    if (!userToken){
       return undefined
    }
@@ -12,8 +12,7 @@ const getMe =async() =>{
   let user =await axios.get('http://localhost:4000/v1/auth/me',{
       headers: {"Authorization" : `Bearer ${userToken}`}
    }).then(data=>data.data)
-  console.log(user);
-  
+
    return [user,userToken]
    
   }
