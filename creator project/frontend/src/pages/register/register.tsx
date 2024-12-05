@@ -5,6 +5,7 @@ import { ReactNode, useContext,FC } from "react";
 import axios from "axios";
 import {userInfo} from "../../context/context";
 import { handleUserRegister } from "./funcs/registerfuncs";
+import { showIziToast } from "../../utils/util";
 
 type userInfoType = {
     email: string,
@@ -41,9 +42,8 @@ const register:FC = () => {
         Navigate("/")
         
     }
-      ).catch((err)=>{
-        alert('کاربر با این مشخصات قبلا ثبت نام کرده است')
-        console.log(err)
+      ).catch(()=>{
+        showIziToast('ناموفق','کاربر با این مشخصات قبلا ثبت نام کرده است','red')
       })
     }
 

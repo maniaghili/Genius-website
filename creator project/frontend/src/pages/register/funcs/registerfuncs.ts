@@ -1,5 +1,5 @@
 
-import { setLocalStorage } from "../../../utils/util";
+import { setLocalStorage, showIziToast } from "../../../utils/util";
 
 
 
@@ -7,7 +7,7 @@ const handleUserRegister = (data:{
     accessToken:string
 }) => {
 setLocalStorage('userToken',data.accessToken)
-alert('ورود موفقیت امیز بود')
+ showIziToast('با موفقیت وارد شدید','موفق','green')
 }
 
 
