@@ -7,14 +7,15 @@ import { handleUserRegister } from "./register/funcs/registerfuncs"
 import { useContext ,FC} from "react"
 import { userInfo } from "../context/context";
 import { showIziToast } from "../utils/util";
-
+import { memo } from "react"
 
 type userInfo = {
     identifier:string,
     password:string | number
 }
 
-const login:FC = () => {
+const login:FC =memo(() => {
+
     const Navigate = useNavigate()
     const user = useContext(userInfo)
 
@@ -31,8 +32,8 @@ const login:FC = () => {
         handleUserRegister(res.data)
         user.setUserToken(res.data.accessToken)
         Navigate("/")
-       })
-       .catch(()=>{
+    })
+    .catch(()=>{
        showIziToast("ناموفق","نام کاربری یا رمز ورود اشتباه است ","red")
     })
     }
@@ -98,5 +99,6 @@ const login:FC = () => {
     </>
   )
 }
+) 
 
 export default login

@@ -2,15 +2,13 @@ import { useLocation, useRoutes } from 'react-router-dom'
 import { Router } from './router/router'
 import './App.css'
 import { getMe } from './utils/getMe'
-import { useContext, useEffect, useLayoutEffect, useState } from 'react'
+import { useContext, useEffect, useLayoutEffect } from 'react'
 import { userInfo } from './context/context'
 
 
 
 function App() {
 
-  const [userInfos,setUserInfos] = useState([])
-  
   const {pathname} = useLocation()
   
   useLayoutEffect(()=>{
@@ -29,7 +27,7 @@ function App() {
     }
    })
   
-  },[userInfos])
+  },[])
   
 
 const router = useRoutes(Router)

@@ -2,18 +2,19 @@ import './HeaderTop.css'
 import CircleButton from '../circleButton/circleButton'
 import HeaderLi from '../HeaderLi/HeaderLi'
 import Username from '../userName/Username'
-import {  useState } from 'react';
+import {  memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { userInfo } from "../../context/context";
 import { navigateUser } from './funcs/headerFuncs';
 
-function HeaderTop() {
-  const user = useContext(userInfo)
-const [colaps,setColaps] = useState(false)
-
-  return (
-    <div className=' sticky w-full top-0 shadow-md box-border z-40  bg-slate-50  border-b-2  '>
+const HeaderTop = memo(
+  () => {
+    const user = useContext(userInfo)
+    const [colaps,setColaps] = useState(false)
+    
+    return (
+      <div className=' sticky w-full top-0 shadow-md box-border z-40  bg-slate-50  border-b-2  '>
 
     <div className="flex justify-center relative ">
      <div className="w-[95%] h-[75px] flex justify-between">
@@ -196,5 +197,6 @@ const [colaps,setColaps] = useState(false)
     
   )
 }
+) 
 
 export default HeaderTop

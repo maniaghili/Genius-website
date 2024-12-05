@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import HeaderTop from "../../components/HeaderTop/HeaderTop";
 import { useForm } from "react-hook-form";
-import { ReactNode, useContext,FC } from "react";
+import { ReactNode, useContext,FC, memo } from "react";
 import axios from "axios";
 import {userInfo} from "../../context/context";
 import { handleUserRegister } from "./funcs/registerfuncs";
@@ -16,12 +16,13 @@ type userInfoType = {
 }
 
 
-const register:FC = () => {
+const register:FC =memo(() => {
+
     const Navigate = useNavigate()
     let Infos = useContext(userInfo)
     
     
-
+    
     const {register,handleSubmit,formState:{errors}} = useForm()
     
     const registerHandler = (e:userInfoType) => {
@@ -113,5 +114,6 @@ const register:FC = () => {
   </>
   )
 }
+)
 
 export default register

@@ -5,21 +5,22 @@ import CoursesBox from "../components/Coursesbox/CoursesBox";
 import MainBottom from "../components/mainBottom/mainBottom";
 import FooterTop from "../components/footerTop/footerTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
+import { memo } from "react";
 
-const Index = () => {
-  
-  
-  return (
-    <>
-      <HeaderTop />
-      <HeaderBottom />
-      <MainTop />
-      <CoursesBox />
-      <MainBottom />
-      <FooterTop />
-      <FooterBottom />
-    </>
-  )
-}
+const Index = memo(
+  () => {
+    return (
+      <>
+        <HeaderTop />
+        <HeaderBottom />
+        <MainTop />
+        <CoursesBox />
+        <MainBottom />
+        <FooterTop />
+        <FooterBottom />
+      </>
+    )
+  }
+)
 
 export default Index

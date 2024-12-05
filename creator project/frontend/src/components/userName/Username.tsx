@@ -66,7 +66,7 @@ const Username:React.FC<name> = ({name,isName}) => {
          removeLocalStorage('userToken')
          user.setUserToken('')
          user.setUserInfo({})
-         location.reload()
+         location.href = '/'
          }} className="text-red-600 mt-1  gap-3 cursor-pointer h-8 flex items-center hover:text-blue-500" >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"></path>
