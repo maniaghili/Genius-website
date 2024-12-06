@@ -40,9 +40,9 @@ const login:FC =memo(() => {
                 title:'آیا میخواهید به پنل ادمین بروید؟',
                 icon:'info',
                 buttons:['خیر','بله']
-              }).then(resolve=>{
+              }).then((resolve:null | boolean)=>{
                 if(resolve){
-
+                    alert('هنوز تکمیل نشده')
                 }else{
                     Navigate('/')
                 }

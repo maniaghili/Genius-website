@@ -25,7 +25,7 @@ const Username:React.FC<name> = ({name,isName}) => {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="group-hover:rotate-180 transition-all w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
         </svg>
-        <ul className="group-hover:visible drop_down bg-slate-100 absolute top-16 w-44 left-4  overflow-hidden min-h-40 rounded-lg">
+        <ul className="group-hover:visible drop_down bg-slate-50 absolute top-16 w-44 left-4  overflow-hidden min-h-40 rounded-lg">
          <li className="text-black mt-1 cursor-pointer gap-3  h-8 flex items-center hover:text-blue-500">
          <Link className="flex gap-3 items-center w-full h-full" to={navigateUser('/userprofile','/login')}>
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">
