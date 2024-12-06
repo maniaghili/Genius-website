@@ -64,12 +64,13 @@ const Username:React.FC<name> = ({name,isName}) => {
               
          <li onClick={()=>{
           showSwal({
-            title:'آیا مطمین هستید؟',
+            title:'خروج از حساب',
+            text:'آیا مطمین هستید؟',
             icon:'warning',
             buttons:['خیر','بله']
           }).then(resolve=>{
             if(resolve){
-              showIziToast('موفق','از حساب کاربری خود خارج شدید','green')
+              showIziToast('موفق','از حساب کاربری خود خارج شدید','green') 
               removeLocalStorage('userToken')
          
               user.setUserToken('')

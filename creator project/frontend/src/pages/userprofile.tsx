@@ -1,9 +1,16 @@
-import { memo } from "react";
+import { memo ,useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import InfoBox from "../components/infoBox/infoBox"
 import FooterBottom from "../components/footerBottom/footerBottom";
 import { Link, Outlet } from "react-router-dom";
+import { showSwal } from "../utils/swal";
+import { removeLocalStorage, showIziToast } from "../utils/util";
+import { userInfo } from "../context/context"
 const userProfile = memo(() => {
+    const user = useContext(userInfo)
+    const Navigate = useNavigate()
+
     return (
       <div>
        <HeaderTop />
@@ -54,7 +61,24 @@ const userProfile = memo(() => {
                               <p className="font-bold text-[12px]">تیکت های شما</p>
                              </Link>
                           </li>
-                          <li className="hover:bg-red-700 cursor-pointer transition-all mb-4 bg-slate-100 flex justify-start  gap-1 items-center w-[90%] h-9 rounded-2xl mt-4">
+                          <li onClick={()=>{
+                            showSwal({
+                                title:'خروج',
+                                text:'آیا مطمین هستید؟',
+                                icon:'warning',
+                                buttons:['خیر','بله']
+                              }).then(resolve=>{
+                                if(resolve){
+                                  showIziToast('موفق','از حساب کاربری خود خارج شدید','green') 
+                                  removeLocalStorage('userToken')
+                             
+                                  user.setUserToken('')
+                                  user.setUserInfo({})
+                                  Navigate("/")
+                                }
+                                
+                              })
+                          }} className="hover:bg-red-700 cursor-pointer transition-all mb-4 bg-slate-100 flex justify-start  gap-1 items-center w-[90%] h-9 rounded-2xl mt-4">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15">
                                           </path>

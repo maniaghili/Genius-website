@@ -9,6 +9,7 @@ import { userInfo } from "../context/context";
 import { showIziToast } from "../utils/util";
 import { memo } from "react"
 import { getMe } from "../utils/getMe"
+import { showSwal } from "../utils/swal"
 
 type userInfo = {
     identifier:string,
@@ -35,8 +36,18 @@ const login:FC =memo(() => {
             if(infos){
               user.setUserInfo(infos[0])
               user.setUserToken(infos[1])
-              infos[0].role === 'ADMIN' && alert('آیا میخواهید به پنل ادمین بروید؟')
-              Navigate("/")
+              infos[0].role === 'ADMIN' && showSwal({
+                title:'آیا میخواهید به پنل ادمین بروید؟',
+                icon:'info',
+                buttons:['خیر','بله']
+              }).then(resolve=>{
+                if(resolve){
+
+                }else{
+                    Navigate('/')
+                }
+              })
+              
             }
            })
         
