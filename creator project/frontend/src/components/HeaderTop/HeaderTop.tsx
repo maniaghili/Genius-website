@@ -47,9 +47,7 @@ const HeaderTop = memo(
         <HeaderLi>
       دسته بندی آمـــوزش 
         </HeaderLi>
-       <a href="/" className='opacity-65 text-[13px] font-bold'>
-       
-       مقالات آموزشی </a>
+       <Link to="/series" className='opacity-65 text-[13px] font-bold'>همه ی دوره ها</Link>
         <Username name='لینک های مفید' isName={user?.userInfos?.name} />  
        </ul>
 
