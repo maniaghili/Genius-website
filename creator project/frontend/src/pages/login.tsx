@@ -47,7 +47,7 @@ const login:FC =memo(() => {
                     Navigate('/')
                 }
               })
-              
+              Navigate('/')
             }
            })
         

@@ -15,7 +15,7 @@ import { useQuery } from "react-query"
 const HeaderTop = memo(() => {
     const user = useContext(userInfo)
     const [colaps,setColaps] = useState(false)
-   
+    
     const {data : categories} = useQuery('Categories',()=>axios.get("http://localhost:4000/v1/category").then(categories=>categories.data)
    ,{
       staleTime:1000000,
