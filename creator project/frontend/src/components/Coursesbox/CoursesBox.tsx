@@ -11,16 +11,13 @@ import axios from "axios";
 
 const CoursesBox = memo(() => {
   
-const [courses,setCourses] = useState([])
+const [courses,setCourses] = useState([]) as any
 
  const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),{staleTime:200000})
 
   useEffect(()=>{
     setCourses(data?.data)
   },[data])
-  
-  console.log('salam');
-  
 
   return (
     <>
@@ -47,7 +44,7 @@ const [courses,setCourses] = useState([])
         }}
       >
         {
-          courses?.map(course=>(
+          courses?.map((course : any)=>(
             <SwiperSlide key={course._id}><Coursebox {...course} /></SwiperSlide>
           ))
         }

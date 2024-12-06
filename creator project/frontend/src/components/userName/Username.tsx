@@ -3,7 +3,8 @@ import './UserInfo.css'
 import { Link } from "react-router-dom"
 import { navigateUser } from "../HeaderTop/funcs/headerFuncs"
 import { userInfo } from "../../context/context"
-import { removeLocalStorage } from "../../utils/util"
+import { removeLocalStorage, showIziToast } from "../../utils/util"
+import { showSwal } from "../../utils/swal"
 
 type name = {
     name:string | boolean | undefined
@@ -62,11 +63,21 @@ const Username:React.FC<name> = ({name,isName}) => {
          </li>
               
          <li onClick={()=>{
-          alert('آیا مطمِن هستید؟')
-         removeLocalStorage('userToken')
+          showSwal({
+            title:'آیا مطمین هستید؟',
+            icon:'warning',
+            buttons:['خیر','بله']
+          }).then(resolve=>{
+            if(resolve){
+              showIziToast('موفق','از حساب کاربری خود خارج شدید','green')
+              removeLocalStorage('userToken')
          
-         user.setUserToken('')
-         user.setUserInfo({})
+              user.setUserToken('')
+              user.setUserInfo({})
+            }
+            
+          })
+         
          
          }} className="text-red-600 mt-1  gap-3 cursor-pointer h-8 flex items-center hover:text-blue-500" >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5">

@@ -17,7 +17,7 @@ console.log(course);
   return (
     
         <div className="md:w-11/12 ssm:w-full min-h-96  rounded-3xl  flex flex-col items-center" data-aos="zoom-in-up">              
-                <img src="../../../public/02.jpg" className="w-full h-5/12 rounded-3xl" alt="" />
+                <img src={`http://localhost:4000/courses/covers/${course.cover}`} className="w-full h-5/12 rounded-3xl" alt="" />
                 <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
                     <div className="flex flex-col justify-center p-1">
                     <p className="text-green-600 font-bold">. {course.isComplete?'تکمیل شده':'در حال ضبط'}</p>
@@ -29,10 +29,8 @@ console.log(course);
                         <span className="flex text-[12px] font-bold">{course.registers}</span>
                         </div>
                         <div className="flex items-center w-fit opacity-70 gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"></path>
-                            </svg>
-                        <span className="flex"><p>12</p>ساعت</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"></path></svg>
+                        <span className="flex">5.0</span>
                         </div>
                     </div>
                     <div className="w-full h-16 flex justify-between items-center">
