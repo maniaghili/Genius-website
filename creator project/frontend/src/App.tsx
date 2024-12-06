@@ -21,7 +21,7 @@ function App() {
 useEffect(()=>{
    getMe().then((infos:any)=>{
     if(infos){
-      userAllInfos.setUserInfo(infos[0])
+      userAllInfos.setUserInfo(infos[0])  
       userAllInfos.setUserToken(infos[1])
     }
    })

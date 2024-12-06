@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import Aos from 'aos'
 import { memo, useEffect } from 'react'
 const coursebox:React.FC = memo(({...course}:any) => {
-console.log(course);
-
     useEffect(()=>{
         Aos.init({
             delay: 100
@@ -46,7 +44,7 @@ console.log(course);
                         </div>
                     </div>
                     <div className="flex w-full gap-5 mt-3">
-                        <Link to={'/courseDetail/jk'} className=" select-none bg-blue-600 w-4/5 cursor-pointer rounded-2xl flex justify-center items-center hover:bg-blue-500 transition-all">
+                        <Link to={`/courseDetail/${course.shortName}`} className=" select-none bg-blue-600 w-4/5 cursor-pointer rounded-2xl flex justify-center items-center hover:bg-blue-500 transition-all">
                             <span className="text-white p-2">مشاهده دوره</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-white">
                                 <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>

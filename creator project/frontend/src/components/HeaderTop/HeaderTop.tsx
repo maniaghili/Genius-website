@@ -7,12 +7,21 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { userInfo } from "../../context/context";
 import { navigateUser } from './funcs/headerFuncs';
+import axios from "axios"
+import { useQuery } from "react-query"
 
-const HeaderTop = memo(
-  () => {
+
+
+const HeaderTop = memo(() => {
     const user = useContext(userInfo)
     const [colaps,setColaps] = useState(false)
-    
+   
+    const {data : categories} = useQuery('Categories',()=>axios.get("http://localhost:4000/v1/category").then(categories=>categories.data)
+   ,{
+      staleTime:1000000,
+      cacheTime:1000000
+    })
+
     return (
       <div className=' sticky w-full top-0 shadow-md box-border z-40  bg-slate-50  border-b-2  '>
 
@@ -44,7 +53,7 @@ const HeaderTop = memo(
 
 
        <ul className=' h-full items-center gap-5 mr-3 ssm:hidden lg:flex '>
-        <HeaderLi>
+        <HeaderLi categories={categories}>
       دسته بندی آمـــوزش 
         </HeaderLi>
        <Link to="/series" className='opacity-65 text-[13px] font-bold'>همه ی دوره ها</Link>
@@ -152,10 +161,11 @@ const HeaderTop = memo(
                   </div>
                  <div className='group-hover:flex hidden'>
                   <ul className='list-disc mr-10 mb-4'>
-                    <li>فرانت اند</li>
-                    <li>بک اند</li>
-                    <li>فرانت اند</li>
-                    <li>بک اند</li>
+                    {
+                      categories?.map((category : any)=>
+                        <li><Link to={''}>{category.title}</Link></li>
+                      )
+                    }
                   </ul>
                  </div>
             </li>

@@ -1,7 +1,15 @@
+import { useQuery } from 'react-query'
 import ArticleBox from '../artecleBox/ArticleBox'
 import './footerTop.css'
+import axios from 'axios'
 
 const footerTop = () => {
+
+ const {data : articles} = useQuery('Articles',()=>axios.get("http://localhost:4000/v1/articles")
+ .then(article=>article.data),{
+  staleTime:1000000,
+  cacheTime:1000000 })
+
   return (
     <div className='w-full flex justify-center items-center mt-48'>
       <div className='w-[95%]  rounded-2xl min-h-[800px] flex items-center ssm:flex-col lg:flex-row '>
@@ -26,15 +34,16 @@ const footerTop = () => {
             
             <div className='md:w-1/2 flex flex-col justify-center items-center gap-3 mb-16'>
               <div className='flex justify-center'>
-                <ArticleBox />
+              {articles?.slice(3,4).map((article:any)=>(
+                <ArticleBox key={article._id as string}  {...article} ></ArticleBox>
+              ))}
               </div>
-              <div className='flex justify-center'>
-                <ArticleBox />
-              </div>
+              
             </div>
             <div className='md:w-1/2  flex flex-col justify-center items-center gap-3 '>
-              <ArticleBox />
-              <ArticleBox />
+              {articles?.slice(0,2).map((article:any)=>
+                <ArticleBox key={article._id as string}  {...article} ></ArticleBox>
+              )}
             </div>
           </div>
         </div>
