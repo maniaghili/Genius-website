@@ -1,7 +1,8 @@
-import { PropsWithChildren, useMemo, useState } from "react"
+import { PropsWithChildren, useState } from "react"
 import './HeaderLi.css'
 import { Link } from "react-router-dom"
-import { useQueryClient } from "react-query";
+import { useQuery } from "react-query";
+import axios from "axios";
 
 type categoriesType = {
   categories:any
@@ -9,10 +10,10 @@ type categoriesType = {
 
 const HeaderLi:React.FC<PropsWithChildren<categoriesType>> = ({categories,children}) => {
 
-const courses = useQueryClient().getQueryData("Courses") as any
 const [rightMenu,setRightMenu] = useState<undefined | string>(undefined) 
 const [isShowMenu,setIsShowMenu] = useState<Boolean>(false)
- 
+const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),{staleTime:3000000,cacheTime:30000000,keepPreviousData:true})
+
   return (
     <li className='group relative  h-14 flex items-center gap-1'>
       <div className="flex justify-end jjl opacity-65"><p>{children}</p></div>
@@ -23,10 +24,10 @@ const [isShowMenu,setIsShowMenu] = useState<Boolean>(false)
           <div className="bg-white drop_down absolute z-10  top-10  w-48 min-h-40 rounded-lg  group-hover:visible ">
               <ul className="w-full ">
                 {categories?.map((category:any)=>
-                  <li onMouseEnter={()=>{setRightMenu(category.title)
+                  <li key={category._id} onMouseEnter={()=>{setRightMenu(category.title)
                     setIsShowMenu(true)
                   }} onMouseLeave={()=>{setIsShowMenu(false)}} className="text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between ">
-                  <Link to={'/series'} className="w-full text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between">
+                  <Link to={`/series/${category.name}`} className="w-full text-black mt-1 hover:text-blue-600  h-8 cursor-pointer flex items-center text-[13px] font-semibold mr-2 justify-between">
                     <p>{category.title}</p>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 ml-2 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
@@ -44,7 +45,7 @@ const [isShowMenu,setIsShowMenu] = useState<Boolean>(false)
               <ul className="mr-7 aa mt-2">
                 
                 
-               {courses?.data.map((course : any)=>
+               {data?.data.map((course : any)=>
                   course.categoryID.title == rightMenu && <li key={course._id} className="hover:text-blue-600 text-[14px] font-bold"><Link to={`/courseDetail/${course.shortName}`}>{course.name}</Link></li>
                )}
               </ul>

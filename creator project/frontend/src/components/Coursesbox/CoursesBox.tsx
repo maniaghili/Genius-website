@@ -5,19 +5,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Navigation } from 'swiper/modules';
 import '../../../node_modules/swiper/swiper.css';
 import '../../../node_modules/swiper/modules/navigation.css';
-import { useQuery } from "react-query";
-import axios from "axios";
+import { useQueryClient } from "react-query";
+
 
 
 const CoursesBox = memo(() => {
   
-const [courses,setCourses] = useState([]) as any
+const [courses,setCourses] = useState(undefined) as any
 
- const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),{staleTime:200000})
 
+const data = useQueryClient().getQueriesData('Courses') as  any
+
+    console.log(data);
+    
   useEffect(()=>{
-    setCourses(data?.data)
-  },[data])
+   setCourses(data[0][1]?.data)
+    
+    
+  },[data[0][0]])
 
   return (
     <>

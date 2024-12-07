@@ -1,13 +1,39 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
+import { useParams } from "react-router-dom";
+import { useQuery, useQueryClient } from "react-query";
+import axios from "axios";
 
 const series = memo(() => {
 
   const [isSelectCourseType,setIsSelectCourseType] = useState(false)
   const [isCategoryCourse,setIsCategoryCourse] = useState(false)
-    
+  const [courses,setCourses] = useState(null) as any
+  const params = useParams().catName
+  const data = useQueryClient().getQueryData("Courses") as any
+console.log(data);
+
+
+    useEffect(() => {
+      
+      
+      if(params == 'all'){
+        console.log(data?.data);
+        
+        setCourses(data?.data)
+      }else{
+       const catCourses = data?.data.filter((course:any)=>course.categoryID.name == params)
+        console.log(catCourses);
+        
+        
+        
+       
+      }
+    },[data?.data,params])
+       
+        
     return (
       <>
       <HeaderTop /> 
@@ -117,16 +143,9 @@ const series = memo(() => {
            </div>
           
            <div className=" my-4 justify-center items-center ssm:gap-28 ssm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-           <CourseBox />
-  
-           
+           {courses?.map((course : any)=>
+            <CourseBox key={course._id} {...course} />
+            )}
            </div>
           
   

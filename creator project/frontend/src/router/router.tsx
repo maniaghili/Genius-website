@@ -15,7 +15,7 @@ export const Router:RouteObject[] = [
     {path:"/" ,element: <Index />},
     {path:'/login', element:<Login />},
     {path:'/register' ,element:<Register />},
-    {path:'/series' ,element:<Series />},
+    {path:'/series/:catName' ,element:<Series />},
     {path:'/courseDetail/:courseName',element:<CourseDetail />},
     {path:'/userbasket',element:<Basket />},
     {path:'/articleDetail/:articleName' , element:<ArticleDetail />},

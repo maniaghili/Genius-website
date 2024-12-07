@@ -1,11 +1,11 @@
-import { PropsWithChildren } from "react"
+import { memo, PropsWithChildren } from "react"
 import './circleui.css'
 type props = {
     text:string
     color:string
 }
 
-const circleui:React.FC<PropsWithChildren<props>> = ({text,color,children}) => {
+const circleui:React.FC<PropsWithChildren<props>> = memo(({text,color,children}) => {
    
     
   return (
@@ -19,6 +19,6 @@ const circleui:React.FC<PropsWithChildren<props>> = ({text,color,children}) => {
     </div>
     </div>
   )
-}
+})
 
 export default circleui
