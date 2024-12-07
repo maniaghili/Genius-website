@@ -1,8 +1,7 @@
 import { PropsWithChildren, useState } from "react"
 import './HeaderLi.css'
 import { Link } from "react-router-dom"
-import { useQuery } from "react-query";
-import axios from "axios";
+import useCourses from "../../assets/hooks/courses"
 
 type categoriesType = {
   categories:any
@@ -12,7 +11,8 @@ const HeaderLi:React.FC<PropsWithChildren<categoriesType>> = ({categories,childr
 
 const [rightMenu,setRightMenu] = useState<undefined | string>(undefined) 
 const [isShowMenu,setIsShowMenu] = useState<Boolean>(false)
-const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),{staleTime:3000000,cacheTime:30000000,keepPreviousData:true})
+
+const [allCourses] = useCourses(undefined) as any
 
   return (
     <li className='group relative  h-14 flex items-center gap-1'>
@@ -45,7 +45,7 @@ const {data} = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/cours
               <ul className="mr-7 aa mt-2">
                 
                 
-               {data?.data.map((course : any)=>
+               {allCourses?.map((course : any)=>
                   course.categoryID.title == rightMenu && <li key={course._id} className="hover:text-blue-600 text-[14px] font-bold"><Link to={`/courseDetail/${course.shortName}`}>{course.name}</Link></li>
                )}
               </ul>

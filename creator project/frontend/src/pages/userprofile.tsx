@@ -6,7 +6,7 @@ import FooterBottom from "../components/footerBottom/footerBottom";
 import { Link, Outlet } from "react-router-dom";
 import { showSwal } from "../utils/swal";
 import { removeLocalStorage, showIziToast } from "../utils/util";
-import { userInfo } from "../context/context"
+import { userInfo } from "../context/authContext"
 const userProfile = memo(() => {
     const user = useContext(userInfo)
     const Navigate = useNavigate()

@@ -3,7 +3,7 @@ import HeaderTop from "../../components/HeaderTop/HeaderTop";
 import { useForm } from "react-hook-form";
 import { ReactNode, useContext,FC, memo } from "react";
 import axios from "axios";
-import {userInfo} from "../../context/context";
+import {userInfo} from "../../context/authContext";
 import { handleUserRegister } from "./funcs/registerfuncs";
 import { showIziToast } from "../../utils/util";
 

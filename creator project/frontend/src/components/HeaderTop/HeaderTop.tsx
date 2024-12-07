@@ -5,7 +5,7 @@ import Username from '../userName/Username'
 import {  memo, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import { userInfo } from "../../context/context";
+import { userInfo } from "../../context/authContext";
 import { navigateUser } from './funcs/headerFuncs';
 import axios from "axios"
 import { useQuery } from "react-query"
@@ -60,7 +60,7 @@ const HeaderTop = memo(() => {
             </HeaderLi>
           ,[categories])
         }
-       <Link to="/series/all" className='opacity-65 text-[13px] font-bold'>همه ی دوره ها</Link>
+       <Link to="/series" className='opacity-65 text-[13px] font-bold'>همه ی دوره ها</Link>
         <Username name='لینک های مفید' isName={user?.userInfos?.name} />  
        </ul>
 

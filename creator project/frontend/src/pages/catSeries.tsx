@@ -2,13 +2,15 @@ import { memo, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
+import { useParams } from "react-router-dom";
 import useCourses from "../assets/hooks/courses";
 
 const series = memo(() => {
 
   const [isSelectCourseType,setIsSelectCourseType] = useState(false)
   const [isCategoryCourse,setIsCategoryCourse] = useState(false)
-  const [allCourses] = useCourses(null) as any
+  const params = useParams().catName as any
+  const [allCourses] = useCourses(params) as any
  
  
  

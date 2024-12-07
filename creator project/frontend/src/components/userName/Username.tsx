@@ -2,7 +2,7 @@ import React, { memo, useContext } from "react"
 import './UserInfo.css'
 import { Link } from "react-router-dom"
 import { navigateUser } from "../HeaderTop/funcs/headerFuncs"
-import { userInfo } from "../../context/context"
+import { userInfo } from "../../context/authContext"
 import { removeLocalStorage, showIziToast } from "../../utils/util"
 import { showSwal } from "../../utils/swal"
 

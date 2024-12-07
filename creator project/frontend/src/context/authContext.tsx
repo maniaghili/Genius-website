@@ -1,4 +1,5 @@
-import { createContext, useState,PropsWithChildren,FC } from "react";
+import { createContext, useState,PropsWithChildren,FC, useEffect } from "react";
+import { getMe } from "../utils/getMe";
 
 
 type allInfoType = {
@@ -9,12 +10,19 @@ type allInfoType = {
 } 
 
 const userInfo = createContext(createContext(null) as any)
-const ContextProvider:FC<PropsWithChildren> = ({children}) =>{
+const AuthContextProvider:FC<PropsWithChildren> = ({children}) =>{
 
 const [userInfos,setUserInfo] = useState({})
 const [userToken,setUserToken] = useState('')
 
-
+useEffect(()=>{
+    getMe().then((infos:any)=>{
+     if(infos){
+       setUserInfo(infos[0])  
+       setUserToken(infos[1])
+     }
+    })
+   },[])
 
 const allInfo:allInfoType = {
     userInfos,
@@ -31,4 +39,4 @@ const allInfo:allInfoType = {
 }
 
 export type {allInfoType}
-export {ContextProvider,userInfo}
+export {AuthContextProvider,userInfo}

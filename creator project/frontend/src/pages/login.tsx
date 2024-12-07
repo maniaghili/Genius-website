@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { handleUserRegister } from "./register/funcs/registerfuncs"
 import { useContext ,FC} from "react"
-import { userInfo } from "../context/context";
+import { userInfo } from "../context/authContext";
 import { showIziToast } from "../utils/util";
 import { memo } from "react"
 import { getMe } from "../utils/getMe"

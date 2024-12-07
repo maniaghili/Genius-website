@@ -1,28 +1,17 @@
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import Coursebox from "../coursebox/coursebox";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Navigation } from 'swiper/modules';
 import '../../../node_modules/swiper/swiper.css';
 import '../../../node_modules/swiper/modules/navigation.css';
-import { useQueryClient } from "react-query";
+import useCourses from "../../assets/hooks/courses";
 
 
 
 const CoursesBox = memo(() => {
   
-const [courses,setCourses] = useState(undefined) as any
-
-
-const data = useQueryClient().getQueriesData('Courses') as  any
-
-    console.log(data);
-    
-  useEffect(()=>{
-   setCourses(data[0][1]?.data)
-    
-    
-  },[data[0][0]])
+  const [allCourses] = useCourses({}) as any
 
   return (
     <>
@@ -49,7 +38,7 @@ const data = useQueryClient().getQueriesData('Courses') as  any
         }}
       >
         {
-          courses?.map((course : any)=>(
+          allCourses?.data.map((course : any)=>(
             <SwiperSlide key={course._id}><Coursebox {...course} /></SwiperSlide>
           ))
         }

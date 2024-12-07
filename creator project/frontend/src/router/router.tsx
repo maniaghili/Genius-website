@@ -8,14 +8,15 @@ const CourseDetail  = lazy(()=>import("../pages/courseDetail"))
 const ArticleDetail = lazy(()=>import( "../pages/articleDetail"))
 const Login = lazy(()=>import("../pages/login"));
 const Register = lazy(()=>import("../pages/register/register"))
-const Series = lazy(()=>import("../pages/series"))
-
+const CatSeries = lazy(()=>import("../pages/catSseries"))
+const Series = lazy(()=>import ("../pages/series"))
 
 export const Router:RouteObject[] = [
     {path:"/" ,element: <Index />},
     {path:'/login', element:<Login />},
     {path:'/register' ,element:<Register />},
-    {path:'/series/:catName' ,element:<Series />},
+    {path:'/series/:catName' ,element:<CatSeries />},
+    {path:'/series' ,element:<Series />},
     {path:'/courseDetail/:courseName',element:<CourseDetail />},
     {path:'/userbasket',element:<Basket />},
     {path:'/articleDetail/:articleName' , element:<ArticleDetail />},
