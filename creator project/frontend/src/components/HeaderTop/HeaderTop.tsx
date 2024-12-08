@@ -7,20 +7,15 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { userInfo } from "../../context/authContext";
 import { navigateUser } from './funcs/headerFuncs';
-import axios from "axios"
-import { useQuery } from "react-query"
+import { useCategories } from '../../assets/hooks/useCategories';
 
 
 
 const HeaderTop = memo(() => {
     const user = useContext(userInfo)
     const [colaps,setColaps] = useState(false)
-    
-    const {data : categories} = useQuery('Categories',()=>axios.get("http://localhost:4000/v1/category").then(categories=>categories.data)
-   ,{
-      staleTime:1000000,
-      cacheTime:1000000
-    })
+    const [categories] = useCategories() 
+       
 
     return (
       <div className=' sticky w-full top-0 shadow-md box-border z-40  bg-slate-50  border-b-2  '>

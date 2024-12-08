@@ -17,9 +17,14 @@ const series = memo(() => {
   },[allCourses?.length])
 
  
-  const handleChange = (e:any) => {
+  const handleFilterDates = (e:any) => {
    const filteredCourses = dateFilterCourses(e.target.value,allCourses)
    setCourses(filteredCourses)
+  }
+
+  const handleCatFilters = (e:any) => {
+console.log(e.target.value);
+
   }
  
  
@@ -78,9 +83,9 @@ const series = memo(() => {
               <div className="bg-slate-200 my-3 h-24 rounded-2xl">
               <ul className="mt-2 mr-2 flex flex-col gap-2">
                 
-              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'free'} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleFilterDates} value={'free'} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleFilterDates} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleFilterDates} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
               </ul>
             </div>}
               <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
@@ -105,9 +110,9 @@ const series = memo(() => {
             <div className="bg-slate-200 my-3 h-24 rounded-2xl">
             <ul className=" h-full mr-2 flex flex-col gap-2">
               
-            <li className="flex items-center mt-2 gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70"> نود جی  </p></li>
+            <li className="flex items-center mt-2 gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
+            <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
+            <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70"> نود جی  </p></li>
             </ul>
           </div>
       }
@@ -122,7 +127,7 @@ const series = memo(() => {
               <p className="font-bold text-[13px] w-full">مرتب سازی:</p>
             </div>
             <div className=" rounded-2xl  w-full h-full">
-            <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleChange(e)}}>
+            <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleFilterDates(e)}}>
               <option value="defult" className="font-bold text-[11px]">انتخاب کنید</option>
               <option value="free" className="font-bold text-[11px]">رایگان</option>
               <option value="notfree" className="font-bold text-[11px]">غیر رایگان</option>

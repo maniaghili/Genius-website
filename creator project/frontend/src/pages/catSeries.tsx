@@ -18,7 +18,7 @@ const series = memo(() => {
   },[params,allCourses?.length])
 
  
-  const handleChange = (e:any) => {
+  const handleFilterDates = (e:any) => {
    const filteredCourses = dateFilterCourses(e.target.value,allCourses)
    setCourses(filteredCourses)
   }
@@ -78,9 +78,9 @@ const series = memo(() => {
               <div className="bg-slate-200 my-3 h-24 rounded-2xl">
               <ul className="mt-2 mr-2 flex flex-col gap-2">
                 
-              <li className="flex items-center gap-1"><input type="radio" name="select" value={'free'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'free'} onChange={handleFilterDates} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleFilterDates} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleFilterDates} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
               </ul>
             </div>}
              
@@ -97,7 +97,7 @@ const series = memo(() => {
               <p className="font-bold text-[13px] w-full">مرتب سازی:</p>
             </div>
             <div className=" rounded-2xl  w-full h-full">
-             <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleChange(e)}}>
+             <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleFilterDates(e)}}>
               <option value="defult" className="font-bold text-[11px]">انتخاب کنید</option>
               <option value="free" className="font-bold text-[11px]">رایگان</option>
               <option value="notfree" className="font-bold text-[11px]">غیر رایگان</option>
