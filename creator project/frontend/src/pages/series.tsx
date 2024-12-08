@@ -4,6 +4,7 @@ import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
 import useCourses from "../assets/hooks/courses";
 import { dateFilterCourses } from "../assets/funcs/filterfuncs";
+import { useCategories } from "../assets/hooks/useCategories";
 
 const series = memo(() => {
 
@@ -11,6 +12,7 @@ const series = memo(() => {
   const [isCategoryCourse,setIsCategoryCourse] = useState(false)
   const [courses,setCourses] = useState([])
   const [allCourses] = useCourses(undefined) as any
+  const [categories] = useCategories()
   
   useEffect(()=>{
     setCourses(allCourses)
@@ -23,7 +25,9 @@ const series = memo(() => {
   }
 
   const handleCatFilters = (e:any) => {
-console.log(e.target.value);
+const catFilter = e.target.value
+const catCourses = allCourses?.filter((course:any)=>course.categoryID.name === catFilter)
+setCourses(catCourses)
 
   }
  
@@ -107,12 +111,11 @@ console.log(e.target.value);
               </div>
             </div>
             {isCategoryCourse&&
-            <div className="bg-slate-200 my-3 h-24 rounded-2xl">
+            <div className="bg-slate-200 my-3 h-fit rounded-2xl">
             <ul className=" h-full mr-2 flex flex-col gap-2">
-              
-            <li className="flex items-center mt-2 gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70"> نود جی  </p></li>
+            {categories?.map((cat:any)=>  
+            <li className="flex items-center my-2 gap-1"><input type="radio" name="select" value={cat.name} onChange={handleCatFilters} /><p className="font-bold text-[13px] opacity-70">{cat.title}</p></li>
+            )}
             </ul>
           </div>
       }
