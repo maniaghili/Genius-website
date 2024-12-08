@@ -2,13 +2,10 @@ import axios from "axios"
 import { FC } from "react"
 import { useQuery } from "react-query"
 
-type filter ={
-    filters?:string 
-}
+type filter = string | undefined
+
 
 const useCourses:FC<filter> = (filters) => {
-  console.log(filters);
-  
   const allCourses = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),
   {staleTime:3000000,
     cacheTime:30000000,

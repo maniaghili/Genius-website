@@ -8,7 +8,7 @@ const CourseDetail  = lazy(()=>import("../pages/courseDetail"))
 const ArticleDetail = lazy(()=>import( "../pages/articleDetail"))
 const Login = lazy(()=>import("../pages/login"));
 const Register = lazy(()=>import("../pages/register/register"))
-const CatSeries = lazy(()=>import("../pages/catSseries"))
+const CatSeries = lazy(()=>import("../pages/catSeries"))
 const Series = lazy(()=>import ("../pages/series"))
 
 export const Router:RouteObject[] = [

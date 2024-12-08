@@ -5,9 +5,7 @@ import Aos from 'aos'
 import { memo, useEffect } from 'react'
 const coursebox:React.FC = memo(({...course}:any) => {
     useEffect(()=>{
-        Aos.init({
-            delay: 100
-        })
+        Aos.init()
     })
 
     

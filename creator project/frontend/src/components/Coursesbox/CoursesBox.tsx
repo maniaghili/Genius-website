@@ -11,7 +11,7 @@ import useCourses from "../../assets/hooks/courses";
 
 const CoursesBox = memo(() => {
   
-  const [allCourses] = useCourses({}) as any
+  const [allCourses] = useCourses(undefined) as any
 
   return (
     <>
@@ -38,7 +38,7 @@ const CoursesBox = memo(() => {
         }}
       >
         {
-          allCourses?.data.map((course : any)=>(
+          allCourses?.map((course : any)=>(
             <SwiperSlide key={course._id}><Coursebox {...course} /></SwiperSlide>
           ))
         }

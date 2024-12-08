@@ -1,18 +1,27 @@
-import { memo, useState } from "react";
+import {  memo, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
 import { useParams } from "react-router-dom";
 import useCourses from "../assets/hooks/courses";
+import { dateFilterCourses } from "../assets/funcs/filterfuncs";
 
 const series = memo(() => {
 
   const [isSelectCourseType,setIsSelectCourseType] = useState(false)
-  const [isCategoryCourse,setIsCategoryCourse] = useState(false)
+  const [courses,setCourses] = useState([])
   const params = useParams().catName as any
   const [allCourses] = useCourses(params) as any
+
+  useEffect(()=>{
+    setCourses(allCourses)
+  },[params,allCourses?.length])
+
  
- 
+  const handleChange = (e:any) => {
+   const filteredCourses = dateFilterCourses(e.target.value,allCourses)
+   setCourses(filteredCourses)
+  }
  
     return (
       <>
@@ -69,39 +78,14 @@ const series = memo(() => {
               <div className="bg-slate-200 my-3 h-24 rounded-2xl">
               <ul className="mt-2 mr-2 flex flex-col gap-2">
                 
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'free'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" value={'notfree'} onChange={handleChange} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
               </ul>
             </div>}
-              <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
-              <div onClick={()=>{setIsCategoryCourse(is=>!is)}} className=" hover:text-blue-600 cursor-pointer select-none bg-slate-200 h-10 flex overflow-hidden rounded-xl justify-between items-center  my-2">
-              
-               <div className="flex items-center">
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"></path>
-                </svg>
-                <p className="mr-1 font-bold text-[13px]">دسته بندی دوره</p> 
-               </div>
-               {isCategoryCourse?
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 rotate-180 w-5 h-5">
-               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-           </svg>:
-           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5">
-           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-       </svg>}
-              </div>
+             
             </div>
-            {isCategoryCourse&&
-            <div className="bg-slate-200 my-3 h-24 rounded-2xl">
-            <ul className=" h-full mr-2 flex flex-col gap-2">
-              
-            <li className="flex items-center mt-2 gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">پایتون</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">جاوا اسکریپت</p></li>
-            <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70"> نود جی  </p></li>
-            </ul>
-          </div>
-      }
+            
       </div>
          </div>
           <div className="md:w-3/4  ssm:w-full bg-white h-fit">
@@ -113,17 +97,18 @@ const series = memo(() => {
               <p className="font-bold text-[13px] w-full">مرتب سازی:</p>
             </div>
             <div className=" rounded-2xl  w-full h-full">
-             <select className="h-full bg-slate-200 w-44  rounded-2xl" name="" id="">
-              <option value="" className="font-bold text-[11px]">انتخاب کنید</option>
-              <option value="" className="font-bold text-[11px]">da</option>
-              <option value="" className="font-bold text-[11px]">ad</option>
-              <option value="" className="font-bold text-[11px]">wdq</option>
+             <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleChange(e)}}>
+              <option value="defult" className="font-bold text-[11px]">انتخاب کنید</option>
+              <option value="free" className="font-bold text-[11px]">رایگان</option>
+              <option value="notfree" className="font-bold text-[11px]">غیر رایگان</option>
+              <option value="oldest" className="font-bold text-[11px]">قدیمی ترین</option>
+              <option value="new" className="font-bold text-[11px]">جدید ترین</option>
              </select>
             </div>
            </div>
           
            <div className=" my-4 justify-center items-center ssm:gap-28 ssm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
-           {allCourses?.map((course : any)=>
+           {courses?.map((course : any)=>
             <CourseBox key={course._id} {...course} />
             )}
            </div>

@@ -1,15 +1,26 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
 import useCourses from "../assets/hooks/courses";
+import { dateFilterCourses } from "../assets/funcs/filterfuncs";
 
 const series = memo(() => {
 
   const [isSelectCourseType,setIsSelectCourseType] = useState(false)
   const [isCategoryCourse,setIsCategoryCourse] = useState(false)
-  const [allCourses] = useCourses(null) as any
+  const [courses,setCourses] = useState([])
+  const [allCourses] = useCourses(undefined) as any
+  
+  useEffect(()=>{
+    setCourses(allCourses)
+  },[allCourses?.length])
+
  
+  const handleChange = (e:any) => {
+   const filteredCourses = dateFilterCourses(e.target.value,allCourses)
+   setCourses(filteredCourses)
+  }
  
  
     return (
@@ -67,9 +78,9 @@ const series = memo(() => {
               <div className="bg-slate-200 my-3 h-24 rounded-2xl">
               <ul className="mt-2 mr-2 flex flex-col gap-2">
                 
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
-              <li className="flex items-center gap-1"><input type="radio" name="select" /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'free'} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">فقط نقدی</p></li>
+              <li className="flex items-center gap-1"><input type="radio" name="select" onChange={handleChange} value={'notfree'} /><p className="font-bold text-[13px] opacity-70">نقدی و اعضای ویژه</p></li>
               </ul>
             </div>}
               <div className="h-[1px] opacity-40 bg-gray-900 w-full"></div>
@@ -111,17 +122,18 @@ const series = memo(() => {
               <p className="font-bold text-[13px] w-full">مرتب سازی:</p>
             </div>
             <div className=" rounded-2xl  w-full h-full">
-             <select className="h-full bg-slate-200 w-44  rounded-2xl" name="" id="">
-              <option value="" className="font-bold text-[11px]">انتخاب کنید</option>
-              <option value="" className="font-bold text-[11px]">da</option>
-              <option value="" className="font-bold text-[11px]">ad</option>
-              <option value="" className="font-bold text-[11px]">wdq</option>
+            <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleChange(e)}}>
+              <option value="defult" className="font-bold text-[11px]">انتخاب کنید</option>
+              <option value="free" className="font-bold text-[11px]">رایگان</option>
+              <option value="notfree" className="font-bold text-[11px]">غیر رایگان</option>
+              <option value="oldest" className="font-bold text-[11px]">قدیمی ترین</option>
+              <option value="new" className="font-bold text-[11px]">جدید ترین</option>
              </select>
             </div>
            </div>
           
            <div className=" my-4 justify-center items-center ssm:gap-28 ssm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
-           {allCourses?.map((course : any)=>
+           {courses?.map((course : any)=>
             <CourseBox key={course._id} {...course} />
             )}
            </div>
