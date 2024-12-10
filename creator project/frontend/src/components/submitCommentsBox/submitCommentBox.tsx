@@ -1,5 +1,10 @@
+import { useContext } from "react"
+import { userInfo } from "../../context/authContext"
+import { changeTime } from "../../assets/funcs/changeTime";
 
 const submitCommentBox = () => {
+  const user = useContext(userInfo)
+  
   return (
     <>
      <p className="font-bold my-2 text-[14px]">دیدگاه ها</p>
@@ -8,8 +13,8 @@ const submitCommentBox = () => {
               <div className="flex mr-3 gap-2">
                 <img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
                 <div>
-                  <p className="font-bold text-[12px]">مانی علیقلی</p>
-                  <p className="font-bold text-[12px] opacity-70">2 هفته پیش</p>
+                  <p className="font-bold text-[12px]">{user.userInfos.name}</p>
+                  <p className="font-bold text-[12px] opacity-70">{changeTime(new Date as any)}</p>
                 </div>
               </div>
               <div className="w-full flex justify-center">

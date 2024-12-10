@@ -14,8 +14,7 @@ const courseDetail = memo(() => {
 
   const param = useParams().courseName
   let [courseInfos] = useSingleCourse(param as any)
-  console.log(courseInfos);
-  
+
 
   return (
     <>
@@ -57,7 +56,7 @@ const courseDetail = memo(() => {
           </div>
           <div className="bg-slate-200 h-10 flex justify-center rounded-2xl ssm:w-full  md:w-2/3 sticky top-[50x]">
           <ul className="w-11/12 flex items-center cursor-pointer opacity-80 h-full">
-            <li className="w-1/3 flex items-center gap-2  hover:text-blue-700 transition-all">  
+            <li className="w-1/3 flex items-center gap-2  hover:text-blue-700 transition-all" >  
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="opacity-80 w-5 h-5">
                     <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z">
                     </path>
@@ -65,7 +64,7 @@ const courseDetail = memo(() => {
                 <p className="font-bold text-[14px]">معرفی</p>
 
             </li>
-            <li className="w-1/3 flex items-center gap-2 hover:text-blue-700 transition-all">
+            <li className="w-1/3 flex items-center gap-2 hover:text-blue-700 transition-all" >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z">
                     </path>
@@ -88,7 +87,7 @@ const courseDetail = memo(() => {
             <span className="opacity-70 text-[13px]">
             بدون شک در حال حاضر یکی از پرکاربردترین فریمورک‌های جاوا اسکریپتی که می‌توانید در دنیای وب پیدا بکنید {courseInfos?.name} است. زمانی که یک فریمورک در زمینه‌های مختلف کاربرد داشته باشد نیز در نهایت باعث خواهد شد که فرصت‌های شغلی بسیار زیادی داشته باشد. اما آیا فکر می‌کنید برای قبول شدن در یک فرصت شغلی مناسب، تمام موارد لازم را در اختیار دارید؟ اگر حس می‌کنید در رابطه با این قضیه مطمئن نیستید و شک دارید، بهتر است با این دوره آموزشی همراه باشید.
             </span>
-            <h2 className="font-bold">دوره آموزشی پروژه محور react و next</h2>
+            <h2 className="font-bold">{courseInfos?.name}</h2>
             <img src={`http://localhost:4000/courses/covers/${courseInfos?.cover}`} className="rounded-2xl mt-4" alt="" />
             <span className="opacity-70 text-[13px]">
             زمانی که شما با موضوعات مختلف یک ابزار آشنایی پیدا کردید، یک نکته مهم که باید در نظر داشته باشید این است که چگونه با کنار هم قرار دادن ویژگی‌های مختلف خواهید توانست یک پروژه واقعی را ایجاد کنید. این موضوع دقیقا هدفی است که یک آموزش پروژه محور دنبال می‌کند. در یک آموزش پروژه محور در ابتدا شما به صورت مستقیم یا غیر مستقیم با مفاهیم اولیه آشنا شده و سپس فرایند یادگیری موضوعات جدید را در خلال ایجاد پروژه شروع خواهید کرد.

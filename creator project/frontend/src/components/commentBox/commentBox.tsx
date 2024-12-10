@@ -3,7 +3,6 @@ import { changeTime } from "../../assets/funcs/changeTime";
 import Heartcircle from "../heartcircle/heartcircle"
 
 const commentBox = ({...comment}) => {
-  console.log(comment);
   
   return (
     <div className="flex flex-col items-end">
