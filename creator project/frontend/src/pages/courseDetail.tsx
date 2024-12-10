@@ -8,6 +8,7 @@ import Heartcircle from "../components/heartcircle/heartcircle";
 import { useParams } from "react-router-dom";
 import { useSingleCourse } from "../assets/hooks/getSingleCourse";
 import SubmitCommentBox from "../components/submitCommentsBox/submitCommentBox";
+import { changeTime } from "../assets/funcs/changeTime";
 const courseDetail = memo(() => {
 
   const param = useParams().courseName
@@ -106,7 +107,7 @@ const courseDetail = memo(() => {
           <div className="my-5 ">
              <SubmitCommentBox />
              {courseInfos?.comments.map((comment : any)=>
-             <CommentBox {...comment} /> 
+             <CommentBox key={comment._id} {...comment} /> 
             )
 
              }
@@ -129,8 +130,8 @@ const courseDetail = memo(() => {
               <div className="flex justify-between w-full items-center">
                 <p className="mr-4 opacity-70 font-bold text-[13px]">هزینه ثبت نام:</p>
                <div className="ml-4 font-bold opacity-95">
-                <s>۱,۱۹۹,۰۰۰</s>
-                <p>۱,۰۷۹,۰۰۰</p>
+                {/* <s>۱,۱۹۹,۰۰۰</s> */}
+                <p>{courseInfos?.price?courseInfos.price:'رایگان'}</p>
                </div>
               </div>
               <div className="my-3 flex items-center w-full h-10 justify-center gap-3">
@@ -158,8 +159,8 @@ const courseDetail = memo(() => {
              <div className="flex gap-2">
                < img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
                       <div>
-                           <p className="font-bold text-[12px]">مانی علیقلی</p>
-                          <p className="font-bold text-[12px] opacity-70">2 هفته پیش</p>
+                           <p className="font-bold text-[12px]">{courseInfos?.creator.name} </p>
+                          <p className="font-bold text-[12px] opacity-70">{courseInfos && changeTime(courseInfos.creator.updatedAt)}</p>
                      </div>
                     </div>
                 <div className="bg-slate-100 p-3 text-[13px] font-bold w-fit h-fit my-3 rounded-b-2xl rounded-tl-2xl">
