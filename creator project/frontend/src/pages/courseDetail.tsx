@@ -5,6 +5,7 @@ import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo";
 import SessionBox from "../components/sessionBox/sessionBox";
 import CommentBox from "../components/commentBox/commentBox";
 import Heartcircle from "../components/heartcircle/heartcircle";
+import IsNotData from "../components/isNotData/isNotData";
 import { useParams } from "react-router-dom";
 import { useSingleCourse } from "../assets/hooks/getSingleCourse";
 import SubmitCommentBox from "../components/submitCommentsBox/submitCommentBox";
@@ -99,17 +100,15 @@ const courseDetail = memo(() => {
             
             <SessionBox session={courseInfos.sessions} />
             :
-            <div className="bg-red-500 text-white flex justify-center items-center rounded-2xl w-full h-10"><p>
-           هنوز جلسه ای برای این دوره آپلود نشده است
-              </p></div>
+            <IsNotData dataName={'جلسه ای' as string} />
             }
           </div>
           <div className="my-5 ">
              <SubmitCommentBox />
-             {courseInfos?.comments.map((comment : any)=>
-             <CommentBox key={comment._id} {...comment} /> 
-            )
-
+             {courseInfos?.comments.length?
+              courseInfos.comments.map((comment : any)=>
+              <CommentBox key={comment._id} {...comment} />)
+                :<IsNotData dataName={'کامنتی' as string}/>
              }
              
              
