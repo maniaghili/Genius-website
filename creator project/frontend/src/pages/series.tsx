@@ -5,7 +5,6 @@ import CourseBox from "../components/coursebox/coursebox";
 import useCourses from "../assets/hooks/courses";
 import { dateFilterCourses } from "../assets/funcs/filterfuncs";
 import { useCategories } from "../assets/hooks/useCategories";
-import  Pagination  from "../components/pagination/pagination";
 import { getUrlParam, setUrlParam } from "../assets/funcs/url";
 
 const series = memo(() => {
@@ -155,7 +154,6 @@ setCourses(catCourses)
             )}
            </div>
           
-           <Pagination />
           </div>
         </div>
        
