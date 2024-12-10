@@ -12,9 +12,9 @@ const footerTop = memo(() => {
    cacheTime:1000000 })
  
    return (
-     <div className='w-full flex justify-center items-center mt-48'>
-       <div className='w-[95%]  rounded-2xl min-h-[800px] flex items-center ssm:flex-col lg:flex-row '>
-         <div className='lg:w-1/3 flex  gap-4 ssm:w-[90%] ssm:my-5 '>
+     <div className='w-full flex justify-center items-center ssm:mt-48 md:mt-28 lg:mt-16'>
+       <div className='w-[95%] rounded-2xl min-h-[800px] flex ssm:items-start md:items-center ssm:flex-col lg:flex-row '>
+         <div className='lg:w-1/3 flex gap-4 ssm:w-[90%] ssm:my-5 '>
            <div>
              <div className=" bg-blue-700 w-12 h-12 rounded-full flex justify-center items-center p-2 mr-3">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-white w-5 h-5">

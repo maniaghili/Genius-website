@@ -5,6 +5,8 @@ import CourseBox from "../components/coursebox/coursebox";
 import useCourses from "../assets/hooks/courses";
 import { dateFilterCourses } from "../assets/funcs/filterfuncs";
 import { useCategories } from "../assets/hooks/useCategories";
+import  Pagination  from "../components/pagination/pagination";
+import { getUrlParam, setUrlParam } from "../assets/funcs/url";
 
 const series = memo(() => {
 
@@ -13,15 +15,21 @@ const series = memo(() => {
   const [courses,setCourses] = useState([])
   const [allCourses] = useCourses(undefined) as any
   const [categories] = useCategories()
-  
+  const pp = getUrlParam('sort')
+    
+ 
+
   useEffect(()=>{
-    setCourses(allCourses)
+    const filteredCourses = dateFilterCourses(pp,allCourses)
+    setCourses(filteredCourses)
+
   },[allCourses?.length])
 
  
   const handleFilterDates = (e:any) => {
    const filteredCourses = dateFilterCourses(e.target.value,allCourses)
    setCourses(filteredCourses)
+   setUrlParam('sort',e.target.value)
   }
 
   const handleCatFilters = (e:any) => {
@@ -138,6 +146,7 @@ setCourses(catCourses)
               <option value="new" className="font-bold text-[11px]">جدید ترین</option>
              </select>
             </div>
+            
            </div>
           
            <div className=" my-4 justify-center items-center ssm:gap-28 ssm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
@@ -146,17 +155,12 @@ setCourses(catCourses)
             )}
            </div>
           
-  
+           <Pagination />
           </div>
         </div>
        
       </div>
-      
-      
-        
-         
-           
-      <FooterBottom />
+   <FooterBottom />
       </>
     )
   })

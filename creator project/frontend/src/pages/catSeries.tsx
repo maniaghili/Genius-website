@@ -5,6 +5,7 @@ import CourseBox from "../components/coursebox/coursebox";
 import { useParams } from "react-router-dom";
 import useCourses from "../assets/hooks/courses";
 import { dateFilterCourses } from "../assets/funcs/filterfuncs";
+import { getUrlParam, setUrlParam } from "../assets/funcs/url";
 
 const series = memo(() => {
 
@@ -12,14 +13,18 @@ const series = memo(() => {
   const [courses,setCourses] = useState([])
   const params = useParams().catName as any
   const [allCourses] = useCourses(params) as any
+  const pp = getUrlParam('sort')
+    
 
   useEffect(()=>{
-    setCourses(allCourses)
+    const filteredCourses = dateFilterCourses(pp,allCourses)
+    setCourses(filteredCourses)
   },[params,allCourses?.length])
 
  
   const handleFilterDates = (e:any) => {
    const filteredCourses = dateFilterCourses(e.target.value,allCourses)
+   setUrlParam('sort',e.target.value)
    setCourses(filteredCourses)
   }
  
