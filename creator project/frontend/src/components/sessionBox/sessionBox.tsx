@@ -2,8 +2,6 @@ import { useState } from "react"
 import { showSwal } from "../../utils/swal";
 
 const sessionBox = ({session}:any) => {
-console.log(session);
-
     const [isDrop,setIsDrop] = useState(false)
 
   return (

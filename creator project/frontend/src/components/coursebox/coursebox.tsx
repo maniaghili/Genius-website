@@ -3,7 +3,10 @@ import Heartcircle from '../heartcircle/heartcircle'
 import { Link } from 'react-router-dom'
 import Aos from 'aos';
 import { memo, useEffect } from 'react';
+
 const coursebox:React.FC = memo(({...course}:any) => {
+    console.log(course);
+    
     useEffect(()=>{
         Aos.init()
     })

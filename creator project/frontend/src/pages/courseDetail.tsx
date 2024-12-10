@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop"
 import FooterBottom from "../components/footerBottom/footerBottom"
 import CourseTimeInfo from "../components/courseTimeInfo/courseTimeInfo";
@@ -10,10 +10,16 @@ import { useParams } from "react-router-dom";
 import { useSingleCourse } from "../assets/hooks/getSingleCourse";
 import SubmitCommentBox from "../components/submitCommentsBox/submitCommentBox";
 import { changeTime } from "../assets/funcs/changeTime";
+import { getLocalStorage, setLocalStorage, showIziToast } from "../utils/util";
 const courseDetail = memo(() => {
 
+  const [basket,setBasket] = useState([{}])
   const param = useParams().courseName
   let [courseInfos] = useSingleCourse(param as any)
+  useEffect(()=>{
+    const ss = JSON.parse(getLocalStorage("basket") as any) 
+    setBasket(ss as any)
+  },[])
 
 
   return (
@@ -133,7 +139,11 @@ const courseDetail = memo(() => {
                </div>
               </div>
               <div className="my-3 flex items-center w-full h-10 justify-center gap-3">
-                <div className="flex hover:opacity-90 cursor-pointer items-center justify-center gap-1 rounded-2xl  text-white h-full bg-blue-700 w-4/5">
+                <div onClick={()=>{
+                  basket?setBasket(prevState=>[...prevState,courseInfos]):setBasket([courseInfos]);
+                  setLocalStorage('basket',JSON.stringify(basket) as any)
+                  showIziToast('موفق','محصول با موفقیت به سبد خرید اضافه شد','green')
+                }} className="flex hover:opacity-90 cursor-pointer items-center justify-center gap-1 rounded-2xl  text-white h-full bg-blue-700 w-4/5">
                   <p className="text-[14px]">اضافه به سبد</p>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                     <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>

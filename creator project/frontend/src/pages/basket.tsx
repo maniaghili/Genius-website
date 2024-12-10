@@ -1,8 +1,17 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
+import IsNotData from "../components/isNotData/isNotData";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import Coursebox from "../components/coursebox/coursebox";
+import { getLocalStorage } from "../utils/util";
 const basket = memo(() => {
+
+   const [courses,setCourses] = useState() as any
+   useEffect(()=>{
+    setCourses(JSON.parse(getLocalStorage('basket') as any) as any)
+   },[])
+console.log(courses);
+
     return (
       <>
       <HeaderTop />
@@ -25,30 +34,17 @@ const basket = memo(() => {
                       </div>
                  </div>
                  <div className="grid lg:gap-16 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
-                        <div className=" relative">
-                          <Coursebox />
+                        
+                        {courses?courses.map((course:any)=>
+                      <div className=" relative">
+                        <Coursebox {...course}  key={course._id} />
                           <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
                           </div>
                         </div>
-                        <div className=" relative">
-                          <Coursebox />
-                          <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          </div>
-                        </div>
-                        <div className=" relative">
-                          <Coursebox />
-                          <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          </div>
-                        </div>
-                        <div className=" relative">
-                          <Coursebox />
-                          <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          </div>
-                        </div>
+                      ):
+                      <IsNotData dataName="دوره ای"/>
+                      }
                         
                   </div>
              </div>
