@@ -140,7 +140,7 @@ const courseDetail = memo(() => {
               </div>
               <div className="my-3 flex items-center w-full h-10 justify-center gap-3">
                 <div onClick={()=>{
-                  basket?setBasket(prevState=>[...prevState,courseInfos]):setBasket([courseInfos]);
+                  basket?.length?setBasket(prevState=>[...prevState,courseInfos]):setBasket([courseInfos]);
                   setLocalStorage('basket',JSON.stringify(basket) as any)
                   showIziToast('موفق','محصول با موفقیت به سبد خرید اضافه شد','green')
                 }} className="flex hover:opacity-90 cursor-pointer items-center justify-center gap-1 rounded-2xl  text-white h-full bg-blue-700 w-4/5">

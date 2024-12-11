@@ -15,7 +15,9 @@ const ArticleBox:FC = ({...article}:any) => {
   return (
     <div className='bg-slate-100 rounded-2xl w-[95%]  overflow-hidden' data-aos="zoom-in-up" >
               <div className='m-3 rounded-xl '>
-                <img src={`http://localhost:4000/courses/covers/${article.cover}`} className='h-[60%] w-full rounded-xl' alt="" />
+                <Link to={`/articleDetail/${article.shortName}`} className="w-full h-60% overflow-hidden rounded-xl">
+                <img src={`http://localhost:4000/courses/covers/${article.cover}`} className=' hover:scale-105 duration-150  w-full rounded-xl' alt="" />
+                </Link>
                 <div className='flex justify-between '>
                   <p className='mt-2 font-bold'>{article.title}</p>
                   <div className='mt-[-20px] ml-4'>

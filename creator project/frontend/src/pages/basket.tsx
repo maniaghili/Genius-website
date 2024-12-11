@@ -8,7 +8,10 @@ const basket = memo(() => {
 
    const [courses,setCourses] = useState() as any
    useEffect(()=>{
-    setCourses(JSON.parse(getLocalStorage('basket') as any) as any)
+    const aa = getLocalStorage('basket')
+    setCourses(JSON.parse(aa as any))
+    
+    
    },[])
 console.log(courses);
 
@@ -35,16 +38,16 @@ console.log(courses);
                  </div>
                  <div className="grid lg:gap-16 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
                         
-                        {courses?courses.map((course:any)=>
-                      <div className=" relative">
-                        <Coursebox {...course}  key={course._id} />
+                    {courses?courses.map((course:any)=>
+                       <div className="relative">
+                        <Coursebox key={course._id} />
                           <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
                           </div>
-                        </div>
+                       </div>
                       ):
-                      <IsNotData dataName="دوره ای"/>
-                      }
+                      <IsNotData dataName="دوره ای" />
+                    }
                         
                   </div>
              </div>
