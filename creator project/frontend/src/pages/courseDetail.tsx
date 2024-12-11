@@ -109,7 +109,7 @@ const courseDetail = memo(() => {
             }
           </div>
           <div className="my-5 ">
-             <SubmitCommentBox />
+             <SubmitCommentBox shortName={courseInfos?.shortName} />
              {courseInfos?.comments.length?
               courseInfos.comments.map((comment : any)=>
               <CommentBox key={comment._id} {...comment} />)
