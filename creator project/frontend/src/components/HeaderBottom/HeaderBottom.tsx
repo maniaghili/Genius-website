@@ -3,7 +3,7 @@ import './HeaderBottom.css'
 
 const HeaderBottom = () => {
   return (
-    <div className='w-full overflow-hidden  flex items-center justify-center mt-6'>
+    <div className='w-full overflow-hidden   flex items-center justify-center mt-6'>
       <div className='w-[95%] flex sm:flex-col md:flex-row justify-center items-center  bg-slate-50 rounded-2xl  py-12 h-full gap-10 flex-wrap '>
 
         <div className='md:w-2/5 sm:w-4/5 flex-col flex gap-4'>
