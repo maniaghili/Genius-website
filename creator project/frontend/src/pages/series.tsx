@@ -32,12 +32,16 @@ const series = memo(() => {
   }
 
   const handleCatFilters = (e:any) => {
-const catFilter = e.target.value
-const catCourses = allCourses?.filter((course:any)=>course.categoryID.name === catFilter)
-setCourses(catCourses)
+   const catFilter = e.target.value
+   const catCourses = allCourses?.filter((course:any)=>course.categoryID.name === catFilter)
+   setCourses(catCourses)
 
   }
- 
+
+  const handleSearchCourses = (e:string) =>{
+    const filteredCourses = allCourses.filter((course:any)=>course.name.includes(e))
+    setCourses(filteredCourses)
+  }
  
     return (
       <>
@@ -65,8 +69,8 @@ setCourses(catCourses)
             <div className=" flex flex-col justify-center ">
               <p className="font-bold text-[13px]">جست وجو دوره</p>
               <div className="bg-slate-200 dark:bg-gray-800 h-10 rounded-xl  overflow-hidden justify-between flex items-center my-2">
-                <input type="text" className="bg-slate-200 h-10 dark:bg-gray-800 " placeholder="عنوان دوره..." />
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg>
+                <input type="text" onBlur={(e:any)=>{handleSearchCourses(e.target.value)}} className="bg-slate-200 h-10 dark:bg-gray-800 " placeholder="عنوان دوره..." />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" cursor-pointer ml-3 w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg>
               </div>
               <div className="bg-slate-200 dark:bg-gray-800 h-10 flex overflow-hidden rounded-xl items-center justify-between my-2">
               <p className="mr-1 font-bold text-[13px]">در حال برگزاری</p>
