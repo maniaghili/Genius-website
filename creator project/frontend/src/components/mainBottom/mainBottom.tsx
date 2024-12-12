@@ -2,7 +2,7 @@ import './mainBottom.css'
 import Maincomments from '../maincomments/maincomments'
 const MainBottom = () => {
   return (
-    <div className="w-full flex justify-center items-center ">
+    <div className="w-full flex justify-center  items-center ">
       <div className="w-[95%] ssm:flex-col lg:flex-row ssm:gap-6 rounded-2xl ssm:mt-10   lg:mt-24 flex items-center justify-between h-64">
         <div className="lg:w-1/3 flex justify-start gap-4 items-center">
            <div className=" bg-blue-700 w-12 h-12 rounded-full flex justify-center items-center p-2">
