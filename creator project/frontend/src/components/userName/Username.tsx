@@ -18,7 +18,7 @@ const Username:React.FC<name> = memo(({name,isName}) => {
  
  
    return (  
-     <div className="flex items-center h-full group relative ">
+     <div className="flex items-center dark:text-gray-300 h-full group relative ">
            <div className="w-2/3">
               <p className='jjl opacity-65'>{name?name:'کاربر مهمان'}</p>
            </div>

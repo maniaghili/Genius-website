@@ -21,7 +21,7 @@ const [allCourses] = useCourses(undefined) as any
         <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="group-hover:rotate-180 opacity-80 w-5 h-5 transition-all">
         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
-          <div className="bg-white dark:bg-gray-700  drop_down absolute z-10  top-10  w-48 min-h-40 rounded-lg  group-hover:visible ">
+          <div className="bg-white dark:bg-gray-700  drop_down absolute z-10  top-10  w-48 min-h-40 rounded-r-lg  group-hover:visible ">
               <ul className="w-full ">
                 {categories?.map((category:any)=>
                   <li key={category._id} onMouseEnter={()=>{setRightMenu(category.title)
