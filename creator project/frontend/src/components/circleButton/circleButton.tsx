@@ -10,8 +10,8 @@ const circleButton:React.FC<PropsWithChildren<id>> = memo(({children,id}):JSX.El
 
   const clickHaandler = () => {
      if(id == 1){
-      console.log('dark');
-      
+     let htt = window.document.querySelector('html')
+      htt?.classList.toggle('dark')
      }else if(id == 2){
       let pro = prompt('نام دوره مورد نظر را وارد نمایید')
       console.log(pro);
