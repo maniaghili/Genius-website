@@ -6,7 +6,7 @@ const commentBox = ({...comment}) => {
   
   return (
     <div className="flex flex-col items-end">
-    <div className="w-full flex flex-col my-6 items-center border h-fit rounded-2xl">
+    <div className="w-full flex flex-col my-6 items-center dark:border-gray-700 border h-fit rounded-2xl">
     <div className="flex justify-between w-full m-2 mt-4">
       <div className="flex mr-3">
           <div className="flex mr-3 gap-2">
@@ -18,7 +18,7 @@ const commentBox = ({...comment}) => {
           </div>
      </div>
      <div className="flex gap-2 ml-5">
-      <div className="bg-slate-200  hover:text-blue-700 cursor-pointer rounded-2xl w-20 flex p-1 justify-center gap-2 items-center opacity-80">
+      <div className="bg-slate-200 dark:bg-gray-700  hover:text-blue-700 cursor-pointer rounded-2xl w-20 flex p-1 justify-center gap-2 items-center opacity-80">
         <p className="font-bold text-[12px]">پاسخ</p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
             <path fill-rule="evenodd" d="M12.207 2.232a.75.75 0 0 0 .025 1.06l4.146 3.958H6.375a5.375 5.375 0 0 0 0 10.75H9.25a.75.75 0 0 0 0-1.5H6.375a3.875 3.875 0 0 1 0-7.75h10.003l-4.146 3.957a.75.75 0 0 0 1.036 1.085l5.5-5.25a.75.75 0 0 0 0-1.085l-5.5-5.25a.75.75 0 0 0-1.06.025Z" clip-rule="evenodd"></path>
@@ -34,7 +34,7 @@ const commentBox = ({...comment}) => {
   </div>
 
   {comment.answerContent && 
-  <div className="w-11/12 flex flex-col  items-center border h-fit rounded-2xl">
+  <div className="w-11/12 flex flex-col dark:border-gray-700 items-center border h-fit rounded-2xl">
   <div className="flex justify-between w-full m-2 mt-4">
     <div className="flex mr-3">
         <div className="flex mr-3 gap-2">
@@ -46,7 +46,7 @@ const commentBox = ({...comment}) => {
         </div>
    </div>
    <div className="flex gap-2 ml-5">
-    <div className="bg-slate-200  hover:text-blue-700 cursor-pointer rounded-2xl w-20 flex p-1 justify-center gap-2 items-center opacity-80">
+    <div className="bg-slate-200 dark:bg-gray-700  hover:text-blue-700 cursor-pointer rounded-2xl w-20 flex p-1 justify-center gap-2 items-center opacity-80">
       <p className="font-bold text-[12px]">پاسخ</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
           <path fill-rule="evenodd" d="M12.207 2.232a.75.75 0 0 0 .025 1.06l4.146 3.958H6.375a5.375 5.375 0 0 0 0 10.75H9.25a.75.75 0 0 0 0-1.5H6.375a3.875 3.875 0 0 1 0-7.75h10.003l-4.146 3.957a.75.75 0 0 0 1.036 1.085l5.5-5.25a.75.75 0 0 0 0-1.085l-5.5-5.25a.75.75 0 0 0-1.06.025Z" clip-rule="evenodd"></path>

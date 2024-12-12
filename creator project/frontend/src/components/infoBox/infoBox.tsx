@@ -8,7 +8,7 @@ type prop = {
 
 const infoBox:React.FC<PropsWithChildren<prop>> = ({text,value,children}) => {
   return (
-    <div className="bg-slate-200 flex items-center gap-2 justify-center w-full h-16 rounded-xl">
+    <div className="bg-slate-200 dark:bg-slate-800 dark:text-gray-300 flex items-center gap-2 justify-center w-full h-16 rounded-xl">
     <CircleButton id={undefined}>
    {children}
     </CircleButton>

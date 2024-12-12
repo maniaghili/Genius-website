@@ -8,7 +8,7 @@ type props = {
 
 const courseTimeInfo:React.FC<PropsWithChildren<props>> = ({text,time,children}) => {
   return (
-    <div className="flex flex-col items-center gap-2 justify-center bg-slate-200 w-1/4 rounded-xl  h-full">
+    <div className="flex flex-col items-center gap-2 justify-center bg-slate-200 dark:bg-gray-800 w-1/4 rounded-xl  h-full">
              <CircleButton id={undefined}>
               {children}
              </CircleButton>
