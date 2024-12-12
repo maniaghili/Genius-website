@@ -105,7 +105,7 @@ const courseDetail = memo(() => {
             
             <SessionBox session={courseInfos.sessions} />
             :
-            <IsNotData dataName={'جلسه ای' as string} />
+            <IsNotData dataName={'فعلا برای این دوره جلسه ای آپلود نشده است' as string} />
             }
           </div>
           <div className="my-5 ">
@@ -113,7 +113,7 @@ const courseDetail = memo(() => {
              {courseInfos?.comments.length?
               courseInfos.comments.map((comment : any)=>
               <CommentBox key={comment._id} {...comment} />)
-                :<IsNotData dataName={'کامنتی' as string}/>
+                :<IsNotData dataName={'هیچ کامنتی تا بحال ثبت نشده است' as string}/>
              }
              
              

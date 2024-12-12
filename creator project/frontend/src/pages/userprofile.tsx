@@ -19,14 +19,13 @@ const userProfile = memo(() => {
               <div className="ssm:w-full sa:w-[25%]">
                  <div className="w-full h-full gap-5 flex items-center flex-col">
                     <div className=" mt-3 w-[95%] flex flex-col gap-6 h-fit sticky top-20">
-                      <div className="w-full  flex items-center dark:text-gray-300">
+                      <div className="w-full  flex items-center dark:text-gray-300  ">
                           <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
                           <div className="h-10 w-full">
                               <p className="opacity-70 ss">خوش آمدید</p>
                               <span className="ss">مانی علیقلی نژاد</span>
                           </div>
                       </div>
-                    
                     <div className="h-fit mb-4 w-full flex justify-center">
                       <ul className="bg-slate-200 dark:text-gray-300 dark:bg-slate-900 w-full flex flex-col  items-center rounded-xl h-full">
                           <li className="hover:opacity-90 cursor-pointer bg-blue-600 text-white  flex justify-start  gap-1 items-center w-[90%] h-9 rounded-2xl mt-4">

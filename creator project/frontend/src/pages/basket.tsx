@@ -46,7 +46,7 @@ console.log(courses);
                           </div>
                        </div>
                       ):
-                      <IsNotData dataName="دوره ای" />
+                      <IsNotData dataName="دوره ای در سبد خرید شما وجود ندارد" />
                     }
                         
                   </div>
