@@ -2,11 +2,11 @@ import Circleui from '../circleui/circleui'
 import './mainTop.css'
 const mainTop = () => {
   return (
-    <div className='w-full flex justify-center mt-16'>
-      <div className='w-[95%] rounded-2xl  bg-slate-50'>
+    <div className='w-full flex justify-center mt-16 '>
+      <div className='w-[95%] rounded-2xl dark:bg-gray-900  bg-slate-50'>
         
-        <div className='flex mt-[-24px] justify-center'>
-          <div className=' border  bg-white rounded-2xl'>
+        <div className='flex mt-[-24px] justify-center '>
+          <div className=' border  bg-white rounded-2xl dark:bg-gray-900 dark:text-white dark:border-gray-700'>
             <p className='font-bold py-3 px-6'>چرا آکادمی نابغه؟</p>
           </div>
         </div>

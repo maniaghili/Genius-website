@@ -18,7 +18,7 @@ const HeaderTop = memo(() => {
        
 
     return (
-      <div className=' sticky w-full top-0 shadow-md box-border z-40  bg-slate-50 dark:bg-gray-900  border-b-2  '>
+      <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 dark:bg-gray-950  border-b-2 dark:border-gray-600  '>
 
     <div className="flex justify-center relative ">
      <div className="w-[95%] h-[75px] flex justify-between">
@@ -66,14 +66,14 @@ const HeaderTop = memo(() => {
         <div className='flex w-fit items-center h-full gap-4'> 
           <div className='flex items-center gap-4 ssm:hidden lg:flex'>
           <CircleButton id={1}>
-          <button className='parent bg-slate-100 dark:text-gray-200 dark:bg-gray-800 hover:bg-slate-200 transition-all '>
+          <button className='parent bg-slate-100 dark:text-gray-200 dark:bg-gray-900 hover:bg-slate-200 transition-all '>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path>
           </svg>
           </button>
           </CircleButton>
           <CircleButton id={2}>
-          <button className='parent bg-slate-100 dark:text-gray-200 dark:bg-gray-800 hover:bg-slate-200 transition-all '>
+          <button className='parent bg-slate-100 dark:text-gray-200 dark:bg-gray-900 hover:bg-slate-200 transition-all '>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
           </svg>
@@ -81,7 +81,7 @@ const HeaderTop = memo(() => {
           </CircleButton>
           </div>
           <CircleButton >
-          <Link className='parent dark:bg-gray-800 dark:text-gray-200 bg-slate-100 hover:bg-slate-200 transition-all' to={'/userbasket'}>
+          <Link className='parent dark:bg-gray-900 dark:text-gray-200 bg-slate-100 hover:bg-slate-200 transition-all' to={'/userbasket'}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path>
           </svg>
@@ -89,7 +89,7 @@ const HeaderTop = memo(() => {
           </CircleButton>
           <CircleButton>
           
-          <Link className='parent dark:bg-gray-800 dark:text-gray-200 bg-slate-100 hover:bg-slate-200 transition-all' to={navigateUser('/userprofile','/login')}>
+          <Link className='parent dark:bg-gray-900 dark:text-gray-200 bg-slate-100 hover:bg-slate-200 transition-all' to={navigateUser('/userprofile','/login')}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
           </svg>
@@ -102,9 +102,9 @@ const HeaderTop = memo(() => {
      </div>
      {
       colaps?
-      <div  className='active_colaps z-50 absolute h-screen box-border w-full lg:hidden flex justify-between'>
-       <div className='w-3/4 bg-white'>
-       <div className='z-50 w-full  flex items-center justify-between'>
+      <div  className='active_colaps dark:bg-gray-500 z-50 rounded-none absolute h-screen w-full lg:hidden flex justify-between'>
+       <div className='w-3/4 bg-white dark:bg-gray-950 dark:text-gray-200'>
+       <div className='z-50 w-full flex items-center justify-between'>
         
         <div className='flex w-1/2 h-1/5  gap-3 items-center'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-700">
@@ -129,7 +129,7 @@ const HeaderTop = memo(() => {
        </div>
 
        <div className='w-full flex  flex-col items-center'>
-         <div className='flex items-center gap-2 mt-4 bg-slate-200 rounded-2xl w-11/12 h-11 border border-neutral-700 border-opacity-30'>
+         <div className='flex items-center gap-2 mt-4 bg-slate-200 dark:bg-gray-900 rounded-2xl w-11/12 h-11 border border-neutral-700 border-opacity-30'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"></path>
           </svg>

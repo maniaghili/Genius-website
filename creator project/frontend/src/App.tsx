@@ -20,7 +20,9 @@ const router = useRoutes(Router)
     
    <QueryClientProvider client={allQueries}>
    <Suspense>
+    <div className='dark:bg-gray-950'>
     {router}
+    </div>
     </Suspense>
    <ReactQueryDevtools />
    </QueryClientProvider>
