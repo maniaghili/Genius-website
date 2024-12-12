@@ -1,7 +1,7 @@
 
 const maincomments = () => {
   return (
-    <div className=" rounded-3xl border border-zinc-300 flex flex-col items-center">
+    <div className=" rounded-3xl border dark:border-gray-600 border-zinc-300 flex flex-col items-center">
     <div className="opacity-70 w-5/6 my-3">
         من به تیم شما بابت پشتیبانی عالیتان از وبسایتتان تشکر می‌کنم. سوالات
         و

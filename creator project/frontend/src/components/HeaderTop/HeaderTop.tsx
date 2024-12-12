@@ -18,13 +18,13 @@ const HeaderTop = memo(() => {
        
 
     return (
-      <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 dark:bg-gray-950  border-b-2 dark:border-gray-600  '>
+      <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 dark:bg-gray-950  border-b-2 dark:border-gray-700  '>
 
     <div className="flex justify-center relative ">
      <div className="w-[95%] h-[75px] flex justify-between">
       <div className="w-[50%] flex">
         <div className="w-lg-[20%] w-md-[45%] flex items-center gap-2">
-          <button onClick={()=>{setColaps(true)}} className='dark:bg-gray-700  coli_button bg-slate-100 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center ssm:flex lg:hidden'>
+          <button onClick={()=>{setColaps(true)}} className='dark:bg-gray-900 dark:text-gray-300 coli_button bg-slate-100 rounded-full w-9 h-9 flex flex-col gap-1 items-center justify-center ssm:flex lg:hidden'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
               </svg>

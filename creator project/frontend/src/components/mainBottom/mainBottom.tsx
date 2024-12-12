@@ -3,8 +3,8 @@ import Maincomments from '../maincomments/maincomments'
 const MainBottom = () => {
   return (
     <div className="w-full flex justify-center  items-center ">
-      <div className="w-[95%] ssm:flex-col lg:flex-row ssm:gap-6 rounded-2xl ssm:mt-10   lg:mt-24 flex items-center justify-between h-64">
-        <div className="lg:w-1/3 flex justify-start gap-4 items-center">
+      <div className="w-[95%] ssm:flex-col lg:flex-row dark:text-gray-300 ssm:gap-6 rounded-2xl ssm:mt-10   lg:mt-24 flex items-center justify-between h-64">
+        <div className="lg:w-1/3 flex justify-start  gap-4 items-center">
            <div className=" bg-blue-700 w-12 h-12 rounded-full flex justify-center items-center p-2">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-white w-5 h-5">
@@ -12,7 +12,7 @@ const MainBottom = () => {
             </svg>
               
            </div>
-           <div className="w-[80%] flex flex-col gap-3">
+           <div className="w-[80%] flex flex-col gap-3 ">
             <p className="text-blue-700 damo">در مورد نابغه چه میشنویم؟</p>
             <span className="opacity-70">این‌ها، بخش خیلی کوچکی از نظراتی هستند که افراد مختلف در مورد نابغه دارند.</span>
            </div>
