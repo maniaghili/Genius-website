@@ -12,7 +12,7 @@ const footerTop = memo(() => {
    cacheTime:1000000 })
  
    return (
-     <div className='w-full flex justify-center items-center ssm:mt-48 md:mt-28 lg:mt-16'>
+     <div className='w-full flex dark:text-white justify-center items-center ssm:mt-48 md:mt-28 lg:mt-16'>
        <div className='w-[95%] rounded-2xl min-h-[800px] flex ssm:items-start md:items-center ssm:flex-col lg:flex-row '>
          <div className='lg:w-1/3 flex gap-4 ssm:w-[90%] ssm:my-5 '>
            <div>

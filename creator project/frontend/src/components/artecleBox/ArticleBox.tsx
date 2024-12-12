@@ -13,7 +13,7 @@ const ArticleBox:FC = ({...article}:any) => {
     
 })
   return (
-    <div className='bg-slate-100 rounded-2xl w-[95%]  overflow-hidden' data-aos="zoom-in-up" >
+    <div className='bg-slate-100 dark:bg-gray-800 rounded-2xl w-[95%]  overflow-hidden' data-aos="zoom-in-up" >
               <div className='m-3 rounded-xl '>
                 <Link to={`/articleDetail/${article.shortName}`} className="w-full h-60% overflow-hidden rounded-xl">
                 <img src={`http://localhost:4000/courses/covers/${article.cover}`} className=' hover:scale-105 duration-150  w-full rounded-xl' alt="" />
@@ -30,7 +30,7 @@ const ArticleBox:FC = ({...article}:any) => {
                     <span className='font-bold'>{article.creator.name}</span>
                    </div>
                    <Link to={`/articleDetail/${article.shortName}`}>
-                   <div className='bg-slate-200 p-1 rounded-3xl hover:bg-slate-100 transition-all cursor-pointer'>
+                   <div className='bg-slate-200 dark:bg-gray-900 p-1 rounded-3xl hover:bg-slate-100 transition-all cursor-pointer'>
                     <span className='text-blue-600 '> مشاهده</span>
                     </div>
                    </Link>

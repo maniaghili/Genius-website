@@ -32,7 +32,7 @@ const series = memo(() => {
       <>
       <HeaderTop /> 
       
-        <div className='lg:w-full flex justify-start my-4 gap-3 '>
+        <div className='lg:w-full flex justify-start my-4 gap-3 dark:text-gray-300'>
               <div className='flex justify-center items-center sm:mr-2 lg:mr-0'>
                   <div className='h-14 bg-blue-700 w-14  rounded-full flex justify-center items-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-white">
@@ -47,21 +47,21 @@ const series = memo(() => {
         </div>
             <div className="w-full  flex justify-center">
            
-        <div className="w-[96%] h-fit flex gap-3">
-         <div className="bg-white ssm:hidden md:inline-block min-h-full w-1/4">
+        <div className="w-[96%] h-fit flex gap-3 ">
+         <div className="bg-white dark:bg-gray-950 dark:text-gray-300 ssm:hidden md:inline-block min-h-full w-1/4">
            <div className="h-fit sticky top-[80px] ">
             
             <div className=" flex flex-col justify-center ">
-              <p className="font-bold text-[13px]">جست وجو دوره</p>
-              <div className="bg-slate-200 h-10 rounded-xl  overflow-hidden justify-between flex items-center my-2">
-                <input type="text" className="bg-slate-200 h-10 " placeholder="عنوان دوره..." />
+              <p className="font-bold text-[13px] ">جست وجو دوره</p>
+              <div className="bg-slate-200 dark:bg-gray-800 h-10 rounded-xl  overflow-hidden justify-between flex items-center my-2">
+                <input type="text" className="bg-slate-200 h-10 dark:bg-gray-800" placeholder="عنوان دوره..." />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="ml-3 w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg>
               </div>
-              <div className="bg-slate-200 h-10 flex overflow-hidden rounded-xl items-center justify-between my-2">
+              <div className="bg-slate-200 dark:bg-gray-800 h-10 flex overflow-hidden rounded-xl items-center justify-between my-2">
               <p className="mr-1 font-bold text-[13px]">در حال برگزاری</p>
                
               </div>
-              <div onClick={()=>{setIsSelectCourseType(type => !type)}} className="select-none bg-slate-200 h-10  flex  overflow-hidden rounded-xl hover:text-blue-600 transition-all cursor-pointer items-center justify-between my-2">
+              <div onClick={()=>{setIsSelectCourseType(type => !type)}} className="select-none dark:bg-gray-800 bg-slate-200 h-10  flex  overflow-hidden rounded-xl hover:text-blue-600 transition-all cursor-pointer items-center justify-between my-2">
                
                   <div className="flex items-center">
   
@@ -80,7 +80,7 @@ const series = memo(() => {
              
               </div>
               {isSelectCourseType &&
-              <div className="bg-slate-200 my-3 h-24 rounded-2xl">
+              <div className="bg-slate-200 dark:bg-gray-800 my-3 h-24 rounded-2xl">
               <ul className="mt-2 mr-2 flex flex-col gap-2">
                 
               <li className="flex items-center gap-1"><input type="radio" name="select" value={'free'} onChange={handleFilterDates} /><p className="font-bold text-[13px] opacity-70">رایگان</p></li>
@@ -93,7 +93,7 @@ const series = memo(() => {
             
       </div>
          </div>
-          <div className="md:w-3/4  ssm:w-full bg-white h-fit">
+          <div className="md:w-3/4 dark:bg-gray-950 ssm:w-full bg-white h-fit">
            <div className=" h-10 flex items-center lg:gap-3 md:gap-2 ssm:gap-0 opacity-70">
             <div className="flex gap-1 items-center w-24 ">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className=" w-5 h-5">
@@ -102,7 +102,7 @@ const series = memo(() => {
               <p className="font-bold text-[13px] w-full">مرتب سازی:</p>
             </div>
             <div className=" rounded-2xl  w-full h-full">
-             <select className="h-full bg-slate-200 w-44  rounded-2xl" onChange={(e:any)=>{handleFilterDates(e)}}>
+             <select className="h-full bg-slate-200 dark:bg-gray-700 dark:text-gray-300 w-44  rounded-2xl" onChange={(e:any)=>{handleFilterDates(e)}}>
               <option value="defult" className="font-bold text-[11px]">انتخاب کنید</option>
               <option value="free" className="font-bold text-[11px]">رایگان</option>
               <option value="notfree" className="font-bold text-[11px]">غیر رایگان</option>

@@ -1,10 +1,10 @@
 import { memo } from "react"
 import CircleButton from "../circleButton/circleButton"
 const footerBottom = memo(() => {return (
-          <div className="w-full  box-border flex justify-center mt-11 border-t-gray-300 border">
+          <div className="w-full dark:border-gray-700 flex justify-center mt-11 dark:text-gray-300 border-t-gray-300 border-t">
               <div className=" w-[95%]  rounded-2xl min-h-96 ">
-                  <div className="w-full flex justify-end -mt-4 transition-all">
-                      <button onClick={()=>{scrollTo(0,5)}} className="bg-slate-200 rounded-2xl p-1 flex justify-center items-center">
+                  <div className="w-full flex justify-end -mt-4  transition-all">
+                      <button onClick={()=>{scrollTo(0,5)}} className="bg-slate-200 dark:bg-gray-800 rounded-2xl p-1 flex justify-center items-center">
                       <p >برگشت به بالا</p>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                           <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"></path>
@@ -54,7 +54,7 @@ const footerBottom = memo(() => {return (
                   </div>
       
                   <div className="w-full ssm:flex-col md:flex-row  mt-5 flex justify-start">
-                      <div className="bg-slate-100 p-5 rounded-3xl h-fit md:w-5/12 flex justify-center items-center flex-col gap-2">
+                      <div className="bg-slate-100 dark:bg-gray-800 p-5 rounded-3xl h-fit md:w-5/12 flex justify-center items-center flex-col gap-2">
                          <div className="w-11/12 ">
                             <p className="font-bold w-full">درباره ما</p>
                             <span className="opacity-70 md:text-[12px]">
@@ -75,14 +75,14 @@ const footerBottom = memo(() => {return (
                          <p className="font-bold">خبرنامه</p>
                          <span>برای اطلاع از جدیدترین اخبار و جشنوراه‌های تخفیفی نابغه ایمیل خود را وارد کنید.</span>
                          <div className=" rounded-2xl flex items-center ssm:w-5/6 md:w-full  gap-2">
-                             <div className="flex items-center gap-3 w-full h-full bg-slate-200 rounded-xl">
+                             <div className="flex items-center gap-3 dark:bg-gray-800 w-full h-full bg-slate-200 rounded-xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-3 opacity-70 ">
                                   <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z">
                                   </path>
                                   <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z">
                                   </path>
                                 </svg>
-                                 <input type="text" className="bg-transparent h-[40px]" placeholder="آدرس ایمیل" />
+                                 <input type="text" className="bg-transparent h-[40px] " placeholder="آدرس ایمیل" />
                              </div>
                              <div className=" flex justify-end">
                                  
