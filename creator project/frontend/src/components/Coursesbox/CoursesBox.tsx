@@ -17,13 +17,13 @@ const CoursesBox = memo(() => {
     <>
     <BreadCrumb />
     <div className="w-full flex justify-center mt-10 h-[480px]">
-       <div className="w-[95%] ssm:justify-center flex gap-4 overflow-hidden rounded-2xl h-full">
+       <div className="w-[95%] dark:bg-gray-900 ssm:justify-center flex gap-4 overflow-hidden rounded-2xl h-full">
        <Swiper
         
         navigation={true}
         modules={[ Navigation]}
         loop={true}
-        className="mySwiper"
+        className="mySwiper mt-5"
         breakpoints={{
           100:{
             slidesPerView:1

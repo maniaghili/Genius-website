@@ -14,11 +14,11 @@ const coursebox:React.FC = memo(({...course}:any) => {
 
   return (
     
-        <div className="md:w-11/12 ssm:w-full min-h-96 rounded-3xl  transition-all flex flex-col items-center" data-aos="zoom-in-up">              
+        <div className="md:w-11/12 ssm:w-full min-h-96 rounded-3xl dark:text-gray-300  transition-all flex flex-col items-center" data-aos="zoom-in-up">              
                 <Link to={`/courseDetail/${course.shortName}`} className='overflow-hidden rounded-3xl'>
                 <img src={`http://localhost:4000/courses/covers/${course.cover}`} className="w-full h-5/12 duration-300 hover:scale-105 " alt="" />
                 </Link>
-                <div className="w-5/6 h-16  rounded-2xl bg-slate-100">
+                <div className="w-5/6 h-16  rounded-2xl bg-slate-100 dark:bg-gray-800">
                     <div className="flex flex-col justify-center p-1">
                     <p className="text-green-600 font-bold">. {course.isComplete?'تکمیل شده':'در حال ضبط'}</p>
                     <h3 className="font-bold text-[14px]">{course.name}</h3>

@@ -20,7 +20,7 @@ const BreadCrumb = () => {
             </div>
          </div>
          <div className='lg:w-[10%] ssm:2/5 sm:w-1/5 rounded-2xl overflow-hidden felx w-full items-center ml-2 '>
-            <div className='w-full ssm:p-0 sm:p-2 bg-slate-200 flex justify-center items-center hover:opacity-80 dark:bg-gray-900 dark:text-white hover:text-blue-500 transition-all'>
+            <div className='w-full ssm:p-0 sm:p-2 bg-slate-200 flex justify-center items-center hover:opacity-80 dark:bg-gray-900 dark:text-white` hover:text-blue-500 transition-all'>
                 <button className='font-bold moshahede'>مشاهده همه</button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                     <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
