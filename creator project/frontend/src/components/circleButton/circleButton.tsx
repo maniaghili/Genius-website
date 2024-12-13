@@ -29,7 +29,9 @@ const circleButton:React.FC<PropsWithChildren<id>> = memo(({children,id}):JSX.El
         buttons:['لغو','تایید'],
         content:'input',
       }).then(data=>{
-        Navigate(`/allCoursesSearch?search=${data}`)
+        if(data){
+          Navigate(`/allCoursesSearch?search=${data}`)
+        }
       })
       
      }
