@@ -1,5 +1,7 @@
 import { memo, PropsWithChildren } from 'react';
 import './circleButton.css';
+import { showSwal } from '../../utils/swal';
+import { useNavigate } from 'react-router-dom';
 
 type id = {
 id?:number | boolean |undefined
@@ -7,14 +9,22 @@ id?:number | boolean |undefined
 
 const circleButton:React.FC<PropsWithChildren<id>> = memo(({children,id}):JSX.Element => {
   
+  const Navigate = useNavigate()
 
   const clickHaandler = () => {
      if(id == 1){
      let htt = window.document.querySelector('html')
       htt?.classList.toggle('dark')
      }else if(id == 2){
-      let pro = prompt('نام دوره مورد نظر را وارد نمایید')
-      console.log(pro);
+       showSwal({
+        title:'یافتن دوره',
+        text:'نام دوره یا مقاله مورد نظر را وارد نمایید',
+        icon:'info',
+        buttons:['لغو','تایید'],
+        content:'input',
+      }).then(data=>{
+        Navigate(`/allCoursesSearch?search=${data}`)
+      })
       
      }
   }
