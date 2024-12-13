@@ -14,7 +14,13 @@ const circleButton:React.FC<PropsWithChildren<id>> = memo(({children,id}):JSX.El
   const clickHaandler = () => {
      if(id == 1){
      let htt = window.document.querySelector('html')
-      htt?.classList.toggle('dark')
+     if(htt?.classList.value == 'dark'){
+      htt?.classList.remove('dark')
+      localStorage.setItem('theme','dark')
+     }else{
+      htt?.classList.add('dark')
+     }
+ 
      }else if(id == 2){
        showSwal({
         title:'یافتن دوره',
