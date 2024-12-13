@@ -1,5 +1,6 @@
 import { memo } from "react"
 import CircleButton from "../circleButton/circleButton"
+import { showIziToast } from "../../utils/util"
 const footerBottom = memo(() => {return (
           <div className="w-full dark:border-gray-700 flex justify-center mt-11 dark:text-gray-300 border-t-gray-300 border-t">
               <div className=" w-[95%]  rounded-2xl min-h-96 ">
@@ -86,7 +87,13 @@ const footerBottom = memo(() => {return (
                              </div>
                              <div className=" flex justify-end">
                                  
-                                 <button className="bg-blue-600 text-white font-black hover:bg-blue-500 transition-all rounded-xl w-20 py-2"> 
+                                 <button onClick={(e:any)=>{
+                                    if(e.target.value){
+                                        showIziToast('موفق','ایمیل شما با موفقیت ثبت شد','green') 
+                                    }else{
+                                        showIziToast('ناموفق','خطا در ثبت ایمیل','red') 
+                                    }
+                                 }} className="bg-blue-600 text-white font-black hover:bg-blue-500 transition-all rounded-xl w-20 py-2"> 
                                     ثبت ایمیل
                                 </button>
                              </div>

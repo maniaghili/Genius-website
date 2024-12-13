@@ -103,7 +103,7 @@ const HeaderTop = memo(() => {
      </div>
      {
       colaps?
-      <div  className='active_colaps dark:bg-gray-500 z-50 rounded-none absolute h-screen w-full lg:hidden flex justify-between'>
+      <div  className='active_colaps dark:bg-transparent z-50 rounded-none absolute h-screen w-full lg:hidden flex justify-between'>
        <div className='w-3/4 bg-white dark:bg-gray-950 dark:text-gray-200'>
        <div className='z-50 w-full flex items-center justify-between'>
         
